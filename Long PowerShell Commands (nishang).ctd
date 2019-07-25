@@ -1,0 +1,725 @@
+<?xml version="1.0" ?><cherrytree><node custom_icon_id="0" foreground="" is_bold="True" name="Long PowerShell Commands" prog_lang="plain-text" readonly="False" tags="" ts_creation="1561519277.53" ts_lastsave="1561519277.53" unique_id="47"><rich_text></rich_text><node custom_icon_id="0" foreground="" is_bold="True" name="nishang" prog_lang="custom-colors" readonly="True" tags="" ts_creation="1561536283.41" ts_lastsave="1562301014.06" unique_id="46"><rich_text scale="h1" weight="heavy">PREREQUISITES:</rich_text><rich_text>
+
+    </rich_text><rich_text scale="h2" underline="single" weight="heavy">Local Machine</rich_text><rich_text scale="h2" weight="heavy"> (kali-windows)</rich_text><rich_text scale="h2" underline="single" weight="heavy">:</rich_text><rich_text>
+    </rich_text><rich_text scale="h2">
+       • </rich_text><rich_text scale="h2" weight="heavy">PowerShell</rich_text><rich_text scale="h2"> v3 onwards</rich_text><rich_text>
+ </rich_text><rich_text scale="h2">      • Running </rich_text><rich_text scale="h2" weight="heavy">remotesigned</rich_text><rich_text scale="h2"> scripts is enabled </rich_text><rich_text>
+       
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text><rich_text scale="h1" weight="heavy">STEPS TO RECREATE:</rich_text><rich_text>
+
+</rich_text><rich_text scale="h2">       1. Encode a PowerShell command using </rich_text><rich_text scale="h2" weight="heavy">Invoke-Encode</rich_text><rich_text scale="h2"> from </rich_text><rich_text scale="h2" weight="heavy">nishang</rich_text><rich_text scale="h2">:
+</rich_text><rich_text>
+              </rich_text><rich_text scale="h2">• Clone </rich_text><rich_text link="webs https://github.com/samratashok/nishang" scale="h2">nishang</rich_text><rich_text scale="h2"> from GitHub</rich_text><rich_text> (skip if necessary)
+    
+                 </rich_text><rich_text justification="left"></rich_text><rich_text>
+    
+</rich_text><rich_text scale="h2">           • Import then </rich_text><rich_text scale="h2" style="italic">dot source</rich_text><rich_text scale="h2"> the </rich_text><rich_text scale="h2" weight="heavy">Invoke-Encode</rich_text><rich_text scale="h2"> cmdlet:</rich_text><rich_text>
+   
+                 </rich_text><rich_text justification="left"></rich_text><rich_text>
+
+             </rich_text><rich_text scale="h2">• Encode then run a PowerShell command:</rich_text><rich_text>
+             
+</rich_text><rich_text scale="h3">                 </rich_text><rich_text justification="left"></rich_text><rich_text>
+                 
+                 </rich_text><rich_text justification="left"></rich_text><rich_text>                 
+                 
+ </rich_text><rich_text scale="h2">          </rich_text><rich_text scale="h2" weight="heavy">NOTES</rich_text><rich_text weight="heavy">:</rich_text><rich_text>
+</rich_text><rich_text scale="h2">              • Invoke-Encode outputs two files -- </rich_text><rich_text scale="h2" weight="heavy">encoded.txt</rich_text><rich_text scale="h2"> and </rich_text><rich_text scale="h2" weight="heavy">encodedcommand.txt</rich_text><rich_text>
+</rich_text><rich_text scale="h2">                  • </rich_text><rich_text scale="h2" weight="heavy">encoded.txt</rich_text><rich_text scale="h2"> contains a base64 encoding of the command stored in a memory stream then compressed</rich_text><rich_text>
+ </rich_text><rich_text scale="h2">                 • </rich_text><rich_text scale="h2" weight="heavy">encodedcommand.txt</rich_text><rich_text scale="h2"> contains a base64 encoding of the decompression process of encoded.txt then added to an Invoke-Expression cmdlet</rich_text><rich_text>
+</rich_text><rich_text scale="h2">              • The decoded final command looks like this:</rich_text><rich_text>
+                     </rich_text><rich_text justification="left"></rich_text><rich_text>
+
+
+      </rich_text><rich_text scale="h2">• </rich_text><rich_text scale="h2" weight="heavy">Logs Generated:</rich_text><rich_text>
+   </rich_text><rich_text scale="h2">        •  </rich_text><rich_text link="node 48" scale="h2" weight="heavy">LogName: Security</rich_text><rich_text scale="sup"> (&lt;- CLICK HERE TO VIEW BRIEF SUMMARY)</rich_text><rich_text weight="heavy">:</rich_text><rich_text>
+</rich_text><rich_text scale="h2">                1. </rich_text><rich_text link="node 51" scale="h2">4688 - Process Creation (Success)</rich_text><rich_text>
+</rich_text><rich_text scale="h2">          •  </rich_text><rich_text link="node 50" scale="h2" weight="heavy">PowerShell Logs</rich_text><rich_text scale="h2"> </rich_text><rich_text scale="sup">(&lt;- CLICK HERE TO VIEW BRIEF SUMMARY)</rich_text><rich_text scale="h2">:
+                1. </rich_text><rich_text link="node 55" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+                2. </rich_text><rich_text link="node 69" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+                3. </rich_text><rich_text link="node 70" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+                4. </rich_text><rich_text link="node 71" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+                5. </rich_text><rich_text link="node 72" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+                6. </rich_text><rich_text link="node 73" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+                7. </rich_text><rich_text link="node 74" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+                8. </rich_text><rich_text link="node 75" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+                9. </rich_text><rich_text link="node 76" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+                10. </rich_text><rich_text link="node 77" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+                11. </rich_text><rich_text link="node 78" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+                12. </rich_text><rich_text link="node 79" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+                13. </rich_text><rich_text link="node 80" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+                14. </rich_text><rich_text link="node 81" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+                15. </rich_text><rich_text link="node 82" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+                16. </rich_text><rich_text link="node 83" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+                17. </rich_text><rich_text link="node 84" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+                18. </rich_text><rich_text link="node 61" scale="h2">400 - Engine Lifecycle</rich_text><rich_text scale="h2">
+                19. </rich_text><rich_text link="node 85" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+                20. </rich_text><rich_text link="node 86" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+                21. </rich_text><rich_text link="node 87" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+                22. </rich_text><rich_text link="node 88" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+                23. </rich_text><rich_text link="node 89" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+                24. </rich_text><rich_text link="node 90" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+                25. </rich_text><rich_text link="node 91" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+                26. </rich_text><rich_text link="node 92" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text>
+</rich_text><rich_text scale="h2">          •  </rich_text><rich_text scale="h2" weight="heavy">Sysmon Logs:</rich_text><rich_text scale="h2">
+                1. </rich_text><rich_text link="node 205" scale="h2">1 - Process Create (rule: ProcessCreate)</rich_text><rich_text scale="h2">
+                2. </rich_text><rich_text link="node 206" scale="h2">11 - File created (rule: FileCreate)</rich_text><rich_text>
+                    
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</rich_text><codebox char_offset="389" frame_height="40" frame_width="82" highlight_brackets="True" show_line_numbers="False" syntax_highlighting="sh" width_in_pixels="False">git clone https://github.com/samratashok/nishang.git</codebox><codebox char_offset="479" frame_height="70" frame_width="82" highlight_brackets="True" show_line_numbers="False" syntax_highlighting="powershell" width_in_pixels="False">cd .\nishang
+Import-Module .\nishang.psm1
+. .\Utility\Invoke-Encode </codebox><codebox char_offset="566" frame_height="70" frame_width="82" highlight_brackets="True" show_line_numbers="False" syntax_highlighting="powershell" width_in_pixels="False">Invoke-Encode -DataToEncode &quot;Get-ChildItem $home/Desktop&quot; -IsString -OutCommand &gt;$null
+$cmd=Get-Content .\encodedcommand.txt
+powershell -enc $cmd</codebox><table char_offset="603" col_max="1000" col_min="40"><row><cell>-DataToEncode</cell><cell>The path of the file to be decoded. Use with -IsString to enter a string.</cell></row><row><cell>-IsString</cell><cell>Use this to specify the data/command to be encodedif you are passing a string in place of a filepath.
+</cell></row><row><cell>-OutCommand</cell><cell>Generate an encoded command which could be used with -EncodedCommand parameter of PowerShell.
+</cell></row><row><cell>OPTION</cell><cell>DEFINITION</cell></row></table><codebox char_offset="1092" frame_height="70" frame_width="82" highlight_brackets="True" show_line_numbers="False" syntax_highlighting="powershell" width_in_pixels="False">Invoke-Expression $(New-ObjectIO.StreamReader ($(New-ObjectIO.Compression.DeflateStream ($(New-ObjectIO.MemoryStream (,$([Convert]::FromBase64String('c08t0XXOyMxJ8SxJzVVwtooJLU4tKo7xSk3KTMlMzNB3SS3OLskv4OUCAA==')))), [IO.Compression.CompressionMode]::Decompress)), [Text.Encoding]::ASCII)).ReadToEnd();</codebox><node custom_icon_id="0" foreground="" is_bold="False" name="LogName: Security" prog_lang="custom-colors" readonly="True" tags="" ts_creation="1561548024.54" ts_lastsave="1561548210.66" unique_id="48"><rich_text scale="h2">    1. </rich_text><rich_text link="node 51" scale="h2">4688 - Process Creation (Success)</rich_text><rich_text>
+          </rich_text><rich_text justification="left"></rich_text><table char_offset="51" col_max="750" col_min="40"><row><cell>NewProcessName</cell><cell>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</cell></row><row><cell>CommandLine</cell><cell>&quot;C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe&quot; -enc SQBuAHYAbwBrAGUALQBFAHgAcAByAGUAcwBzAGkAbwBuACAAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBTAHQAcgBlAGEAbQBSAGUAYQBkAGUAcgAgACgAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBDAG8AbQBwAHIAZQBzAHMAaQBvAG4ALgBEAGUAZgBsAGEAdABlAFMAdAByAGUAYQBtACAAKAAkACgATgBlAHcALQBPAGIAagBlAGMAdAAgAEkATwAuAE0AZQBtAG8AcgB5AFMAdAByAGUAYQBtACAAKAAsACQAKABbAEMAbwBuAHYAZQByAHQAXQA6ADoARgByAG8AbQBCAGEAcwBlADYANABTAHQAcgBpAG4AZwAoACcAYwAwADgAdAAwAFgAWABPAHkATQB4AEoAOABTAHgASgB6AFYAVgB3AHQAbwBvAEoATABVADQAdABLAG8ANwB4AGQAQQBYAFIAKwBpADYAcAB4AGQAawBsACsAUQBXADgAWABBAEEAPQAnACkAKQApACkALAAgAFsASQBPAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAE0AbwBkAGUAXQA6ADoARABlAGMAbwBtAHAAcgBlAHMAcwApACkALAAgAFsAVABlAHgAdAAuAEUAbgBjAG8AZABpAG4AZwBdADoAOgBBAFMAQwBJAEkAKQApAC4AUgBlAGEAZABUAG8ARQBuAGQAKAApADsA</cell></row><row><cell>ParentProcessName</cell><cell>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><node custom_icon_id="0" foreground="" is_bold="False" name="1. 4688 - Process Creation (Success)" prog_lang="xml" readonly="True" tags="" ts_creation="1561548123.78" ts_lastsave="1561548141.64" unique_id="51"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+      &lt;Provider Name=&quot;Microsoft-Windows-Security-Auditing&quot; Guid=&quot;{54849625-5478-4994-a5ba-3e3b0328c30d}&quot; /&gt; 
+      &lt;EventID&gt;4688&lt;/EventID&gt; 
+      &lt;Version&gt;2&lt;/Version&gt; 
+      &lt;Level&gt;0&lt;/Level&gt; 
+      &lt;Task&gt;13312&lt;/Task&gt; 
+      &lt;Opcode&gt;0&lt;/Opcode&gt; 
+      &lt;Keywords&gt;0x8020000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-26T10:43:10.096282800Z&quot; /&gt; 
+      &lt;EventRecordID&gt;377113&lt;/EventRecordID&gt; 
+      &lt;Correlation /&gt; 
+      &lt;Execution ProcessID=&quot;4&quot; ThreadID=&quot;300&quot; /&gt; 
+      &lt;Channel&gt;Security&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data Name=&quot;SubjectUserSid&quot;&gt;S-1-5-21-3461203602-4096304019-2269080069-1000&lt;/Data&gt; 
+      &lt;Data Name=&quot;SubjectUserName&quot;&gt;IEUser&lt;/Data&gt; 
+      &lt;Data Name=&quot;SubjectDomainName&quot;&gt;MSEDGEWIN10&lt;/Data&gt; 
+      &lt;Data Name=&quot;SubjectLogonId&quot;&gt;0xd8a59&lt;/Data&gt; 
+      &lt;Data Name=&quot;NewProcessId&quot;&gt;0x1a5c&lt;/Data&gt; 
+      &lt;Data Name=&quot;NewProcessName&quot;&gt;C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe&lt;/Data&gt; 
+      &lt;Data Name=&quot;TokenElevationType&quot;&gt;%%1937&lt;/Data&gt; 
+      &lt;Data Name=&quot;ProcessId&quot;&gt;0x744&lt;/Data&gt; 
+      &lt;Data Name=&quot;CommandLine&quot;&gt;&quot;C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe&quot; -enc SQBuAHYAbwBrAGUALQBFAHgAcAByAGUAcwBzAGkAbwBuACAAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBTAHQAcgBlAGEAbQBSAGUAYQBkAGUAcgAgACgAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBDAG8AbQBwAHIAZQBzAHMAaQBvAG4ALgBEAGUAZgBsAGEAdABlAFMAdAByAGUAYQBtACAAKAAkACgATgBlAHcALQBPAGIAagBlAGMAdAAgAEkATwAuAE0AZQBtAG8AcgB5AFMAdAByAGUAYQBtACAAKAAsACQAKABbAEMAbwBuAHYAZQByAHQAXQA6ADoARgByAG8AbQBCAGEAcwBlADYANABTAHQAcgBpAG4AZwAoACcAYwAwADgAdAAwAFgAWABPAHkATQB4AEoAOABTAHgASgB6AFYAVgB3AHQAbwBvAEoATABVADQAdABLAG8ANwB4AGQAQQBYAFIAKwBpADYAcAB4AGQAawBsACsAUQBXADgAWABBAEEAPQAnACkAKQApACkALAAgAFsASQBPAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAE0AbwBkAGUAXQA6ADoARABlAGMAbwBtAHAAcgBlAHMAcwApACkALAAgAFsAVABlAHgAdAAuAEUAbgBjAG8AZABpAG4AZwBdADoAOgBBAFMAQwBJAEkAKQApAC4AUgBlAGEAZABUAG8ARQBuAGQAKAApADsA&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetUserSid&quot;&gt;S-1-0-0&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetUserName&quot;&gt;-&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetDomainName&quot;&gt;-&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetLogonId&quot;&gt;0x0&lt;/Data&gt; 
+      &lt;Data Name=&quot;ParentProcessName&quot;&gt;C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe&lt;/Data&gt; 
+      &lt;Data Name=&quot;MandatoryLabel&quot;&gt;S-1-16-12288&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;  </rich_text></node></node><node custom_icon_id="0" foreground="" is_bold="False" name="PowerShell Logs" prog_lang="custom-colors" readonly="True" tags="" ts_creation="1561548040.27" ts_lastsave="1561608614.12" unique_id="50"><rich_text>     </rich_text><rich_text scale="h2">1. </rich_text><rich_text link="node 55" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+         </rich_text><rich_text justification="left" scale="h2"></rich_text><rich_text scale="h2">     
+      
+    2. </rich_text><rich_text link="node 69" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+         </rich_text><rich_text justification="left" scale="h2"></rich_text><rich_text scale="h2">     
+      
+    3. </rich_text><rich_text link="node 70" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+         </rich_text><rich_text justification="left" scale="h2"></rich_text><rich_text scale="h2">     
+      
+    4. </rich_text><rich_text link="node 71" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+         </rich_text><rich_text justification="left" scale="h2"></rich_text><rich_text scale="h2">     
+      
+    5. </rich_text><rich_text link="node 72" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+         </rich_text><rich_text justification="left" scale="h2"></rich_text><rich_text scale="h2">     
+      
+    6. </rich_text><rich_text link="node 73" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+         </rich_text><rich_text justification="left" scale="h2"></rich_text><rich_text scale="h2">     
+      
+    7. </rich_text><rich_text link="node 74" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+         </rich_text><rich_text justification="left" scale="h2"></rich_text><rich_text scale="h2">     
+      
+    8. </rich_text><rich_text link="node 75" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+         </rich_text><rich_text justification="left" scale="h2"></rich_text><rich_text scale="h2">     
+      
+    9. </rich_text><rich_text link="node 76" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+         </rich_text><rich_text justification="left" scale="h2"></rich_text><rich_text scale="h2">     
+      
+    10. </rich_text><rich_text link="node 77" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+         </rich_text><rich_text justification="left" scale="h2"></rich_text><rich_text scale="h2">     
+      
+    11. </rich_text><rich_text link="node 78" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+         </rich_text><rich_text justification="left" scale="h2"></rich_text><rich_text scale="h2">     
+      
+    12. </rich_text><rich_text link="node 79" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+         </rich_text><rich_text justification="left" scale="h2"></rich_text><rich_text scale="h2">     
+      
+    13. </rich_text><rich_text link="node 80" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+         </rich_text><rich_text justification="left" scale="h2"></rich_text><rich_text scale="h2">     
+      
+    14. </rich_text><rich_text link="node 81" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+         </rich_text><rich_text justification="left" scale="h2"></rich_text><rich_text scale="h2">     
+      
+    15. </rich_text><rich_text link="node 82" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+         </rich_text><rich_text justification="left" scale="h2"></rich_text><rich_text scale="h2">     
+      
+    16. </rich_text><rich_text link="node 83" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+         </rich_text><rich_text justification="left" scale="h2"></rich_text><rich_text scale="h2">     
+      
+    17. </rich_text><rich_text link="node 84" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+         </rich_text><rich_text justification="left" scale="h2"></rich_text><rich_text scale="h2">     
+      
+    18. </rich_text><rich_text link="node 61" scale="h2">400 - Engine Lifecycle</rich_text><rich_text scale="h2">
+        </rich_text><rich_text justification="left" scale="h2"></rich_text><rich_text scale="h2">
+
+    19. </rich_text><rich_text link="node 85" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">    
+        </rich_text><rich_text justification="left" scale="h2"></rich_text><rich_text scale="h2">
+
+    20. </rich_text><rich_text link="node 86" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+        </rich_text><rich_text justification="left" scale="h2"></rich_text><rich_text scale="h2">
+        
+    21. </rich_text><rich_text link="node 87" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+        </rich_text><rich_text justification="left" scale="h2"></rich_text><rich_text scale="h2">
+          
+    22. </rich_text><rich_text link="node 88" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+        </rich_text><rich_text justification="left" scale="h2"></rich_text><rich_text scale="h2">
+        
+    23. </rich_text><rich_text link="node 89" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+        </rich_text><rich_text justification="left" scale="h2"></rich_text><rich_text scale="h2">
+        
+    24. </rich_text><rich_text link="node 90" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+        </rich_text><rich_text justification="left" scale="h2"></rich_text><rich_text scale="h2">
+        
+    25. </rich_text><rich_text link="node 91" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">
+        </rich_text><rich_text justification="left" scale="h2"></rich_text><rich_text scale="h2">
+
+    26. </rich_text><rich_text link="node 92" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text scale="h2">    
+        </rich_text><rich_text justification="left" scale="h2"></rich_text><rich_text scale="h2">    
+    
+</rich_text><table char_offset="50" col_max="1000" col_min="40"><row><cell>Computer</cell><cell> MSEDGEWIN10</cell></row><row><cell>Data</cell><cell></cell></row><row><cell>Data</cell><cell>DetailSequence=1 DetailTotal=1 SequenceNumber=1228 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=115 ScriptName= CommandLine=</cell></row><row><cell>Data</cell><cell>CommandInvocation(PSConsoleHostReadLine): &quot;PSConsoleHostReadLine&quot;</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><table char_offset="113" col_max="1000" col_min="40"><row><cell>Computer</cell><cell> MSEDGEWIN10</cell></row><row><cell>Data</cell><cell>$ms = New-Object IO.MemoryStream</cell></row><row><cell>Data</cell><cell>DetailSequence=1 DetailTotal=1 SequenceNumber=1230 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=116 ScriptName=C:\Users\IEUser\Desktop\nishang\Utility\Invoke-Encode.ps1 CommandLine= $ms = New-Object IO.MemoryStream</cell></row><row><cell>Data</cell><cell>CommandInvocation(New-Object): &quot;New-Object&quot; ParameterBinding(New-Object): name=&quot;TypeName&quot;; value=&quot;IO.MemoryStream&quot;</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><table char_offset="176" col_max="1000" col_min="40"><row><cell>Computer</cell><cell> MSEDGEWIN10</cell></row><row><cell>Data</cell><cell>$cs = New-Object IO.Compression.DeflateStream ($ms,$action)</cell></row><row><cell>Data</cell><cell>DetailSequence=1 DetailTotal=1 SequenceNumber=1232 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=116 ScriptName=C:\Users\IEUser\Desktop\nishang\Utility\Invoke-Encode.ps1 CommandLine= $cs = New-Object IO.Compression.DeflateStream ($ms,$action)</cell></row><row><cell>Data</cell><cell>CommandInvocation(New-Object): &quot;New-Object&quot; ParameterBinding(New-Object): name=&quot;TypeName&quot;; value=&quot;IO.Compression.DeflateStream&quot; ParameterBinding(New-Object): name=&quot;ArgumentList&quot;; value=&quot;System.IO.MemoryStream, Compress&quot;</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><table char_offset="239" col_max="1000" col_min="40"><row><cell>Computer</cell><cell> MSEDGEWIN10</cell></row><row><cell>Data</cell><cell>$sw = New-Object IO.StreamWriter ($cs, [Text.Encoding]::ASCII)</cell></row><row><cell>Data</cell><cell>DetailSequence=1 DetailTotal=1 SequenceNumber=1234 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=116 ScriptName=C:\Users\IEUser\Desktop\nishang\Utility\Invoke-Encode.ps1 CommandLine= $sw = New-Object IO.StreamWriter ($cs, [Text.Encoding]::ASCII)</cell></row><row><cell>Data</cell><cell>CommandInvocation(New-Object): &quot;New-Object&quot; ParameterBinding(New-Object): name=&quot;TypeName&quot;; value=&quot;IO.StreamWriter&quot; ParameterBinding(New-Object): name=&quot;ArgumentList&quot;; value=&quot;System.IO.Compression.DeflateStream, System.Text.ASCIIEncoding&quot;</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><table char_offset="302" col_max="1000" col_min="40"><row><cell>Computer</cell><cell> MSEDGEWIN10</cell></row><row><cell>Data</cell><cell>$Enc | ForEach-Object {$sw.WriteLine($_)}</cell></row><row><cell>Data</cell><cell>DetailSequence=1 DetailTotal=1 SequenceNumber=1236 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=116 ScriptName=C:\Users\IEUser\Desktop\nishang\Utility\Invoke-Encode.ps1 CommandLine= $Enc | ForEach-Object {$sw.WriteLine($_)}</cell></row><row><cell>Data</cell><cell>CommandInvocation(ForEach-Object): &quot;ForEach-Object&quot; ParameterBinding(ForEach-Object): name=&quot;Process&quot;; value=&quot;$sw.WriteLine($_)&quot; ParameterBinding(ForEach-Object): name=&quot;InputObject&quot;; value=&quot;Get-ChildItem C:\Users\IEUser/Desktop&quot;</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><table char_offset="365" col_max="1000" col_min="40"><row><cell>Computer</cell><cell> MSEDGEWIN10</cell></row><row><cell>Data</cell><cell>Out-File -InputObject $Compressed -FilePath $OutputFilePath</cell></row><row><cell>Data</cell><cell>DetailSequence=1 DetailTotal=1 SequenceNumber=1238 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=116 ScriptName=C:\Users\IEUser\Desktop\nishang\Utility\Invoke-Encode.ps1 CommandLine= Out-File -InputObject $Compressed -FilePath $OutputFilePath</cell></row><row><cell>Data</cell><cell>CommandInvocation(Out-File): &quot;Out-File&quot; ParameterBinding(Out-File): name=&quot;InputObject&quot;; value=&quot;c08t0XXOyMxJ8SxJzVVwtooJLU4tKo7xdAXR+i6pxdkl+QW8XAA=&quot; ParameterBinding(Out-File): name=&quot;FilePath&quot;; value=&quot;.\encoded.txt&quot;</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><table char_offset="428" col_max="1000" col_min="40"><row><cell>Computer</cell><cell> MSEDGEWIN10</cell></row><row><cell>Data</cell><cell>Write-Output &quot;Encoded data written to $OutputFilePath&quot;</cell></row><row><cell>Data</cell><cell>DetailSequence=1 DetailTotal=1 SequenceNumber=1240 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=116 ScriptName=C:\Users\IEUser\Desktop\nishang\Utility\Invoke-Encode.ps1 CommandLine= Write-Output &quot;Encoded data written to $OutputFilePath&quot;</cell></row><row><cell>Data</cell><cell>CommandInvocation(Write-Output): &quot;Write-Output&quot; ParameterBinding(Write-Output): name=&quot;InputObject&quot;; value=&quot;Encoded data written to .\encoded.txt&quot;</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><table char_offset="491" col_max="1000" col_min="40"><row><cell>Computer</cell><cell> MSEDGEWIN10</cell></row><row><cell>Data</cell><cell>$UnicodeEncoder = New-Object System.Text.UnicodeEncoding</cell></row><row><cell>Data</cell><cell>DetailSequence=1 DetailTotal=1 SequenceNumber=1242 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=116 ScriptName=C:\Users\IEUser\Desktop\nishang\Utility\Invoke-Encode.ps1 CommandLine= $UnicodeEncoder = New-Object System.Text.UnicodeEncoding</cell></row><row><cell>Data</cell><cell>CommandInvocation(New-Object): &quot;New-Object&quot; ParameterBinding(New-Object): name=&quot;TypeName&quot;; value=&quot;System.Text.UnicodeEncoding&quot;</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><table char_offset="554" col_max="1000" col_min="40"><row><cell>Computer</cell><cell> MSEDGEWIN10</cell></row><row><cell>Data</cell><cell>Out-File -InputObject $EncScript -FilePath $OutputCommandFilePath</cell></row><row><cell>Data</cell><cell>DetailSequence=1 DetailTotal=1 SequenceNumber=1244 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=116 ScriptName=C:\Users\IEUser\Desktop\nishang\Utility\Invoke-Encode.ps1 CommandLine= Out-File -InputObject $EncScript -FilePath $OutputCommandFilePath</cell></row><row><cell>Data</cell><cell>CommandInvocation(Out-File): &quot;Out-File&quot; ParameterBinding(Out-File): name=&quot;InputObject&quot;; value=&quot;SQBuAHYAbwBrAGUALQBFAHgAcAByAGUAcwBzAGkAbwBuACAAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBTAHQAcgBlAGEAbQBSAGUAYQBkAGUAcgAgACgAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBDAG8AbQBwAHIAZQBzAHMAaQBvAG4ALgBEAGUAZgBsAGEAdABlAFMAdAByAGUAYQBtACAAKAAkACgATgBlAHcALQBPAGIAagBlAGMAdAAgAEkATwAuAE0AZQBtAG8AcgB5AFMAdAByAGUAYQBtACAAKAAsACQAKABbAEMAbwBuAHYAZQByAHQAXQA6ADoARgByAG8AbQBCAGEAcwBlADYANABTAHQAcgBpAG4AZwAoACcAYwAwADgAdAAwAFgAWABPAHkATQB4AEoAOABTAHgASgB6AFYAVgB3AHQAbwBvAEoATABVADQAdABLAG8ANwB4AGQAQQBYAFIAKwBpADYAcAB4AGQAawBsACsAUQBXADgAWABBAEEAPQAnACkAKQApACkALAAgAFsASQBPAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAE0AbwBkAGUAXQA6ADoARABlAGMAbwBtAHAAcgBlAHMAcwApACkALAAgAFsAVABlAHgAdAAuAEUAbgBjAG8AZABpAG4AZwBdADoAOgBBAFMAQwBJAEkAKQApAC4AUgBlAGEAZABUAG8ARQBuAGQAKAApADsA&quot; ParameterBinding(Out-File): name=&quot;FilePath&quot;; value=&quot;.\encodedcommand.txt&quot;</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><table char_offset="618" col_max="1000" col_min="40"><row><cell>Computer</cell><cell> MSEDGEWIN10</cell></row><row><cell>Data</cell><cell>Write-Output &quot;Encoded command written to $OutputCommandFilePath&quot;</cell></row><row><cell>Data</cell><cell>DetailSequence=1 DetailTotal=1 SequenceNumber=1246 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=116 ScriptName=C:\Users\IEUser\Desktop\nishang\Utility\Invoke-Encode.ps1 CommandLine= Write-Output &quot;Encoded command written to $OutputCommandFilePath&quot;</cell></row><row><cell>Data</cell><cell>CommandInvocation(Write-Output): &quot;Write-Output&quot; ParameterBinding(Write-Output): name=&quot;InputObject&quot;; value=&quot;Encoded command written to .\encodedcommand.txt&quot;</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><table char_offset="682" col_max="1000" col_min="40"><row><cell>Computer</cell><cell> MSEDGEWIN10</cell></row><row><cell>Data</cell><cell></cell></row><row><cell>Data</cell><cell>DetailSequence=1 DetailTotal=1 SequenceNumber=1248 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=116 ScriptName= CommandLine=</cell></row><row><cell>Data</cell><cell>CommandInvocation(Out-Default): &quot;Out-Default&quot;</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><table char_offset="746" col_max="1000" col_min="40"><row><cell>Computer</cell><cell> MSEDGEWIN10</cell></row><row><cell>Data</cell><cell>Microsoft.PowerShell.Core\Set-StrictMode -Off</cell></row><row><cell>Data</cell><cell>DetailSequence=1 DetailTotal=1 SequenceNumber=1250 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=118 ScriptName=C:\Program Files\WindowsPowerShell\Modules\PSReadline\2.0.0\PSReadLine.psm1 CommandLine= Microsoft.PowerShell.Core\Set-StrictMode -Off</cell></row><row><cell>Data</cell><cell>CommandInvocation(Set-StrictMode): &quot;Set-StrictMode&quot; ParameterBinding(Set-StrictMode): name=&quot;Off&quot;; value=&quot;True&quot;</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><table char_offset="810" col_max="1000" col_min="40"><row><cell>Computer</cell><cell> MSEDGEWIN10</cell></row><row><cell>Data</cell><cell></cell></row><row><cell>Data</cell><cell>DetailSequence=1 DetailTotal=1 SequenceNumber=1252 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=118 ScriptName= CommandLine=</cell></row><row><cell>Data</cell><cell>CommandInvocation(PSConsoleHostReadLine): &quot;PSConsoleHostReadLine&quot;</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><table char_offset="874" col_max="1000" col_min="40"><row><cell>Computer</cell><cell> MSEDGEWIN10</cell></row><row><cell>Data</cell><cell>$cmd=Get-Content .\encodedcommand.txt</cell></row><row><cell>Data</cell><cell>DetailSequence=1 DetailTotal=1 SequenceNumber=1254 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=119 ScriptName= CommandLine=$cmd=Get-Content .\encodedcommand.txt</cell></row><row><cell>Data</cell><cell>CommandInvocation(Get-Content): &quot;Get-Content&quot; ParameterBinding(Get-Content): name=&quot;Path&quot;; value=&quot;.\encodedcommand.txt&quot;</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><table char_offset="938" col_max="1000" col_min="40"><row><cell>Computer</cell><cell> MSEDGEWIN10</cell></row><row><cell>Data</cell><cell></cell></row><row><cell>Data</cell><cell>DetailSequence=1 DetailTotal=1 SequenceNumber=1256 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=119 ScriptName= CommandLine=</cell></row><row><cell>Data</cell><cell>CommandInvocation(Out-Default): &quot;Out-Default&quot;</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><table char_offset="1002" col_max="1000" col_min="40"><row><cell>Computer</cell><cell> MSEDGEWIN10</cell></row><row><cell>Data</cell><cell>Microsoft.PowerShell.Core\Set-StrictMode -Off</cell></row><row><cell>Data</cell><cell>DetailSequence=1 DetailTotal=1 SequenceNumber=1258 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=121 ScriptName=C:\Program Files\WindowsPowerShell\Modules\PSReadline\2.0.0\PSReadLine.psm1 CommandLine= Microsoft.PowerShell.Core\Set-StrictMode -Off</cell></row><row><cell>Data</cell><cell>CommandInvocation(Set-StrictMode): &quot;Set-StrictMode&quot; ParameterBinding(Set-StrictMode): name=&quot;Off&quot;; value=&quot;True&quot;</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><table char_offset="1066" col_max="1000" col_min="40"><row><cell>Computer</cell><cell> MSEDGEWIN10</cell></row><row><cell>Data</cell><cell></cell></row><row><cell>Data</cell><cell>DetailSequence=1 DetailTotal=1 SequenceNumber=1260 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=121 ScriptName= CommandLine=</cell></row><row><cell>Data</cell><cell>CommandInvocation(PSConsoleHostReadLine): &quot;PSConsoleHostReadLine&quot;</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><table char_offset="1119" col_max="750" col_min="40"><row><cell>Computer</cell><cell>MSEDGEWIN10</cell></row><row><cell>Data</cell><cell>Available</cell></row><row><cell>Data</cell><cell>None</cell></row><row><cell>Data</cell><cell>NewEngineState=Available PreviousEngineState=None SequenceNumber=13 HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=7ed7754b-4803-4a45-975a-55708008803e HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -enc SQBuAHYAbwBrAGUALQBFAHgAcAByAGUAcwBzAGkAbwBuACAAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBTAHQAcgBlAGEAbQBSAGUAYQBkAGUAcgAgACgAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBDAG8AbQBwAHIAZQBzAHMAaQBvAG4ALgBEAGUAZgBsAGEAdABlAFMAdAByAGUAYQBtACAAKAAkACgATgBlAHcALQBPAGIAagBlAGMAdAAgAEkATwAuAE0AZQBtAG8AcgB5AFMAdAByAGUAYQBtACAAKAAsACQAKABbAEMAbwBuAHYAZQByAHQAXQA6ADoARgByAG8AbQBCAGEAcwBlADYANABTAHQAcgBpAG4AZwAoACcAYwAwADgAdAAwAFgAWABPAHkATQB4AEoAOABTAHgASgB6AFYAVgB3AHQAbwBvAEoATABVADQAdABLAG8ANwB4AGQAQQBYAFIAKwBpADYAcAB4AGQAawBsACsAUQBXADgAWABBAEEAPQAnACkAKQApACkALAAgAFsASQBPAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAE0AbwBkAGUAXQA6ADoARABlAGMAbwBtAHAAcgBlAHMAcwApACkALAAgAFsAVABlAHgAdAAuAEUAbgBjAG8AZABpAG4AZwBdADoAOgBBAFMAQwBJAEkAKQApAC4AUgBlAGEAZABUAG8ARQBuAGQAKAApADsA EngineVersion=5.1.17763.316 RunspaceId=e3677fb3-97c8-4c9d-a381-356e3335a720 PipelineId= CommandName= CommandType= ScriptName= CommandPath= CommandLine=</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><table char_offset="1175" col_max="750" col_min="40"><row><cell>Computer</cell><cell>MSEDGEWIN10</cell></row><row><cell>Data</cell><cell>Invoke-Expression $(New-Object IO.StreamReader ($(New-Object IO.Compression.DeflateStream ($(New-Object IO.MemoryStream (,$([Convert]::FromBase64String('c08t0XXOyMxJ8SxJzVVwtooJLU4tKo7xdAXR+i6pxdkl+QW8XAA=')))), [IO.Compression.CompressionMode]::Decompress)), [Text.Encoding]::ASCII)).ReadToEnd();</cell></row><row><cell>Data</cell><cell>DetailSequence=1 DetailTotal=1 SequenceNumber=15 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=7ed7754b-4803-4a45-975a-55708008803e HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -enc SQBuAHYAbwBrAGUALQBFAHgAcAByAGUAcwBzAGkAbwBuACAAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBTAHQAcgBlAGEAbQBSAGUAYQBkAGUAcgAgACgAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBDAG8AbQBwAHIAZQBzAHMAaQBvAG4ALgBEAGUAZgBsAGEAdABlAFMAdAByAGUAYQBtACAAKAAkACgATgBlAHcALQBPAGIAagBlAGMAdAAgAEkATwAuAE0AZQBtAG8AcgB5AFMAdAByAGUAYQBtACAAKAAsACQAKABbAEMAbwBuAHYAZQByAHQAXQA6ADoARgByAG8AbQBCAGEAcwBlADYANABTAHQAcgBpAG4AZwAoACcAYwAwADgAdAAwAFgAWABPAHkATQB4AEoAOABTAHgASgB6AFYAVgB3AHQAbwBvAEoATABVADQAdABLAG8ANwB4AGQAQQBYAFIAKwBpADYAcAB4AGQAawBsACsAUQBXADgAWABBAEEAPQAnACkAKQApACkALAAgAFsASQBPAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAE0AbwBkAGUAXQA6ADoARABlAGMAbwBtAHAAcgBlAHMAcwApACkALAAgAFsAVABlAHgAdAAuAEUAbgBjAG8AZABpAG4AZwBdADoAOgBBAFMAQwBJAEkAKQApAC4AUgBlAGEAZABUAG8ARQBuAGQAKAApADsA EngineVersion=5.1.17763.316 RunspaceId=e3677fb3-97c8-4c9d-a381-356e3335a720 PipelineId=1 ScriptName= CommandLine=Invoke-Expression $(New-Object IO.StreamReader ($(New-Object IO.Compression.DeflateStream ($(New-Object IO.MemoryStream (,$([Convert]::FromBase64String('c08t0XXOyMxJ8SxJzVVwtooJLU4tKo7xdAXR+i6pxdkl+QW8XAA=')))), [IO.Compression.CompressionMode]::Decompress)), [Text.Encoding]::ASCII)).ReadToEnd();</cell></row><row><cell>Data</cell><cell>CommandInvocation(New-Object): &quot;New-Object&quot; ParameterBinding(New-Object): name=&quot;TypeName&quot;; value=&quot;IO.MemoryStream&quot; ParameterBinding(New-Object): name=&quot;ArgumentList&quot;; value=&quot;System.Object[]&quot;</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><table char_offset="1227" col_max="750" col_min="40"><row><cell>Computer</cell><cell>MSEDGEWIN10</cell></row><row><cell>Data</cell><cell>Invoke-Expression $(New-Object IO.StreamReader ($(New-Object IO.Compression.DeflateStream ($(New-Object IO.MemoryStream (,$([Convert]::FromBase64String('c08t0XXOyMxJ8SxJzVVwtooJLU4tKo7xdAXR+i6pxdkl+QW8XAA=')))), [IO.Compression.CompressionMode]::Decompress)), [Text.Encoding]::ASCII)).ReadToEnd();</cell></row><row><cell>Data</cell><cell>DetailSequence=1 DetailTotal=1 SequenceNumber=17 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=7ed7754b-4803-4a45-975a-55708008803e HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -enc SQBuAHYAbwBrAGUALQBFAHgAcAByAGUAcwBzAGkAbwBuACAAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBTAHQAcgBlAGEAbQBSAGUAYQBkAGUAcgAgACgAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBDAG8AbQBwAHIAZQBzAHMAaQBvAG4ALgBEAGUAZgBsAGEAdABlAFMAdAByAGUAYQBtACAAKAAkACgATgBlAHcALQBPAGIAagBlAGMAdAAgAEkATwAuAE0AZQBtAG8AcgB5AFMAdAByAGUAYQBtACAAKAAsACQAKABbAEMAbwBuAHYAZQByAHQAXQA6ADoARgByAG8AbQBCAGEAcwBlADYANABTAHQAcgBpAG4AZwAoACcAYwAwADgAdAAwAFgAWABPAHkATQB4AEoAOABTAHgASgB6AFYAVgB3AHQAbwBvAEoATABVADQAdABLAG8ANwB4AGQAQQBYAFIAKwBpADYAcAB4AGQAawBsACsAUQBXADgAWABBAEEAPQAnACkAKQApACkALAAgAFsASQBPAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAE0AbwBkAGUAXQA6ADoARABlAGMAbwBtAHAAcgBlAHMAcwApACkALAAgAFsAVABlAHgAdAAuAEUAbgBjAG8AZABpAG4AZwBdADoAOgBBAFMAQwBJAEkAKQApAC4AUgBlAGEAZABUAG8ARQBuAGQAKAApADsA EngineVersion=5.1.17763.316 RunspaceId=e3677fb3-97c8-4c9d-a381-356e3335a720 PipelineId=1 ScriptName= CommandLine=Invoke-Expression $(New-Object IO.StreamReader ($(New-Object IO.Compression.DeflateStream ($(New-Object IO.MemoryStream (,$([Convert]::FromBase64String('c08t0XXOyMxJ8SxJzVVwtooJLU4tKo7xdAXR+i6pxdkl+QW8XAA=')))), [IO.Compression.CompressionMode]::Decompress)), [Text.Encoding]::ASCII)).ReadToEnd();</cell></row><row><cell>Data</cell><cell>CommandInvocation(New-Object): &quot;New-Object&quot; ParameterBinding(New-Object): name=&quot;TypeName&quot;; value=&quot;IO.MemoryStream&quot; ParameterBinding(New-Object): name=&quot;ArgumentList&quot;; value=&quot;System.Object[]&quot;CommandInvocation(New-Object): &quot;New-Object&quot; ParameterBinding(New-Object): name=&quot;TypeName&quot;; value=&quot;IO.Compression.DeflateStream&quot; ParameterBinding(New-Object): name=&quot;ArgumentList&quot;; value=&quot;System.IO.MemoryStream, Decompress&quot;</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><table char_offset="1287" col_max="750" col_min="40"><row><cell>Computer</cell><cell>MSEDGEWIN10</cell></row><row><cell>Data</cell><cell>Invoke-Expression $(New-Object IO.StreamReader ($(New-Object IO.Compression.DeflateStream ($(New-Object IO.MemoryStream (,$([Convert]::FromBase64String('c08t0XXOyMxJ8SxJzVVwtooJLU4tKo7xdAXR+i6pxdkl+QW8XAA=')))), [IO.Compression.CompressionMode]::Decompress)), [Text.Encoding]::ASCII)).ReadToEnd();</cell></row><row><cell>Data</cell><cell>DetailSequence=1 DetailTotal=1 SequenceNumber=19 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=7ed7754b-4803-4a45-975a-55708008803e HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -enc SQBuAHYAbwBrAGUALQBFAHgAcAByAGUAcwBzAGkAbwBuACAAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBTAHQAcgBlAGEAbQBSAGUAYQBkAGUAcgAgACgAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBDAG8AbQBwAHIAZQBzAHMAaQBvAG4ALgBEAGUAZgBsAGEAdABlAFMAdAByAGUAYQBtACAAKAAkACgATgBlAHcALQBPAGIAagBlAGMAdAAgAEkATwAuAE0AZQBtAG8AcgB5AFMAdAByAGUAYQBtACAAKAAsACQAKABbAEMAbwBuAHYAZQByAHQAXQA6ADoARgByAG8AbQBCAGEAcwBlADYANABTAHQAcgBpAG4AZwAoACcAYwAwADgAdAAwAFgAWABPAHkATQB4AEoAOABTAHgASgB6AFYAVgB3AHQAbwBvAEoATABVADQAdABLAG8ANwB4AGQAQQBYAFIAKwBpADYAcAB4AGQAawBsACsAUQBXADgAWABBAEEAPQAnACkAKQApACkALAAgAFsASQBPAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAE0AbwBkAGUAXQA6ADoARABlAGMAbwBtAHAAcgBlAHMAcwApACkALAAgAFsAVABlAHgAdAAuAEUAbgBjAG8AZABpAG4AZwBdADoAOgBBAFMAQwBJAEkAKQApAC4AUgBlAGEAZABUAG8ARQBuAGQAKAApADsA EngineVersion=5.1.17763.316 RunspaceId=e3677fb3-97c8-4c9d-a381-356e3335a720 PipelineId=1 ScriptName= CommandLine=Invoke-Expression $(New-Object IO.StreamReader ($(New-Object IO.Compression.DeflateStream ($(New-Object IO.MemoryStream (,$([Convert]::FromBase64String('c08t0XXOyMxJ8SxJzVVwtooJLU4tKo7xdAXR+i6pxdkl+QW8XAA=')))), [IO.Compression.CompressionMode]::Decompress)), [Text.Encoding]::ASCII)).ReadToEnd();</cell></row><row><cell>Data</cell><cell>CommandInvocation(New-Object): &quot;New-Object&quot; ParameterBinding(New-Object): name=&quot;TypeName&quot;; value=&quot;IO.StreamReader&quot; ParameterBinding(New-Object): name=&quot;ArgumentList&quot;; value=&quot;System.IO.Compression.DeflateStream, System.Text.ASCIIEncoding&quot;</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><table char_offset="1349" col_max="750" col_min="40"><row><cell>Computer</cell><cell>MSEDGEWIN10</cell></row><row><cell>Data</cell><cell>Get-ChildItem C:\Users\IEUser/Desktop</cell></row><row><cell>Data</cell><cell>DetailSequence=1 DetailTotal=1 SequenceNumber=21 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=7ed7754b-4803-4a45-975a-55708008803e HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -enc SQBuAHYAbwBrAGUALQBFAHgAcAByAGUAcwBzAGkAbwBuACAAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBTAHQAcgBlAGEAbQBSAGUAYQBkAGUAcgAgACgAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBDAG8AbQBwAHIAZQBzAHMAaQBvAG4ALgBEAGUAZgBsAGEAdABlAFMAdAByAGUAYQBtACAAKAAkACgATgBlAHcALQBPAGIAagBlAGMAdAAgAEkATwAuAE0AZQBtAG8AcgB5AFMAdAByAGUAYQBtACAAKAAsACQAKABbAEMAbwBuAHYAZQByAHQAXQA6ADoARgByAG8AbQBCAGEAcwBlADYANABTAHQAcgBpAG4AZwAoACcAYwAwADgAdAAwAFgAWABPAHkATQB4AEoAOABTAHgASgB6AFYAVgB3AHQAbwBvAEoATABVADQAdABLAG8ANwB4AGQAQQBYAFIAKwBpADYAcAB4AGQAawBsACsAUQBXADgAWABBAEEAPQAnACkAKQApACkALAAgAFsASQBPAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAE0AbwBkAGUAXQA6ADoARABlAGMAbwBtAHAAcgBlAHMAcwApACkALAAgAFsAVABlAHgAdAAuAEUAbgBjAG8AZABpAG4AZwBdADoAOgBBAFMAQwBJAEkAKQApAC4AUgBlAGEAZABUAG8ARQBuAGQAKAApADsA EngineVersion=5.1.17763.316 RunspaceId=e3677fb3-97c8-4c9d-a381-356e3335a720 PipelineId=1 ScriptName= CommandLine=Get-ChildItem C:\Users\IEUser/Desktop</cell></row><row><cell>Data</cell><cell>CommandInvocation(Get-ChildItem): &quot;Get-ChildItem&quot; ParameterBinding(Get-ChildItem): name=&quot;Path&quot;; value=&quot;C:\Users\IEUser/Desktop&quot;</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><table char_offset="1409" col_max="750" col_min="40"><row><cell>Computer</cell><cell>MSEDGEWIN10</cell></row><row><cell>Data</cell><cell>Invoke-Expression $(New-Object IO.StreamReader ($(New-Object IO.Compression.DeflateStream ($(New-Object IO.MemoryStream (,$([Convert]::FromBase64String('c08t0XXOyMxJ8SxJzVVwtooJLU4tKo7xdAXR+i6pxdkl+QW8XAA=')))), [IO.Compression.CompressionMode]::Decompress)), [Text.Encoding]::ASCII)).ReadToEnd();</cell></row><row><cell>Data</cell><cell>DetailSequence=1 DetailTotal=1 SequenceNumber=23 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=7ed7754b-4803-4a45-975a-55708008803e HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -enc SQBuAHYAbwBrAGUALQBFAHgAcAByAGUAcwBzAGkAbwBuACAAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBTAHQAcgBlAGEAbQBSAGUAYQBkAGUAcgAgACgAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBDAG8AbQBwAHIAZQBzAHMAaQBvAG4ALgBEAGUAZgBsAGEAdABlAFMAdAByAGUAYQBtACAAKAAkACgATgBlAHcALQBPAGIAagBlAGMAdAAgAEkATwAuAE0AZQBtAG8AcgB5AFMAdAByAGUAYQBtACAAKAAsACQAKABbAEMAbwBuAHYAZQByAHQAXQA6ADoARgByAG8AbQBCAGEAcwBlADYANABTAHQAcgBpAG4AZwAoACcAYwAwADgAdAAwAFgAWABPAHkATQB4AEoAOABTAHgASgB6AFYAVgB3AHQAbwBvAEoATABVADQAdABLAG8ANwB4AGQAQQBYAFIAKwBpADYAcAB4AGQAawBsACsAUQBXADgAWABBAEEAPQAnACkAKQApACkALAAgAFsASQBPAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAE0AbwBkAGUAXQA6ADoARABlAGMAbwBtAHAAcgBlAHMAcwApACkALAAgAFsAVABlAHgAdAAuAEUAbgBjAG8AZABpAG4AZwBdADoAOgBBAFMAQwBJAEkAKQApAC4AUgBlAGEAZABUAG8ARQBuAGQAKAApADsA EngineVersion=5.1.17763.316 RunspaceId=e3677fb3-97c8-4c9d-a381-356e3335a720 PipelineId=1 ScriptName= CommandLine=Invoke-Expression $(New-Object IO.StreamReader ($(New-Object IO.Compression.DeflateStream ($(New-Object IO.MemoryStream (,$([Convert]::FromBase64String('c08t0XXOyMxJ8SxJzVVwtooJLU4tKo7xdAXR+i6pxdkl+QW8XAA=')))), [IO.Compression.CompressionMode]::Decompress)), [Text.Encoding]::ASCII)).ReadToEnd();</cell></row><row><cell>Data</cell><cell>CommandInvocation(Invoke-Expression): &quot;Invoke-Expression&quot; ParameterBinding(Invoke-Expression): name=&quot;Command&quot;; value=&quot;Get-ChildItem C:\Users\IEUser/Desktop &quot;</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><table char_offset="1469" col_max="750" col_min="40"><row><cell>Computer</cell><cell>MSEDGEWIN10</cell></row><row><cell>Data</cell><cell></cell></row><row><cell>Data</cell><cell>DetailSequence=1 DetailTotal=1 SequenceNumber=25 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=7ed7754b-4803-4a45-975a-55708008803e HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -enc SQBuAHYAbwBrAGUALQBFAHgAcAByAGUAcwBzAGkAbwBuACAAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBTAHQAcgBlAGEAbQBSAGUAYQBkAGUAcgAgACgAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBDAG8AbQBwAHIAZQBzAHMAaQBvAG4ALgBEAGUAZgBsAGEAdABlAFMAdAByAGUAYQBtACAAKAAkACgATgBlAHcALQBPAGIAagBlAGMAdAAgAEkATwAuAE0AZQBtAG8AcgB5AFMAdAByAGUAYQBtACAAKAAsACQAKABbAEMAbwBuAHYAZQByAHQAXQA6ADoARgByAG8AbQBCAGEAcwBlADYANABTAHQAcgBpAG4AZwAoACcAYwAwADgAdAAwAFgAWABPAHkATQB4AEoAOABTAHgASgB6AFYAVgB3AHQAbwBvAEoATABVADQAdABLAG8ANwB4AGQAQQBYAFIAKwBpADYAcAB4AGQAawBsACsAUQBXADgAWABBAEEAPQAnACkAKQApACkALAAgAFsASQBPAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAE0AbwBkAGUAXQA6ADoARABlAGMAbwBtAHAAcgBlAHMAcwApACkALAAgAFsAVABlAHgAdAAuAEUAbgBjAG8AZABpAG4AZwBdADoAOgBBAFMAQwBJAEkAKQApAC4AUgBlAGEAZABUAG8ARQBuAGQAKAApADsA EngineVersion=5.1.17763.316 RunspaceId=e3677fb3-97c8-4c9d-a381-356e3335a720 PipelineId=1 ScriptName= CommandLine=</cell></row><row><cell>Data</cell><cell>CommandInvocation(Out-Default): &quot;Out-Default&quot; ParameterBinding(Out-Default): name=&quot;InputObject&quot;; value=&quot;nishang&quot; ParameterBinding(Out-Default): name=&quot;InputObject&quot;; value=&quot;eula.lnk&quot; ParameterBinding(Out-Default): name=&quot;InputObject&quot;; value=&quot;task.txt&quot;</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><table char_offset="1529" col_max="750" col_min="40"><row><cell>Computer</cell><cell>MSEDGEWIN10</cell></row><row><cell>Data</cell><cell></cell></row><row><cell>Data</cell><cell>DetailSequence=1 DetailTotal=1 SequenceNumber=1262 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=122 ScriptName= CommandLine=</cell></row><row><cell>Data</cell><cell>CommandInvocation(Out-Default): &quot;Out-Default&quot;</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><table char_offset="1585" col_max="750" col_min="40"><row><cell>Computer</cell><cell>MSEDGEWIN10</cell></row><row><cell>Data</cell><cell>Microsoft.PowerShell.Core\Set-StrictMode -Off</cell></row><row><cell>Data</cell><cell>DetailSequence=1 DetailTotal=1 SequenceNumber=1264 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=124 ScriptName=C:\Program Files\WindowsPowerShell\Modules\PSReadline\2.0.0\PSReadLine.psm1 CommandLine= Microsoft.PowerShell.Core\Set-StrictMode -Off</cell></row><row><cell>Data</cell><cell>CommandInvocation(Set-StrictMode): &quot;Set-StrictMode&quot; ParameterBinding(Set-StrictMode): name=&quot;Off&quot;; value=&quot;True&quot;</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><node custom_icon_id="0" foreground="" is_bold="False" name="1. 800 - Pipeline Execution Details" prog_lang="xml" readonly="True" tags="" ts_creation="1561548343.97" ts_lastsave="1561605352.55" unique_id="55"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+      &lt;Provider Name=&quot;PowerShell&quot; /&gt; 
+      &lt;EventID Qualifiers=&quot;0&quot;&gt;800&lt;/EventID&gt; 
+      &lt;Level&gt;4&lt;/Level&gt; 
+      &lt;Task&gt;8&lt;/Task&gt; 
+      &lt;Keywords&gt;0x80000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-26T10:43:01.218819500Z&quot; /&gt; 
+      &lt;EventRecordID&gt;4529&lt;/EventRecordID&gt; 
+      &lt;Channel&gt;Windows PowerShell&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data /&gt; 
+      &lt;Data&gt;DetailSequence=1 DetailTotal=1 SequenceNumber=1228 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=115 ScriptName= CommandLine=&lt;/Data&gt; 
+      &lt;Data&gt;CommandInvocation(PSConsoleHostReadLine): &quot;PSConsoleHostReadLine&quot;&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node><node custom_icon_id="0" foreground="" is_bold="False" name="2. 800 - Pipeline Execution Details" prog_lang="xml" readonly="True" tags="" ts_creation="1561548413.99" ts_lastsave="1561605335.2" unique_id="69"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+      &lt;Provider Name=&quot;PowerShell&quot; /&gt; 
+      &lt;EventID Qualifiers=&quot;0&quot;&gt;800&lt;/EventID&gt; 
+      &lt;Level&gt;4&lt;/Level&gt; 
+      &lt;Task&gt;8&lt;/Task&gt; 
+      &lt;Keywords&gt;0x80000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-26T10:43:01.222371700Z&quot; /&gt; 
+      &lt;EventRecordID&gt;4530&lt;/EventRecordID&gt; 
+      &lt;Channel&gt;Windows PowerShell&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data&gt;$ms = New-Object IO.MemoryStream&lt;/Data&gt; 
+      &lt;Data&gt;DetailSequence=1 DetailTotal=1 SequenceNumber=1230 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=116 ScriptName=C:\Users\IEUser\Desktop\nishang\Utility\Invoke-Encode.ps1 CommandLine= $ms = New-Object IO.MemoryStream&lt;/Data&gt; 
+      &lt;Data&gt;CommandInvocation(New-Object): &quot;New-Object&quot; ParameterBinding(New-Object): name=&quot;TypeName&quot;; value=&quot;IO.MemoryStream&quot;&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node><node custom_icon_id="0" foreground="" is_bold="False" name="3. 800 - Pipeline Execution Details" prog_lang="xml" readonly="True" tags="" ts_creation="1561548417.68" ts_lastsave="1561605317.95" unique_id="70"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+      &lt;Provider Name=&quot;PowerShell&quot; /&gt; 
+      &lt;EventID Qualifiers=&quot;0&quot;&gt;800&lt;/EventID&gt; 
+      &lt;Level&gt;4&lt;/Level&gt; 
+      &lt;Task&gt;8&lt;/Task&gt; 
+      &lt;Keywords&gt;0x80000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-26T10:43:01.222371700Z&quot; /&gt; 
+      &lt;EventRecordID&gt;4531&lt;/EventRecordID&gt; 
+      &lt;Channel&gt;Windows PowerShell&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data&gt;$cs = New-Object IO.Compression.DeflateStream ($ms,$action)&lt;/Data&gt; 
+      &lt;Data&gt;DetailSequence=1 DetailTotal=1 SequenceNumber=1232 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=116 ScriptName=C:\Users\IEUser\Desktop\nishang\Utility\Invoke-Encode.ps1 CommandLine= $cs = New-Object IO.Compression.DeflateStream ($ms,$action)&lt;/Data&gt; 
+      &lt;Data&gt;CommandInvocation(New-Object): &quot;New-Object&quot; ParameterBinding(New-Object): name=&quot;TypeName&quot;; value=&quot;IO.Compression.DeflateStream&quot; ParameterBinding(New-Object): name=&quot;ArgumentList&quot;; value=&quot;System.IO.MemoryStream, Compress&quot;&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node><node custom_icon_id="0" foreground="" is_bold="False" name="4. 800 - Pipeline Execution Details" prog_lang="xml" readonly="True" tags="" ts_creation="1561548418.14" ts_lastsave="1561605281.36" unique_id="71"><rich_text>+ &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+      &lt;Provider Name=&quot;PowerShell&quot; /&gt; 
+      &lt;EventID Qualifiers=&quot;0&quot;&gt;800&lt;/EventID&gt; 
+      &lt;Level&gt;4&lt;/Level&gt; 
+      &lt;Task&gt;8&lt;/Task&gt; 
+      &lt;Keywords&gt;0x80000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-26T10:43:01.222371700Z&quot; /&gt; 
+      &lt;EventRecordID&gt;4532&lt;/EventRecordID&gt; 
+      &lt;Channel&gt;Windows PowerShell&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data&gt;$sw = New-Object IO.StreamWriter ($cs, [Text.Encoding]::ASCII)&lt;/Data&gt; 
+      &lt;Data&gt;DetailSequence=1 DetailTotal=1 SequenceNumber=1234 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=116 ScriptName=C:\Users\IEUser\Desktop\nishang\Utility\Invoke-Encode.ps1 CommandLine= $sw = New-Object IO.StreamWriter ($cs, [Text.Encoding]::ASCII)&lt;/Data&gt; 
+      &lt;Data&gt;CommandInvocation(New-Object): &quot;New-Object&quot; ParameterBinding(New-Object): name=&quot;TypeName&quot;; value=&quot;IO.StreamWriter&quot; ParameterBinding(New-Object): name=&quot;ArgumentList&quot;; value=&quot;System.IO.Compression.DeflateStream, System.Text.ASCIIEncoding&quot;&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node><node custom_icon_id="0" foreground="" is_bold="False" name="5. 800 - Pipeline Execution Details" prog_lang="xml" readonly="True" tags="" ts_creation="1561548418.4" ts_lastsave="1561605203.24" unique_id="72"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+      &lt;Provider Name=&quot;PowerShell&quot; /&gt; 
+      &lt;EventID Qualifiers=&quot;0&quot;&gt;800&lt;/EventID&gt; 
+      &lt;Level&gt;4&lt;/Level&gt; 
+      &lt;Task&gt;8&lt;/Task&gt; 
+      &lt;Keywords&gt;0x80000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-26T10:43:01.222371700Z&quot; /&gt; 
+      &lt;EventRecordID&gt;4533&lt;/EventRecordID&gt; 
+      &lt;Channel&gt;Windows PowerShell&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data&gt;$Enc | ForEach-Object {$sw.WriteLine($_)}&lt;/Data&gt; 
+      &lt;Data&gt;DetailSequence=1 DetailTotal=1 SequenceNumber=1236 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=116 ScriptName=C:\Users\IEUser\Desktop\nishang\Utility\Invoke-Encode.ps1 CommandLine= $Enc | ForEach-Object {$sw.WriteLine($_)}&lt;/Data&gt; 
+      &lt;Data&gt;CommandInvocation(ForEach-Object): &quot;ForEach-Object&quot; ParameterBinding(ForEach-Object): name=&quot;Process&quot;; value=&quot;$sw.WriteLine($_)&quot; ParameterBinding(ForEach-Object): name=&quot;InputObject&quot;; value=&quot;Get-ChildItem C:\Users\IEUser/Desktop&quot;&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node><node custom_icon_id="0" foreground="" is_bold="False" name="6. 800 - Pipeline Execution Details" prog_lang="xml" readonly="True" tags="" ts_creation="1561548418.65" ts_lastsave="1561605169.82" unique_id="73"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+      &lt;Provider Name=&quot;PowerShell&quot; /&gt; 
+      &lt;EventID Qualifiers=&quot;0&quot;&gt;800&lt;/EventID&gt; 
+      &lt;Level&gt;4&lt;/Level&gt; 
+      &lt;Task&gt;8&lt;/Task&gt; 
+      &lt;Keywords&gt;0x80000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-26T10:43:01.222371700Z&quot; /&gt; 
+      &lt;EventRecordID&gt;4534&lt;/EventRecordID&gt; 
+      &lt;Channel&gt;Windows PowerShell&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+  &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data&gt;Out-File -InputObject $Compressed -FilePath $OutputFilePath&lt;/Data&gt; 
+      &lt;Data&gt;DetailSequence=1 DetailTotal=1 SequenceNumber=1238 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=116 ScriptName=C:\Users\IEUser\Desktop\nishang\Utility\Invoke-Encode.ps1 CommandLine= Out-File -InputObject $Compressed -FilePath $OutputFilePath&lt;/Data&gt; 
+      &lt;Data&gt;CommandInvocation(Out-File): &quot;Out-File&quot; ParameterBinding(Out-File): name=&quot;InputObject&quot;; value=&quot;c08t0XXOyMxJ8SxJzVVwtooJLU4tKo7xdAXR+i6pxdkl+QW8XAA=&quot; ParameterBinding(Out-File): name=&quot;FilePath&quot;; value=&quot;.\encoded.txt&quot;&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node><node custom_icon_id="0" foreground="" is_bold="False" name="7. 800 - Pipeline Execution Details" prog_lang="xml" readonly="True" tags="" ts_creation="1561548418.96" ts_lastsave="1561605143.41" unique_id="74"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+      &lt;Provider Name=&quot;PowerShell&quot; /&gt; 
+      &lt;EventID Qualifiers=&quot;0&quot;&gt;800&lt;/EventID&gt; 
+      &lt;Level&gt;4&lt;/Level&gt; 
+      &lt;Task&gt;8&lt;/Task&gt; 
+      &lt;Keywords&gt;0x80000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-26T10:43:01.222371700Z&quot; /&gt; 
+      &lt;EventRecordID&gt;4535&lt;/EventRecordID&gt; 
+      &lt;Channel&gt;Windows PowerShell&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data&gt;Write-Output &quot;Encoded data written to $OutputFilePath&quot;&lt;/Data&gt; 
+      &lt;Data&gt;DetailSequence=1 DetailTotal=1 SequenceNumber=1240 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=116 ScriptName=C:\Users\IEUser\Desktop\nishang\Utility\Invoke-Encode.ps1 CommandLine= Write-Output &quot;Encoded data written to $OutputFilePath&quot;&lt;/Data&gt; 
+      &lt;Data&gt;CommandInvocation(Write-Output): &quot;Write-Output&quot; ParameterBinding(Write-Output): name=&quot;InputObject&quot;; value=&quot;Encoded data written to .\encoded.txt&quot;&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node><node custom_icon_id="0" foreground="" is_bold="False" name="8. 800 - Pipeline Execution Details" prog_lang="xml" readonly="True" tags="" ts_creation="1561548419.25" ts_lastsave="1561605114.29" unique_id="75"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
++ &lt;System&gt;
+      &lt;Provider Name=&quot;PowerShell&quot; /&gt; 
+      &lt;EventID Qualifiers=&quot;0&quot;&gt;800&lt;/EventID&gt; 
+      &lt;Level&gt;4&lt;/Level&gt; 
+      &lt;Task&gt;8&lt;/Task&gt; 
+      &lt;Keywords&gt;0x80000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-26T10:43:01.222371700Z&quot; /&gt; 
+      &lt;EventRecordID&gt;4536&lt;/EventRecordID&gt; 
+      &lt;Channel&gt;Windows PowerShell&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data&gt;$UnicodeEncoder = New-Object System.Text.UnicodeEncoding&lt;/Data&gt; 
+      &lt;Data&gt;DetailSequence=1 DetailTotal=1 SequenceNumber=1242 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=116 ScriptName=C:\Users\IEUser\Desktop\nishang\Utility\Invoke-Encode.ps1 CommandLine= $UnicodeEncoder = New-Object System.Text.UnicodeEncoding&lt;/Data&gt; 
+      &lt;Data&gt;CommandInvocation(New-Object): &quot;New-Object&quot; ParameterBinding(New-Object): name=&quot;TypeName&quot;; value=&quot;System.Text.UnicodeEncoding&quot;&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node><node custom_icon_id="0" foreground="" is_bold="False" name="9. 800 - Pipeline Execution Details" prog_lang="xml" readonly="True" tags="" ts_creation="1561548419.52" ts_lastsave="1561605076.73" unique_id="76"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+  &lt;Provider Name=&quot;PowerShell&quot; /&gt; 
+  &lt;EventID Qualifiers=&quot;0&quot;&gt;800&lt;/EventID&gt; 
+  &lt;Level&gt;4&lt;/Level&gt; 
+  &lt;Task&gt;8&lt;/Task&gt; 
+  &lt;Keywords&gt;0x80000000000000&lt;/Keywords&gt; 
+  &lt;TimeCreated SystemTime=&quot;2019-06-26T10:43:01.222371700Z&quot; /&gt; 
+  &lt;EventRecordID&gt;4537&lt;/EventRecordID&gt; 
+  &lt;Channel&gt;Windows PowerShell&lt;/Channel&gt; 
+  &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+  &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data&gt;Out-File -InputObject $EncScript -FilePath $OutputCommandFilePath&lt;/Data&gt; 
+      &lt;Data&gt;DetailSequence=1 DetailTotal=1 SequenceNumber=1244 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=116 ScriptName=C:\Users\IEUser\Desktop\nishang\Utility\Invoke-Encode.ps1 CommandLine= Out-File -InputObject $EncScript -FilePath $OutputCommandFilePath&lt;/Data&gt; 
+      &lt;Data&gt;CommandInvocation(Out-File): &quot;Out-File&quot; ParameterBinding(Out-File): name=&quot;InputObject&quot;; value=&quot;SQBuAHYAbwBrAGUALQBFAHgAcAByAGUAcwBzAGkAbwBuACAAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBTAHQAcgBlAGEAbQBSAGUAYQBkAGUAcgAgACgAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBDAG8AbQBwAHIAZQBzAHMAaQBvAG4ALgBEAGUAZgBsAGEAdABlAFMAdAByAGUAYQBtACAAKAAkACgATgBlAHcALQBPAGIAagBlAGMAdAAgAEkATwAuAE0AZQBtAG8AcgB5AFMAdAByAGUAYQBtACAAKAAsACQAKABbAEMAbwBuAHYAZQByAHQAXQA6ADoARgByAG8AbQBCAGEAcwBlADYANABTAHQAcgBpAG4AZwAoACcAYwAwADgAdAAwAFgAWABPAHkATQB4AEoAOABTAHgASgB6AFYAVgB3AHQAbwBvAEoATABVADQAdABLAG8ANwB4AGQAQQBYAFIAKwBpADYAcAB4AGQAawBsACsAUQBXADgAWABBAEEAPQAnACkAKQApACkALAAgAFsASQBPAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAE0AbwBkAGUAXQA6ADoARABlAGMAbwBtAHAAcgBlAHMAcwApACkALAAgAFsAVABlAHgAdAAuAEUAbgBjAG8AZABpAG4AZwBdADoAOgBBAFMAQwBJAEkAKQApAC4AUgBlAGEAZABUAG8ARQBuAGQAKAApADsA&quot; ParameterBinding(Out-File): name=&quot;FilePath&quot;; value=&quot;.\encodedcommand.txt&quot;&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node><node custom_icon_id="0" foreground="" is_bold="False" name="10. 800 - Pipeline Execution Details" prog_lang="xml" readonly="True" tags="" ts_creation="1561548419.79" ts_lastsave="1561605058.01" unique_id="77"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+      &lt;Provider Name=&quot;PowerShell&quot; /&gt; 
+      &lt;EventID Qualifiers=&quot;0&quot;&gt;800&lt;/EventID&gt; 
+      &lt;Level&gt;4&lt;/Level&gt; 
+      &lt;Task&gt;8&lt;/Task&gt; 
+      &lt;Keywords&gt;0x80000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-26T10:43:01.222371700Z&quot; /&gt; 
+      &lt;EventRecordID&gt;4538&lt;/EventRecordID&gt; 
+      &lt;Channel&gt;Windows PowerShell&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data&gt;Write-Output &quot;Encoded command written to $OutputCommandFilePath&quot;&lt;/Data&gt; 
+      &lt;Data&gt;DetailSequence=1 DetailTotal=1 SequenceNumber=1246 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=116 ScriptName=C:\Users\IEUser\Desktop\nishang\Utility\Invoke-Encode.ps1 CommandLine= Write-Output &quot;Encoded command written to $OutputCommandFilePath&quot;&lt;/Data&gt; 
+      &lt;Data&gt;CommandInvocation(Write-Output): &quot;Write-Output&quot; ParameterBinding(Write-Output): name=&quot;InputObject&quot;; value=&quot;Encoded command written to .\encodedcommand.txt&quot;&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node><node custom_icon_id="0" foreground="" is_bold="False" name="11. 800 - Pipeline Execution Details" prog_lang="xml" readonly="True" tags="" ts_creation="1561548420.07" ts_lastsave="1561605035.51" unique_id="78"><rich_text>+ &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+      &lt;Provider Name=&quot;PowerShell&quot; /&gt; 
+      &lt;EventID Qualifiers=&quot;0&quot;&gt;800&lt;/EventID&gt; 
+      &lt;Level&gt;4&lt;/Level&gt; 
+      &lt;Task&gt;8&lt;/Task&gt; 
+      &lt;Keywords&gt;0x80000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-26T10:43:01.222371700Z&quot; /&gt; 
+      &lt;EventRecordID&gt;4539&lt;/EventRecordID&gt; 
+      &lt;Channel&gt;Windows PowerShell&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data /&gt; 
+      &lt;Data&gt;DetailSequence=1 DetailTotal=1 SequenceNumber=1248 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=116 ScriptName= CommandLine=&lt;/Data&gt; 
+      &lt;Data&gt;CommandInvocation(Out-Default): &quot;Out-Default&quot;&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node><node custom_icon_id="0" foreground="" is_bold="False" name="12. 800 - Pipeline Execution Details" prog_lang="xml" readonly="True" tags="" ts_creation="1561548420.34" ts_lastsave="1561605015.99" unique_id="79"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+      &lt;Provider Name=&quot;PowerShell&quot; /&gt; 
+      &lt;EventID Qualifiers=&quot;0&quot;&gt;800&lt;/EventID&gt; 
+      &lt;Level&gt;4&lt;/Level&gt; 
+      &lt;Task&gt;8&lt;/Task&gt; 
+      &lt;Keywords&gt;0x80000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-26T10:43:01.222371700Z&quot; /&gt; 
+      &lt;EventRecordID&gt;4540&lt;/EventRecordID&gt; 
+      &lt;Channel&gt;Windows PowerShell&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data&gt;Microsoft.PowerShell.Core\Set-StrictMode -Off&lt;/Data&gt; 
+      &lt;Data&gt;DetailSequence=1 DetailTotal=1 SequenceNumber=1250 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=118 ScriptName=C:\Program Files\WindowsPowerShell\Modules\PSReadline\2.0.0\PSReadLine.psm1 CommandLine= Microsoft.PowerShell.Core\Set-StrictMode -Off&lt;/Data&gt; 
+      &lt;Data&gt;CommandInvocation(Set-StrictMode): &quot;Set-StrictMode&quot; ParameterBinding(Set-StrictMode): name=&quot;Off&quot;; value=&quot;True&quot;&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node><node custom_icon_id="0" foreground="" is_bold="False" name="13. 800 - Pipeline Execution Details" prog_lang="xml" readonly="True" tags="" ts_creation="1561548420.61" ts_lastsave="1561604985.25" unique_id="80"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+      &lt;Provider Name=&quot;PowerShell&quot; /&gt; 
+      &lt;EventID Qualifiers=&quot;0&quot;&gt;800&lt;/EventID&gt; 
+      &lt;Level&gt;4&lt;/Level&gt; 
+      &lt;Task&gt;8&lt;/Task&gt; 
+      &lt;Keywords&gt;0x80000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-26T10:43:06.305247300Z&quot; /&gt; 
+      &lt;EventRecordID&gt;4541&lt;/EventRecordID&gt; 
+      &lt;Channel&gt;Windows PowerShell&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data /&gt; 
+      &lt;Data&gt;DetailSequence=1 DetailTotal=1 SequenceNumber=1252 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=118 ScriptName= CommandLine=&lt;/Data&gt; 
+      &lt;Data&gt;CommandInvocation(PSConsoleHostReadLine): &quot;PSConsoleHostReadLine&quot;&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node><node custom_icon_id="0" foreground="" is_bold="False" name="14. 800 - Pipeline Execution Details" prog_lang="xml" readonly="True" tags="" ts_creation="1561548420.88" ts_lastsave="1561604962.97" unique_id="81"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+      &lt;Provider Name=&quot;PowerShell&quot; /&gt; 
+      &lt;EventID Qualifiers=&quot;0&quot;&gt;800&lt;/EventID&gt; 
+      &lt;Level&gt;4&lt;/Level&gt; 
+      &lt;Task&gt;8&lt;/Task&gt; 
+      &lt;Keywords&gt;0x80000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-26T10:43:06.305247300Z&quot; /&gt; 
+      &lt;EventRecordID&gt;4542&lt;/EventRecordID&gt; 
+      &lt;Channel&gt;Windows PowerShell&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data&gt;$cmd=Get-Content .\encodedcommand.txt&lt;/Data&gt; 
+      &lt;Data&gt;DetailSequence=1 DetailTotal=1 SequenceNumber=1254 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=119 ScriptName= CommandLine=$cmd=Get-Content .\encodedcommand.txt&lt;/Data&gt; 
+      &lt;Data&gt;CommandInvocation(Get-Content): &quot;Get-Content&quot; ParameterBinding(Get-Content): name=&quot;Path&quot;; value=&quot;.\encodedcommand.txt&quot;&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node><node custom_icon_id="0" foreground="" is_bold="False" name="15. 800 - Pipeline Execution Details" prog_lang="xml" readonly="True" tags="" ts_creation="1561548421.15" ts_lastsave="1561604832.04" unique_id="82"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+      &lt;Provider Name=&quot;PowerShell&quot; /&gt; 
+      &lt;EventID Qualifiers=&quot;0&quot;&gt;800&lt;/EventID&gt; 
+      &lt;Level&gt;4&lt;/Level&gt; 
+      &lt;Task&gt;8&lt;/Task&gt; 
+      &lt;Keywords&gt;0x80000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-26T10:43:06.305247300Z&quot; /&gt; 
+      &lt;EventRecordID&gt;4543&lt;/EventRecordID&gt; 
+      &lt;Channel&gt;Windows PowerShell&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data /&gt; 
+      &lt;Data&gt;DetailSequence=1 DetailTotal=1 SequenceNumber=1256 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=119 ScriptName= CommandLine=&lt;/Data&gt; 
+      &lt;Data&gt;CommandInvocation(Out-Default): &quot;Out-Default&quot;&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node><node custom_icon_id="0" foreground="" is_bold="False" name="16. 800 - Pipeline Execution Details" prog_lang="xml" readonly="True" tags="" ts_creation="1561548421.42" ts_lastsave="1561604794.54" unique_id="83"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+      &lt;Provider Name=&quot;PowerShell&quot; /&gt; 
+      &lt;EventID Qualifiers=&quot;0&quot;&gt;800&lt;/EventID&gt; 
+      &lt;Level&gt;4&lt;/Level&gt; 
+      &lt;Task&gt;8&lt;/Task&gt; 
+      &lt;Keywords&gt;0x80000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-26T10:43:06.309910200Z&quot; /&gt; 
+      &lt;EventRecordID&gt;4544&lt;/EventRecordID&gt; 
+      &lt;Channel&gt;Windows PowerShell&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data&gt;Microsoft.PowerShell.Core\Set-StrictMode -Off&lt;/Data&gt; 
+      &lt;Data&gt;DetailSequence=1 DetailTotal=1 SequenceNumber=1258 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=121 ScriptName=C:\Program Files\WindowsPowerShell\Modules\PSReadline\2.0.0\PSReadLine.psm1 CommandLine= Microsoft.PowerShell.Core\Set-StrictMode -Off&lt;/Data&gt; 
+      &lt;Data&gt;CommandInvocation(Set-StrictMode): &quot;Set-StrictMode&quot; ParameterBinding(Set-StrictMode): name=&quot;Off&quot;; value=&quot;True&quot;&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node><node custom_icon_id="0" foreground="" is_bold="False" name="17. 800 - Pipeline Execution Details" prog_lang="xml" readonly="True" tags="" ts_creation="1561548421.72" ts_lastsave="1561604771.92" unique_id="84"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+      &lt;Provider Name=&quot;PowerShell&quot; /&gt; 
+      &lt;EventID Qualifiers=&quot;0&quot;&gt;800&lt;/EventID&gt; 
+      &lt;Level&gt;4&lt;/Level&gt; 
+      &lt;Task&gt;8&lt;/Task&gt; 
+      &lt;Keywords&gt;0x80000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-26T10:43:10.085867500Z&quot; /&gt; 
+      &lt;EventRecordID&gt;4545&lt;/EventRecordID&gt; 
+      &lt;Channel&gt;Windows PowerShell&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data /&gt; 
+      &lt;Data&gt;DetailSequence=1 DetailTotal=1 SequenceNumber=1260 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=121 ScriptName= CommandLine=&lt;/Data&gt; 
+      &lt;Data&gt;CommandInvocation(PSConsoleHostReadLine): &quot;PSConsoleHostReadLine&quot;&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node><node custom_icon_id="0" foreground="" is_bold="False" name="18. 400 - Engine Lifecycle" prog_lang="xml" readonly="True" tags="" ts_creation="1561548367.51" ts_lastsave="1561548380.88" unique_id="61"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
++ &lt;System&gt;
+      &lt;Provider Name=&quot;PowerShell&quot; /&gt; 
+      &lt;EventID Qualifiers=&quot;0&quot;&gt;400&lt;/EventID&gt; 
+      &lt;Level&gt;4&lt;/Level&gt; 
+      &lt;Task&gt;4&lt;/Task&gt; 
+      &lt;Keywords&gt;0x80000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-26T10:43:10.238051500Z&quot; /&gt; 
+      &lt;EventRecordID&gt;4552&lt;/EventRecordID&gt; 
+      &lt;Channel&gt;Windows PowerShell&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data&gt;Available&lt;/Data&gt; 
+      &lt;Data&gt;None&lt;/Data&gt; 
+      &lt;Data&gt;NewEngineState=Available PreviousEngineState=None SequenceNumber=13 HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=7ed7754b-4803-4a45-975a-55708008803e HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -enc SQBuAHYAbwBrAGUALQBFAHgAcAByAGUAcwBzAGkAbwBuACAAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBTAHQAcgBlAGEAbQBSAGUAYQBkAGUAcgAgACgAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBDAG8AbQBwAHIAZQBzAHMAaQBvAG4ALgBEAGUAZgBsAGEAdABlAFMAdAByAGUAYQBtACAAKAAkACgATgBlAHcALQBPAGIAagBlAGMAdAAgAEkATwAuAE0AZQBtAG8AcgB5AFMAdAByAGUAYQBtACAAKAAsACQAKABbAEMAbwBuAHYAZQByAHQAXQA6ADoARgByAG8AbQBCAGEAcwBlADYANABTAHQAcgBpAG4AZwAoACcAYwAwADgAdAAwAFgAWABPAHkATQB4AEoAOABTAHgASgB6AFYAVgB3AHQAbwBvAEoATABVADQAdABLAG8ANwB4AGQAQQBYAFIAKwBpADYAcAB4AGQAawBsACsAUQBXADgAWABBAEEAPQAnACkAKQApACkALAAgAFsASQBPAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAE0AbwBkAGUAXQA6ADoARABlAGMAbwBtAHAAcgBlAHMAcwApACkALAAgAFsAVABlAHgAdAAuAEUAbgBjAG8AZABpAG4AZwBdADoAOgBBAFMAQwBJAEkAKQApAC4AUgBlAGEAZABUAG8ARQBuAGQAKAApADsA EngineVersion=5.1.17763.316 RunspaceId=e3677fb3-97c8-4c9d-a381-356e3335a720 PipelineId= CommandName= CommandType= ScriptName= CommandPath= CommandLine=&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node><node custom_icon_id="0" foreground="" is_bold="False" name="19. 800 - Pipeline Execution Details" prog_lang="xml" readonly="True" tags="" ts_creation="1561548421.97" ts_lastsave="1561604719.19" unique_id="85"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+      &lt;Provider Name=&quot;PowerShell&quot; /&gt; 
+      &lt;EventID Qualifiers=&quot;0&quot;&gt;800&lt;/EventID&gt; 
+      &lt;Level&gt;4&lt;/Level&gt; 
+      &lt;Task&gt;8&lt;/Task&gt; 
+      &lt;Keywords&gt;0x80000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-26T10:43:10.331724100Z&quot; /&gt; 
+      &lt;EventRecordID&gt;4553&lt;/EventRecordID&gt; 
+      &lt;Channel&gt;Windows PowerShell&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data&gt;Invoke-Expression $(New-Object IO.StreamReader ($(New-Object IO.Compression.DeflateStream ($(New-Object IO.MemoryStream (,$([Convert]::FromBase64String('c08t0XXOyMxJ8SxJzVVwtooJLU4tKo7xdAXR+i6pxdkl+QW8XAA=')))), [IO.Compression.CompressionMode]::Decompress)), [Text.Encoding]::ASCII)).ReadToEnd();&lt;/Data&gt; 
+      &lt;Data&gt;DetailSequence=1 DetailTotal=1 SequenceNumber=15 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=7ed7754b-4803-4a45-975a-55708008803e HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -enc SQBuAHYAbwBrAGUALQBFAHgAcAByAGUAcwBzAGkAbwBuACAAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBTAHQAcgBlAGEAbQBSAGUAYQBkAGUAcgAgACgAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBDAG8AbQBwAHIAZQBzAHMAaQBvAG4ALgBEAGUAZgBsAGEAdABlAFMAdAByAGUAYQBtACAAKAAkACgATgBlAHcALQBPAGIAagBlAGMAdAAgAEkATwAuAE0AZQBtAG8AcgB5AFMAdAByAGUAYQBtACAAKAAsACQAKABbAEMAbwBuAHYAZQByAHQAXQA6ADoARgByAG8AbQBCAGEAcwBlADYANABTAHQAcgBpAG4AZwAoACcAYwAwADgAdAAwAFgAWABPAHkATQB4AEoAOABTAHgASgB6AFYAVgB3AHQAbwBvAEoATABVADQAdABLAG8ANwB4AGQAQQBYAFIAKwBpADYAcAB4AGQAawBsACsAUQBXADgAWABBAEEAPQAnACkAKQApACkALAAgAFsASQBPAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAE0AbwBkAGUAXQA6ADoARABlAGMAbwBtAHAAcgBlAHMAcwApACkALAAgAFsAVABlAHgAdAAuAEUAbgBjAG8AZABpAG4AZwBdADoAOgBBAFMAQwBJAEkAKQApAC4AUgBlAGEAZABUAG8ARQBuAGQAKAApADsA EngineVersion=5.1.17763.316 RunspaceId=e3677fb3-97c8-4c9d-a381-356e3335a720 PipelineId=1 ScriptName= CommandLine=Invoke-Expression $(New-Object IO.StreamReader ($(New-Object IO.Compression.DeflateStream ($(New-Object IO.MemoryStream (,$([Convert]::FromBase64String('c08t0XXOyMxJ8SxJzVVwtooJLU4tKo7xdAXR+i6pxdkl+QW8XAA=')))), [IO.Compression.CompressionMode]::Decompress)), [Text.Encoding]::ASCII)).ReadToEnd();&lt;/Data&gt; 
+      &lt;Data&gt;CommandInvocation(New-Object): &quot;New-Object&quot; ParameterBinding(New-Object): name=&quot;TypeName&quot;; value=&quot;IO.MemoryStream&quot; ParameterBinding(New-Object): name=&quot;ArgumentList&quot;; value=&quot;System.Object[]&quot;&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node><node custom_icon_id="0" foreground="" is_bold="False" name="20. 800 - Pipeline Execution Details" prog_lang="xml" readonly="True" tags="" ts_creation="1561548422.23" ts_lastsave="1561604704.17" unique_id="86"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+      &lt;Provider Name=&quot;PowerShell&quot; /&gt; 
+      &lt;EventID Qualifiers=&quot;0&quot;&gt;800&lt;/EventID&gt; 
+      &lt;Level&gt;4&lt;/Level&gt; 
+      &lt;Task&gt;8&lt;/Task&gt; 
+      &lt;Keywords&gt;0x80000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-26T10:43:10.331724100Z&quot; /&gt; 
+      &lt;EventRecordID&gt;4554&lt;/EventRecordID&gt; 
+      &lt;Channel&gt;Windows PowerShell&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data&gt;Invoke-Expression $(New-Object IO.StreamReader ($(New-Object IO.Compression.DeflateStream ($(New-Object IO.MemoryStream (,$([Convert]::FromBase64String('c08t0XXOyMxJ8SxJzVVwtooJLU4tKo7xdAXR+i6pxdkl+QW8XAA=')))), [IO.Compression.CompressionMode]::Decompress)), [Text.Encoding]::ASCII)).ReadToEnd();&lt;/Data&gt; 
+      &lt;Data&gt;DetailSequence=1 DetailTotal=1 SequenceNumber=17 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=7ed7754b-4803-4a45-975a-55708008803e HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -enc SQBuAHYAbwBrAGUALQBFAHgAcAByAGUAcwBzAGkAbwBuACAAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBTAHQAcgBlAGEAbQBSAGUAYQBkAGUAcgAgACgAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBDAG8AbQBwAHIAZQBzAHMAaQBvAG4ALgBEAGUAZgBsAGEAdABlAFMAdAByAGUAYQBtACAAKAAkACgATgBlAHcALQBPAGIAagBlAGMAdAAgAEkATwAuAE0AZQBtAG8AcgB5AFMAdAByAGUAYQBtACAAKAAsACQAKABbAEMAbwBuAHYAZQByAHQAXQA6ADoARgByAG8AbQBCAGEAcwBlADYANABTAHQAcgBpAG4AZwAoACcAYwAwADgAdAAwAFgAWABPAHkATQB4AEoAOABTAHgASgB6AFYAVgB3AHQAbwBvAEoATABVADQAdABLAG8ANwB4AGQAQQBYAFIAKwBpADYAcAB4AGQAawBsACsAUQBXADgAWABBAEEAPQAnACkAKQApACkALAAgAFsASQBPAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAE0AbwBkAGUAXQA6ADoARABlAGMAbwBtAHAAcgBlAHMAcwApACkALAAgAFsAVABlAHgAdAAuAEUAbgBjAG8AZABpAG4AZwBdADoAOgBBAFMAQwBJAEkAKQApAC4AUgBlAGEAZABUAG8ARQBuAGQAKAApADsA EngineVersion=5.1.17763.316 RunspaceId=e3677fb3-97c8-4c9d-a381-356e3335a720 PipelineId=1 ScriptName= CommandLine=Invoke-Expression $(New-Object IO.StreamReader ($(New-Object IO.Compression.DeflateStream ($(New-Object IO.MemoryStream (,$([Convert]::FromBase64String('c08t0XXOyMxJ8SxJzVVwtooJLU4tKo7xdAXR+i6pxdkl+QW8XAA=')))), [IO.Compression.CompressionMode]::Decompress)), [Text.Encoding]::ASCII)).ReadToEnd();&lt;/Data&gt; 
+      &lt;Data&gt;CommandInvocation(New-Object): &quot;New-Object&quot; ParameterBinding(New-Object): name=&quot;TypeName&quot;; value=&quot;IO.Compression.DeflateStream&quot; ParameterBinding(New-Object): name=&quot;ArgumentList&quot;; value=&quot;System.IO.MemoryStream, Decompress&quot;&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node><node custom_icon_id="0" foreground="" is_bold="False" name="21. 800 - Pipeline Execution Details" prog_lang="xml" readonly="True" tags="" ts_creation="1561548422.51" ts_lastsave="1561604635.04" unique_id="87"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+      &lt;Provider Name=&quot;PowerShell&quot; /&gt; 
+      &lt;EventID Qualifiers=&quot;0&quot;&gt;800&lt;/EventID&gt; 
+      &lt;Level&gt;4&lt;/Level&gt; 
+      &lt;Task&gt;8&lt;/Task&gt; 
+      &lt;Keywords&gt;0x80000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-26T10:43:10.331724100Z&quot; /&gt; 
+      &lt;EventRecordID&gt;4555&lt;/EventRecordID&gt; 
+      &lt;Channel&gt;Windows PowerShell&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data&gt;Invoke-Expression $(New-Object IO.StreamReader ($(New-Object IO.Compression.DeflateStream ($(New-Object IO.MemoryStream (,$([Convert]::FromBase64String('c08t0XXOyMxJ8SxJzVVwtooJLU4tKo7xdAXR+i6pxdkl+QW8XAA=')))), [IO.Compression.CompressionMode]::Decompress)), [Text.Encoding]::ASCII)).ReadToEnd();&lt;/Data&gt; 
+      &lt;Data&gt;DetailSequence=1 DetailTotal=1 SequenceNumber=19 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=7ed7754b-4803-4a45-975a-55708008803e HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -enc SQBuAHYAbwBrAGUALQBFAHgAcAByAGUAcwBzAGkAbwBuACAAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBTAHQAcgBlAGEAbQBSAGUAYQBkAGUAcgAgACgAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBDAG8AbQBwAHIAZQBzAHMAaQBvAG4ALgBEAGUAZgBsAGEAdABlAFMAdAByAGUAYQBtACAAKAAkACgATgBlAHcALQBPAGIAagBlAGMAdAAgAEkATwAuAE0AZQBtAG8AcgB5AFMAdAByAGUAYQBtACAAKAAsACQAKABbAEMAbwBuAHYAZQByAHQAXQA6ADoARgByAG8AbQBCAGEAcwBlADYANABTAHQAcgBpAG4AZwAoACcAYwAwADgAdAAwAFgAWABPAHkATQB4AEoAOABTAHgASgB6AFYAVgB3AHQAbwBvAEoATABVADQAdABLAG8ANwB4AGQAQQBYAFIAKwBpADYAcAB4AGQAawBsACsAUQBXADgAWABBAEEAPQAnACkAKQApACkALAAgAFsASQBPAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAE0AbwBkAGUAXQA6ADoARABlAGMAbwBtAHAAcgBlAHMAcwApACkALAAgAFsAVABlAHgAdAAuAEUAbgBjAG8AZABpAG4AZwBdADoAOgBBAFMAQwBJAEkAKQApAC4AUgBlAGEAZABUAG8ARQBuAGQAKAApADsA EngineVersion=5.1.17763.316 RunspaceId=e3677fb3-97c8-4c9d-a381-356e3335a720 PipelineId=1 ScriptName= CommandLine=Invoke-Expression $(New-Object IO.StreamReader ($(New-Object IO.Compression.DeflateStream ($(New-Object IO.MemoryStream (,$([Convert]::FromBase64String('c08t0XXOyMxJ8SxJzVVwtooJLU4tKo7xdAXR+i6pxdkl+QW8XAA=')))), [IO.Compression.CompressionMode]::Decompress)), [Text.Encoding]::ASCII)).ReadToEnd();&lt;/Data&gt; 
+      &lt;Data&gt;CommandInvocation(New-Object): &quot;New-Object&quot; ParameterBinding(New-Object): name=&quot;TypeName&quot;; value=&quot;IO.StreamReader&quot; ParameterBinding(New-Object): name=&quot;ArgumentList&quot;; value=&quot;System.IO.Compression.DeflateStream, System.Text.ASCIIEncoding&quot;&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node><node custom_icon_id="0" foreground="" is_bold="False" name="22. 800 - Pipeline Execution Details" prog_lang="xml" readonly="True" tags="" ts_creation="1561548422.79" ts_lastsave="1561604609.9" unique_id="88"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+      &lt;Provider Name=&quot;PowerShell&quot; /&gt; 
+      &lt;EventID Qualifiers=&quot;0&quot;&gt;800&lt;/EventID&gt; 
+      &lt;Level&gt;4&lt;/Level&gt; 
+      &lt;Task&gt;8&lt;/Task&gt; 
+      &lt;Keywords&gt;0x80000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-26T10:43:10.425493400Z&quot; /&gt; 
+      &lt;EventRecordID&gt;4556&lt;/EventRecordID&gt; 
+      &lt;Channel&gt;Windows PowerShell&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data&gt;Get-ChildItem C:\Users\IEUser/Desktop&lt;/Data&gt; 
+      &lt;Data&gt;DetailSequence=1 DetailTotal=1 SequenceNumber=21 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=7ed7754b-4803-4a45-975a-55708008803e HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -enc SQBuAHYAbwBrAGUALQBFAHgAcAByAGUAcwBzAGkAbwBuACAAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBTAHQAcgBlAGEAbQBSAGUAYQBkAGUAcgAgACgAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBDAG8AbQBwAHIAZQBzAHMAaQBvAG4ALgBEAGUAZgBsAGEAdABlAFMAdAByAGUAYQBtACAAKAAkACgATgBlAHcALQBPAGIAagBlAGMAdAAgAEkATwAuAE0AZQBtAG8AcgB5AFMAdAByAGUAYQBtACAAKAAsACQAKABbAEMAbwBuAHYAZQByAHQAXQA6ADoARgByAG8AbQBCAGEAcwBlADYANABTAHQAcgBpAG4AZwAoACcAYwAwADgAdAAwAFgAWABPAHkATQB4AEoAOABTAHgASgB6AFYAVgB3AHQAbwBvAEoATABVADQAdABLAG8ANwB4AGQAQQBYAFIAKwBpADYAcAB4AGQAawBsACsAUQBXADgAWABBAEEAPQAnACkAKQApACkALAAgAFsASQBPAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAE0AbwBkAGUAXQA6ADoARABlAGMAbwBtAHAAcgBlAHMAcwApACkALAAgAFsAVABlAHgAdAAuAEUAbgBjAG8AZABpAG4AZwBdADoAOgBBAFMAQwBJAEkAKQApAC4AUgBlAGEAZABUAG8ARQBuAGQAKAApADsA EngineVersion=5.1.17763.316 RunspaceId=e3677fb3-97c8-4c9d-a381-356e3335a720 PipelineId=1 ScriptName= CommandLine=Get-ChildItem C:\Users\IEUser/Desktop&lt;/Data&gt; 
+      &lt;Data&gt;CommandInvocation(Get-ChildItem): &quot;Get-ChildItem&quot; ParameterBinding(Get-ChildItem): name=&quot;Path&quot;; value=&quot;C:\Users\IEUser/Desktop&quot;&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node><node custom_icon_id="0" foreground="" is_bold="False" name="23. 800 - Pipeline Execution Details" prog_lang="xml" readonly="True" tags="" ts_creation="1561548423.07" ts_lastsave="1561604597.85" unique_id="89"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+      &lt;Provider Name=&quot;PowerShell&quot; /&gt; 
+      &lt;EventID Qualifiers=&quot;0&quot;&gt;800&lt;/EventID&gt; 
+      &lt;Level&gt;4&lt;/Level&gt; 
+      &lt;Task&gt;8&lt;/Task&gt; 
+      &lt;Keywords&gt;0x80000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-26T10:43:10.425493400Z&quot; /&gt; 
+      &lt;EventRecordID&gt;4557&lt;/EventRecordID&gt; 
+      &lt;Channel&gt;Windows PowerShell&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data&gt;Invoke-Expression $(New-Object IO.StreamReader ($(New-Object IO.Compression.DeflateStream ($(New-Object IO.MemoryStream (,$([Convert]::FromBase64String('c08t0XXOyMxJ8SxJzVVwtooJLU4tKo7xdAXR+i6pxdkl+QW8XAA=')))), [IO.Compression.CompressionMode]::Decompress)), [Text.Encoding]::ASCII)).ReadToEnd();&lt;/Data&gt; 
+      &lt;Data&gt;DetailSequence=1 DetailTotal=1 SequenceNumber=23 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=7ed7754b-4803-4a45-975a-55708008803e HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -enc SQBuAHYAbwBrAGUALQBFAHgAcAByAGUAcwBzAGkAbwBuACAAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBTAHQAcgBlAGEAbQBSAGUAYQBkAGUAcgAgACgAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBDAG8AbQBwAHIAZQBzAHMAaQBvAG4ALgBEAGUAZgBsAGEAdABlAFMAdAByAGUAYQBtACAAKAAkACgATgBlAHcALQBPAGIAagBlAGMAdAAgAEkATwAuAE0AZQBtAG8AcgB5AFMAdAByAGUAYQBtACAAKAAsACQAKABbAEMAbwBuAHYAZQByAHQAXQA6ADoARgByAG8AbQBCAGEAcwBlADYANABTAHQAcgBpAG4AZwAoACcAYwAwADgAdAAwAFgAWABPAHkATQB4AEoAOABTAHgASgB6AFYAVgB3AHQAbwBvAEoATABVADQAdABLAG8ANwB4AGQAQQBYAFIAKwBpADYAcAB4AGQAawBsACsAUQBXADgAWABBAEEAPQAnACkAKQApACkALAAgAFsASQBPAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAE0AbwBkAGUAXQA6ADoARABlAGMAbwBtAHAAcgBlAHMAcwApACkALAAgAFsAVABlAHgAdAAuAEUAbgBjAG8AZABpAG4AZwBdADoAOgBBAFMAQwBJAEkAKQApAC4AUgBlAGEAZABUAG8ARQBuAGQAKAApADsA EngineVersion=5.1.17763.316 RunspaceId=e3677fb3-97c8-4c9d-a381-356e3335a720 PipelineId=1 ScriptName= CommandLine=Invoke-Expression $(New-Object IO.StreamReader ($(New-Object IO.Compression.DeflateStream ($(New-Object IO.MemoryStream (,$([Convert]::FromBase64String('c08t0XXOyMxJ8SxJzVVwtooJLU4tKo7xdAXR+i6pxdkl+QW8XAA=')))), [IO.Compression.CompressionMode]::Decompress)), [Text.Encoding]::ASCII)).ReadToEnd();&lt;/Data&gt; 
+      &lt;Data&gt;CommandInvocation(Invoke-Expression): &quot;Invoke-Expression&quot; ParameterBinding(Invoke-Expression): name=&quot;Command&quot;; value=&quot;Get-ChildItem C:\Users\IEUser/Desktop &quot;&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node><node custom_icon_id="0" foreground="" is_bold="False" name="24. 800 - Pipeline Execution Details" prog_lang="xml" readonly="True" tags="" ts_creation="1561548423.34" ts_lastsave="1561604546.21" unique_id="90"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+      &lt;Provider Name=&quot;PowerShell&quot; /&gt; 
+      &lt;EventID Qualifiers=&quot;0&quot;&gt;800&lt;/EventID&gt; 
+      &lt;Level&gt;4&lt;/Level&gt; 
+      &lt;Task&gt;8&lt;/Task&gt; 
+      &lt;Keywords&gt;0x80000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-26T10:43:10.425493400Z&quot; /&gt; 
+      &lt;EventRecordID&gt;4558&lt;/EventRecordID&gt; 
+      &lt;Channel&gt;Windows PowerShell&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data /&gt; 
+      &lt;Data&gt;DetailSequence=1 DetailTotal=1 SequenceNumber=25 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=7ed7754b-4803-4a45-975a-55708008803e HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -enc SQBuAHYAbwBrAGUALQBFAHgAcAByAGUAcwBzAGkAbwBuACAAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBTAHQAcgBlAGEAbQBSAGUAYQBkAGUAcgAgACgAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBDAG8AbQBwAHIAZQBzAHMAaQBvAG4ALgBEAGUAZgBsAGEAdABlAFMAdAByAGUAYQBtACAAKAAkACgATgBlAHcALQBPAGIAagBlAGMAdAAgAEkATwAuAE0AZQBtAG8AcgB5AFMAdAByAGUAYQBtACAAKAAsACQAKABbAEMAbwBuAHYAZQByAHQAXQA6ADoARgByAG8AbQBCAGEAcwBlADYANABTAHQAcgBpAG4AZwAoACcAYwAwADgAdAAwAFgAWABPAHkATQB4AEoAOABTAHgASgB6AFYAVgB3AHQAbwBvAEoATABVADQAdABLAG8ANwB4AGQAQQBYAFIAKwBpADYAcAB4AGQAawBsACsAUQBXADgAWABBAEEAPQAnACkAKQApACkALAAgAFsASQBPAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAE0AbwBkAGUAXQA6ADoARABlAGMAbwBtAHAAcgBlAHMAcwApACkALAAgAFsAVABlAHgAdAAuAEUAbgBjAG8AZABpAG4AZwBdADoAOgBBAFMAQwBJAEkAKQApAC4AUgBlAGEAZABUAG8ARQBuAGQAKAApADsA EngineVersion=5.1.17763.316 RunspaceId=e3677fb3-97c8-4c9d-a381-356e3335a720 PipelineId=1 ScriptName= CommandLine=&lt;/Data&gt; 
+      &lt;Data&gt;CommandInvocation(Out-Default): &quot;Out-Default&quot; ParameterBinding(Out-Default): name=&quot;InputObject&quot;; value=&quot;nishang&quot; ParameterBinding(Out-Default): name=&quot;InputObject&quot;; value=&quot;eula.lnk&quot; ParameterBinding(Out-Default): name=&quot;InputObject&quot;; value=&quot;task.txt&quot;&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node><node custom_icon_id="0" foreground="" is_bold="False" name="25. 800 - Pipeline Execution Details" prog_lang="xml" readonly="True" tags="" ts_creation="1561548423.62" ts_lastsave="1561604511.27" unique_id="91"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+      &lt;Provider Name=&quot;PowerShell&quot; /&gt; 
+      &lt;EventID Qualifiers=&quot;0&quot;&gt;800&lt;/EventID&gt; 
+      &lt;Level&gt;4&lt;/Level&gt; 
+      &lt;Task&gt;8&lt;/Task&gt; 
+      &lt;Keywords&gt;0x80000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-26T10:43:10.441166700Z&quot; /&gt; 
+      &lt;EventRecordID&gt;4560&lt;/EventRecordID&gt; 
+      &lt;Channel&gt;Windows PowerShell&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security /&gt; 
+  &lt;/System&gt;
++ &lt;EventData&gt;
+      &lt;Data /&gt; 
+      &lt;Data&gt;DetailSequence=1 DetailTotal=1 SequenceNumber=1262 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=122 ScriptName= CommandLine=&lt;/Data&gt; 
+      &lt;Data&gt;CommandInvocation(Out-Default): &quot;Out-Default&quot;&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node><node custom_icon_id="0" foreground="" is_bold="False" name="26. 800 - Pipeline Execution Details" prog_lang="xml" readonly="True" tags="" ts_creation="1561548423.88" ts_lastsave="1561604469.82" unique_id="92"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+      &lt;Provider Name=&quot;PowerShell&quot; /&gt; 
+      &lt;EventID Qualifiers=&quot;0&quot;&gt;800&lt;/EventID&gt; 
+      &lt;Level&gt;4&lt;/Level&gt; 
+      &lt;Task&gt;8&lt;/Task&gt; 
+      &lt;Keywords&gt;0x80000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-26T10:43:10.441166700Z&quot; /&gt; 
+      &lt;EventRecordID&gt;4561&lt;/EventRecordID&gt; 
+      &lt;Channel&gt;Windows PowerShell&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data&gt;Microsoft.PowerShell.Core\Set-StrictMode -Off&lt;/Data&gt; 
+      &lt;Data&gt;DetailSequence=1 DetailTotal=1 SequenceNumber=1264 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=11317784-9a93-49c3-ad24-38207c8ad86b HostApplication=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe EngineVersion=5.1.17763.316 RunspaceId=b2fccd1d-551c-4b60-bde6-bd2f08876ca9 PipelineId=124 ScriptName=C:\Program Files\WindowsPowerShell\Modules\PSReadline\2.0.0\PSReadLine.psm1 CommandLine= Microsoft.PowerShell.Core\Set-StrictMode -Off&lt;/Data&gt; 
+      &lt;Data&gt;CommandInvocation(Set-StrictMode): &quot;Set-StrictMode&quot; ParameterBinding(Set-StrictMode): name=&quot;Off&quot;; value=&quot;True&quot;&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node></node><node custom_icon_id="0" foreground="" is_bold="False" name="Sysmon Logs" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1562300781.02" ts_lastsave="1562300826.18" unique_id="204"><rich_text></rich_text><node custom_icon_id="0" foreground="" is_bold="False" name="1. 1 - Process Create (rule: ProcessCreate)" prog_lang="xml" readonly="True" tags="" ts_creation="1562300805.49" ts_lastsave="1562300875.9" unique_id="205"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+      &lt;Provider Name=&quot;Microsoft-Windows-Sysmon&quot; Guid=&quot;{5770385f-c22a-43e0-bf4c-06f5698ffbd9}&quot; /&gt; 
+      &lt;EventID&gt;1&lt;/EventID&gt; 
+      &lt;Version&gt;5&lt;/Version&gt; 
+      &lt;Level&gt;4&lt;/Level&gt; 
+      &lt;Task&gt;1&lt;/Task&gt; 
+      &lt;Opcode&gt;0&lt;/Opcode&gt; 
+      &lt;Keywords&gt;0x8000000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-07-05T04:20:55.075306000Z&quot; /&gt; 
+      &lt;EventRecordID&gt;6690&lt;/EventRecordID&gt; 
+      &lt;Correlation /&gt; 
+      &lt;Execution ProcessID=&quot;3200&quot; ThreadID=&quot;4092&quot; /&gt; 
+      &lt;Channel&gt;Microsoft-Windows-Sysmon/Operational&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security UserID=&quot;S-1-5-18&quot; /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data Name=&quot;RuleName&quot; /&gt; 
+      &lt;Data Name=&quot;UtcTime&quot;&gt;2019-07-05 04:20:55.051&lt;/Data&gt; 
+      &lt;Data Name=&quot;ProcessGuid&quot;&gt;{747f3d96-d027-5d1e-0000-001055763f00}&lt;/Data&gt; 
+      &lt;Data Name=&quot;ProcessId&quot;&gt;6008&lt;/Data&gt; 
+      &lt;Data Name=&quot;Image&quot;&gt;C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe&lt;/Data&gt; 
+      &lt;Data Name=&quot;FileVersion&quot;&gt;10.0.17763.1 (WinBuild.160101.0800)&lt;/Data&gt; 
+      &lt;Data Name=&quot;Description&quot;&gt;Windows PowerShell&lt;/Data&gt; 
+      &lt;Data Name=&quot;Product&quot;&gt;Microsoft® Windows® Operating System&lt;/Data&gt; 
+      &lt;Data Name=&quot;Company&quot;&gt;Microsoft Corporation&lt;/Data&gt; 
+      &lt;Data Name=&quot;OriginalFileName&quot;&gt;PowerShell.EXE&lt;/Data&gt; 
+      &lt;Data Name=&quot;CommandLine&quot;&gt;&quot;C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe&quot; -enc SQBuAHYAbwBrAGUALQBFAHgAcAByAGUAcwBzAGkAbwBuACAAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBTAHQAcgBlAGEAbQBSAGUAYQBkAGUAcgAgACgAJAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBDAG8AbQBwAHIAZQBzAHMAaQBvAG4ALgBEAGUAZgBsAGEAdABlAFMAdAByAGUAYQBtACAAKAAkACgATgBlAHcALQBPAGIAagBlAGMAdAAgAEkATwAuAE0AZQBtAG8AcgB5AFMAdAByAGUAYQBtACAAKAAsACQAKABbAEMAbwBuAHYAZQByAHQAXQA6ADoARgByAG8AbQBCAGEAcwBlADYANABTAHQAcgBpAG4AZwAoACcAYwAwADgAdAAwAFgAWABPAHkATQB4AEoAOABTAHgASgB6AFYAVgB3AHQAbwBvAEoATABVADQAdABLAG8ANwB4AGQAQQBYAFIAKwBpADYAcAB4AGQAawBsACsAUQBXADgAWABBAEEAPQAnACkAKQApACkALAAgAFsASQBPAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuAE0AbwBkAGUAXQA6ADoARABlAGMAbwBtAHAAcgBlAHMAcwApACkALAAgAFsAVABlAHgAdAAuAEUAbgBjAG8AZABpAG4AZwBdADoAOgBBAFMAQwBJAEkAKQApAC4AUgBlAGEAZABUAG8ARQBuAGQAKAApADsA&lt;/Data&gt; 
+      &lt;Data Name=&quot;CurrentDirectory&quot;&gt;C:\users\ieuser\Desktop\nishang\Utility\&lt;/Data&gt; 
+      &lt;Data Name=&quot;User&quot;&gt;MSEDGEWIN10\IEUser&lt;/Data&gt; 
+      &lt;Data Name=&quot;LogonGuid&quot;&gt;{747f3d96-be0d-5d1e-0000-002008a61900}&lt;/Data&gt; 
+      &lt;Data Name=&quot;LogonId&quot;&gt;0x19a608&lt;/Data&gt; 
+      &lt;Data Name=&quot;TerminalSessionId&quot;&gt;1&lt;/Data&gt; 
+      &lt;Data Name=&quot;IntegrityLevel&quot;&gt;High&lt;/Data&gt; 
+      &lt;Data Name=&quot;Hashes&quot;&gt;MD5=7353F60B1739074EB17C5F4DDDEFE239,SHA256=DE96A6E69944335375DC1AC238336066889D9FFC7D73628EF4FE1B1B160AB32C&lt;/Data&gt; 
+      &lt;Data Name=&quot;ParentProcessGuid&quot;&gt;{747f3d96-c269-5d1e-0000-00104c1a2c00}&lt;/Data&gt; 
+      &lt;Data Name=&quot;ParentProcessId&quot;&gt;2160&lt;/Data&gt; 
+      &lt;Data Name=&quot;ParentImage&quot;&gt;C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe&lt;/Data&gt; 
+      &lt;Data Name=&quot;ParentCommandLine&quot;&gt;&quot;C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe&quot;&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node><node custom_icon_id="0" foreground="" is_bold="False" name="2. 11 - File created (rule: FileCreate)" prog_lang="xml" readonly="True" tags="" ts_creation="1562300826.27" ts_lastsave="1562300862.15" unique_id="206"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+      &lt;Provider Name=&quot;Microsoft-Windows-Sysmon&quot; Guid=&quot;{5770385f-c22a-43e0-bf4c-06f5698ffbd9}&quot; /&gt; 
+      &lt;EventID&gt;11&lt;/EventID&gt; 
+      &lt;Version&gt;2&lt;/Version&gt; 
+      &lt;Level&gt;4&lt;/Level&gt; 
+      &lt;Task&gt;11&lt;/Task&gt; 
+      &lt;Opcode&gt;0&lt;/Opcode&gt; 
+      &lt;Keywords&gt;0x8000000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-07-05T04:20:55.467980900Z&quot; /&gt; 
+      &lt;EventRecordID&gt;6691&lt;/EventRecordID&gt; 
+      &lt;Correlation /&gt; 
+      &lt;Execution ProcessID=&quot;3200&quot; ThreadID=&quot;4092&quot; /&gt; 
+      &lt;Channel&gt;Microsoft-Windows-Sysmon/Operational&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security UserID=&quot;S-1-5-18&quot; /&gt; 
+  &lt;/System&gt;
++ &lt;EventData&gt;
+      &lt;Data Name=&quot;RuleName&quot; /&gt; 
+      &lt;Data Name=&quot;UtcTime&quot;&gt;2019-07-05 04:20:55.236&lt;/Data&gt; 
+      &lt;Data Name=&quot;ProcessGuid&quot;&gt;{747f3d96-d027-5d1e-0000-001055763f00}&lt;/Data&gt; 
+      &lt;Data Name=&quot;ProcessId&quot;&gt;6008&lt;/Data&gt; 
+      &lt;Data Name=&quot;Image&quot;&gt;C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetFilename&quot;&gt;C:\Users\IEUser\AppData\Local\Temp\__PSScriptPolicyTest_5ywuillo.mzz.ps1&lt;/Data&gt; 
+      &lt;Data Name=&quot;CreationUtcTime&quot;&gt;2019-07-05 04:20:55.236&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node></node></node></node></cherrytree>

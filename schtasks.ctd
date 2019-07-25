@@ -1,0 +1,752 @@
+<?xml version="1.0" ?><cherrytree><node custom_icon_id="0" foreground="" is_bold="True" name="schtasks" prog_lang="custom-colors" readonly="True" tags="" ts_creation="1561118361.88" ts_lastsave="1562296788.16" unique_id="39"><rich_text scale="h1" weight="heavy">PREREQUISITES:</rich_text><rich_text>
+
+    </rich_text><rich_text scale="h2" underline="single" weight="heavy">Local Machine</rich_text><rich_text scale="h2" weight="heavy"> (kali-windows)</rich_text><rich_text scale="h2" underline="single" weight="heavy">:</rich_text><rich_text>
+    </rich_text><rich_text scale="h2">
+       •  Known credentials to a remote machine (</rich_text><rich_text scale="h2" weight="heavy">IEUser</rich_text><rich_text scale="h2"> : </rich_text><rich_text scale="h2" weight="heavy">Passw0rd!</rich_text><rich_text scale="h2">)
+           •  w/ </rich_text><rich_text scale="h2" underline="single">Administrator Privileges</rich_text><rich_text scale="h2">
+       •  Connection to a remote machine (</rich_text><rich_text scale="h2" weight="heavy">192.168.56.101</rich_text><rich_text scale="h2">)</rich_text><rich_text>
+  
+    </rich_text><rich_text scale="h2" underline="single" weight="heavy">Remote Machine</rich_text><rich_text scale="h2" weight="heavy"> (MSEDGEWIN10)</rich_text><rich_text scale="h2" underline="single" weight="heavy">:</rich_text><rich_text scale="h2">
+           
+       •  TCP Port 445 is open
+           •  Microsoft Directory Services (microsoft-ds)
+           •  Server Message Blocks (SMB) over IP</rich_text><rich_text>
+</rich_text><rich_text scale="h2">       •  Firewall is </rich_text><rich_text scale="h2" weight="heavy">disabled</rich_text><rich_text scale="h2"> for </rich_text><rich_text scale="h2" underline="single">public networks</rich_text><rich_text scale="h2">
+           •  Set a firewall exception otherwise</rich_text><rich_text>
+           
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text><rich_text scale="h1" weight="heavy">STEPS TO RECREATE:</rich_text><rich_text>
+
+</rich_text><rich_text scale="h2">       1. </rich_text><rich_text link="node 49" scale="h2">Check if port 445 is open on the remote machine</rich_text><rich_text scale="h2">
+       2. Create the scheduled task</rich_text><rich_text>:
+</rich_text><rich_text scale="h2">           2.1 </rich_text><rich_text link="node 41" scale="h2">Using schtasks.exe</rich_text><rich_text>           
+</rich_text><rich_text scale="h2">       3. </rich_text><rich_text link="node 45" scale="h2">View the created task</rich_text><rich_text>
+</rich_text><rich_text scale="h2">           3.1.</rich_text><rich_text link="node 54" scale="h2">* Adjust the </rich_text><rich_text link="node 54" scale="h2" weight="heavy">START DATE</rich_text><rich_text link="node 54" scale="h2"> and </rich_text><rich_text link="node 54" scale="h2" weight="heavy">START TIME</rich_text><rich_text link="node 54" scale="h2"> parameters </rich_text><rich_text link="node 54" scale="h2" style="italic">if needed</rich_text><rich_text>
+ </rich_text><rich_text scale="h2">      4. </rich_text><rich_text link="node 60" scale="h2">Check if the task indeed runs every specified amount of time.</rich_text><rich_text>
+         
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       
+</rich_text><rich_text scale="h1" weight="heavy">REFERENCES:</rich_text><rich_text>
+
+       </rich_text><rich_text scale="h3">• </rich_text><rich_text link="webs https://www.grc.com/port_445.htm" scale="h3">https://www.grc.com/port_445.htm</rich_text><rich_text>
+</rich_text><rich_text scale="h3">       • </rich_text><rich_text link="webs https://jpcertcc.github.io/ToolAnalysisResultSheet/" scale="h3">https://jpcertcc.github.io/ToolAnalysisResultSheet/</rich_text><rich_text>
+</rich_text><rich_text scale="h3">       • </rich_text><rich_text link="webs https://docs.microsoft.com/en-us/windows/desktop/taskschd/schtasks" scale="h3">https://docs.microsoft.com/en-us/windows/desktop/taskschd/schtasks</rich_text><rich_text>
+</rich_text><rich_text scale="h3">       • </rich_text><rich_text link="webs https://support.microsoft.com/en-au/help/814596/how-to-use-schtasks-exe-to-schedule-tasks-in-windows-server-2003" scale="h3">https://support.microsoft.com/en-au/help/814596/how-to-use-schtasks-exe-to-schedule-tasks-in-windows-server-2003</rich_text><rich_text>
+</rich_text><rich_text scale="h3">       • </rich_text><rich_text link="webs https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/schtasks" scale="h3">https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/schtasks</rich_text><node custom_icon_id="0" foreground="" is_bold="False" name="1. Check if port 445 is open" prog_lang="custom-colors" readonly="True" tags="" ts_creation="1561447771.41" ts_lastsave="1561447904.62" unique_id="49"><rich_text scale="h1">1. Check if port </rich_text><rich_text scale="h1" weight="heavy">445</rich_text><rich_text scale="h1"> is open on the remote machine using </rich_text><rich_text link="webs https://nmap.org/zenmap/" scale="h1" underline="single">Zenmap</rich_text><rich_text scale="h1">:</rich_text><rich_text>
+   
+    </rich_text><rich_text scale="h2">• Command issued (</rich_text><rich_text scale="h2" style="italic">Zenmap</rich_text><rich_text scale="h2">):</rich_text><rich_text>
+
+     </rich_text><rich_text justification="left"></rich_text><rich_text>
+
+    </rich_text><rich_text scale="h2">• Output:</rich_text><rich_text>
+
+     </rich_text><rich_text justification="left"></rich_text><rich_text>
+</rich_text><codebox char_offset="106" frame_height="40" frame_width="100" highlight_brackets="True" show_line_numbers="False" syntax_highlighting="scala" width_in_pixels="False">nmap -p 445 -Pn -sT -v 192.168.56.101</codebox><codebox char_offset="129" frame_height="55" frame_width="100" highlight_brackets="True" show_line_numbers="False" syntax_highlighting="powershell" width_in_pixels="False">PORT    STATE SERVICE
+445/tcp open  microsoft-ds</codebox></node><node custom_icon_id="0" foreground="" is_bold="False" name="2. Create a scheduled task" prog_lang="custom-colors" readonly="True" tags="" ts_creation="1561432749.14" ts_lastsave="1561466505.69" unique_id="40"><rich_text>
+
+</rich_text><rich_text scale="h1" underline="single" weight="heavy">CASES</rich_text><rich_text>:
+
+ </rich_text><rich_text scale="h1">    • Using </rich_text><rich_text link="node 41" scale="h1" weight="heavy">schtasks.exe</rich_text><node custom_icon_id="0" foreground="" is_bold="False" name="2.1 Using schtasks.exe" prog_lang="custom-colors" readonly="True" tags="" ts_creation="1561432764.83" ts_lastsave="1561453863.6" unique_id="41"><rich_text scale="h1">1.1 Using </rich_text><rich_text scale="h1" underline="single" weight="heavy">schtasks.exe</rich_text><rich_text>:
+
+</rich_text><rich_text scale="h2">• Create a payload that appends content to a text file:</rich_text><rich_text>
+</rich_text><rich_text scale="h2">   1. PowerShell command:</rich_text><rich_text>
+
+    </rich_text><rich_text justification="left"></rich_text><rich_text>
+
+</rich_text><rich_text scale="h2">   2. Convert the string to Little-endian with utf-16 encoding then encode to base64:</rich_text><rich_text>
+
+    </rich_text><rich_text justification="left"></rich_text><rich_text> 
+
+</rich_text><rich_text scale="h2">   3. Construct the final payload:</rich_text><rich_text>
+       </rich_text><rich_text justification="left"></rich_text><rich_text>
+
+
+</rich_text><rich_text scale="h2">• Create a scheduled task that runs every two minutes:</rich_text><rich_text>
+
+    </rich_text><rich_text justification="left"></rich_text><rich_text>
+    
+     </rich_text><rich_text justification="left"></rich_text><rich_text scale="h3">  </rich_text><rich_text>
+     
+</rich_text><rich_text scale="h2">• Output:</rich_text><rich_text>
+    </rich_text><rich_text justification="left"></rich_text><rich_text>
+
+
+</rich_text><rich_text scale="h2">• </rich_text><rich_text scale="h2" weight="heavy">Logs Generated:</rich_text><rich_text>
+</rich_text><rich_text scale="h2">        •  </rich_text><rich_text link="node 50" scale="h2" weight="heavy">LogName: Security</rich_text><rich_text scale="sup"> (&lt;- CLICK HERE TO VIEW BRIEF SUMMARY)</rich_text><rich_text weight="heavy">:</rich_text><rich_text>
+</rich_text><rich_text scale="h2">               1. </rich_text><rich_text link="node 43" scale="h2">4624 - Logon (Success)</rich_text><rich_text>
+</rich_text><rich_text scale="h2">               2. </rich_text><rich_text link="node 44" scale="h2">4698 - Other Object Access Events (Success)</rich_text><rich_text>
+
+
+
+
+
+
+
+
+
+</rich_text><codebox char_offset="112" frame_height="40" frame_width="91" highlight_brackets="True" show_line_numbers="False" syntax_highlighting="powershell" width_in_pixels="False">Add-Content C:\Users\IEUser\Desktop\log.txt &quot;Scheduled Task.&quot;</codebox><codebox char_offset="206" frame_height="55" frame_width="91" highlight_brackets="True" show_line_numbers="False" syntax_highlighting="plain-text" width_in_pixels="False">QQBkAGQALQBDAG8AbgB0AGUAbgB0ACAAQwA6AFwAVQBzAGUAcgBzAFwASQBFAFUAcwBlAHIAXABEAGUAcwBrAHQAbwBwAFwAdABhAHMAawAuAHQAeAB0ACAAIgBTAGMAaABlAGQAdQBsAGUAZAAgAFQAYQBzAGsALgAiAAoA</codebox><codebox char_offset="252" frame_height="40" frame_width="127" highlight_brackets="True" show_line_numbers="False" syntax_highlighting="powershell" width_in_pixels="False">powershell.exe -enc QQBkAGQALQBDAG8AbgB0AGUAbgB0ACAAQwA6AFwAVQBzAGUAcgBzAFwASQBFAFUAcwBlAHIAXABEAGUAcwBrAHQAbwBwAFwAdABhAHMAawAuAHQAeAB0ACAAIgBTAGMAaABlAGQAdQBsAGUAZAAgAFQAYQBzAGsALgAiAAoA</codebox><codebox char_offset="316" frame_height="70" frame_width="91" highlight_brackets="True" show_line_numbers="False" syntax_highlighting="powershell" width_in_pixels="False">schtasks.exe /Create /S 192.168.56.101 /U IEUser /P Passw0rd! /SC MINUTE /MO 2 /TN scheduled_task /TR &quot;powershell.exe -enc QQBkAGQALQBDAG8AbgB0AGUAbgB0ACAAQwA6AFwAVQBzAGUAcgBzAFwASQBFAFUAcwBlAHIAXABEAGUAcwBrAHQAbwBwAFwAdABhAHMAawAuAHQAeAB0ACAAIgBTAGMAaABlAGQAdQBsAGUAZAAgAFQAYQBzAGsALgAiAAoA&quot;</codebox><table char_offset="328" col_max="1000" col_min="40"><row><cell>/Create</cell><cell>Creates a new scheduled task.</cell></row><row><cell>/S 192.168.56.101</cell><cell>The remote system to connect to</cell></row><row><cell>/U IEUser</cell><cell>The user context</cell></row><row><cell>/P Passw0rd!</cell><cell>Password for the user context</cell></row><row><cell>/SC MINUTE</cell><cell>Schedule frequency (e.g runs every n minutes - default value is 1)</cell></row><row><cell>/MO 2</cell><cell>Refines the schedule type</cell></row><row><cell>/TN scheduled_task</cell><cell>Specifies the string in the form of path\name
+ which uniquely identifies this scheduled task</cell></row><row><cell>/TR “powershell.exe ...”</cell><cell>Specifies the path and file name of the program to be
+ run at the scheduled time</cell></row><row><cell>PARAMETER</cell><cell>DEFINITION</cell></row></table><codebox char_offset="352" frame_height="40" frame_width="91" highlight_brackets="True" show_line_numbers="False" syntax_highlighting="plain-text" width_in_pixels="False">SUCCESS: The scheduled task &quot;scheduled_task&quot; has successfully been created.</codebox><node custom_icon_id="0" foreground="" is_bold="False" name="LogName: Security" prog_lang="custom-colors" readonly="True" tags="" ts_creation="1561440706.07" ts_lastsave="1561465958.82" unique_id="42"><rich_text scale="h2">     1. </rich_text><rich_text link="node 43" scale="h2">4624 - Logon (Success)</rich_text><rich_text>
+          </rich_text><rich_text justification="left"></rich_text><rich_text>   
+</rich_text><rich_text scale="h2">          </rich_text><rich_text>
+</rich_text><rich_text scale="h2">    2. </rich_text><rich_text link="node 44" scale="h2">4698 - Other Object Access Events (Success)</rich_text><rich_text>
+          </rich_text><rich_text justification="left"></rich_text><table char_offset="41" col_max="750" col_min="40"><row><cell>TargetUserName</cell><cell>IEUser</cell></row><row><cell>TargetDomainName</cell><cell>MSEDGEWIN10</cell></row><row><cell>LogonType</cell><cell>3</cell></row><row><cell>AuthenticationPackageName</cell><cell>NTLM</cell></row><row><cell>WorkstationName</cell><cell>KALI-WINDOWS</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><table char_offset="118" col_max="750" col_min="40"><row><cell>SubjectUserName</cell><cell>IEUser</cell></row><row><cell>SubjectDomainName</cell><cell>MSEDGEWIN10</cell></row><row><cell>Author</cell><cell>KALI-WINDOWS\Jebidiah</cell></row><row><cell>URI</cell><cell>\scheduled_task</cell></row><row><cell>StartBoundary</cell><cell>2019-06-25T13:28:22</cell></row><row><cell>Enabled</cell><cell>true</cell></row><row><cell>Command</cell><cell>powershell.exe</cell></row><row><cell>Arguments</cell><cell>-enc QQBkAGQALQBDAG8AbgB0AGUAbgB0ACAAQwA6AFwAVQBzAGUAcgBzAFwASQBFAFUAcwBlAHIAXABEAGUAcwBrAHQAbwBwAFwAdABhAHMAawAuAHQAeAB0ACAAIgBTAGMAaABlAGQAdQBsAGUAZAAgAFQAYQBzAGsALgAiAAoA</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><node custom_icon_id="0" foreground="" is_bold="False" name="1. 4626 - Logon (Success)" prog_lang="xml" readonly="True" tags="" ts_creation="1561440721.22" ts_lastsave="1561440774.47" unique_id="43"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+      &lt;Provider Name=&quot;Microsoft-Windows-Security-Auditing&quot; Guid=&quot;{54849625-5478-4994-a5ba-3e3b0328c30d}&quot; /&gt; 
+      &lt;EventID&gt;4624&lt;/EventID&gt; 
+      &lt;Version&gt;2&lt;/Version&gt; 
+      &lt;Level&gt;0&lt;/Level&gt; 
+      &lt;Task&gt;12544&lt;/Task&gt; 
+      &lt;Opcode&gt;0&lt;/Opcode&gt; 
+      &lt;Keywords&gt;0x8020000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-25T05:28:22.072321900Z&quot; /&gt; 
+      &lt;EventRecordID&gt;335139&lt;/EventRecordID&gt; 
+      &lt;Correlation ActivityID=&quot;{26a6fbe7-2b82-0004-2bfc-a626822bd501}&quot; /&gt; 
+      &lt;Execution ProcessID=&quot;684&quot; ThreadID=&quot;800&quot; /&gt; 
+      &lt;Channel&gt;Security&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data Name=&quot;SubjectUserSid&quot;&gt;S-1-0-0&lt;/Data&gt; 
+      &lt;Data Name=&quot;SubjectUserName&quot;&gt;-&lt;/Data&gt; 
+      &lt;Data Name=&quot;SubjectDomainName&quot;&gt;-&lt;/Data&gt; 
+      &lt;Data Name=&quot;SubjectLogonId&quot;&gt;0x0&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetUserSid&quot;&gt;S-1-5-21-3461203602-4096304019-2269080069-1000&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetUserName&quot;&gt;IEUser&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetDomainName&quot;&gt;MSEDGEWIN10&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetLogonId&quot;&gt;0x2b21a3&lt;/Data&gt; 
+      &lt;Data Name=&quot;LogonType&quot;&gt;3&lt;/Data&gt; 
+      &lt;Data Name=&quot;LogonProcessName&quot;&gt;NtLmSsp&lt;/Data&gt; 
+      &lt;Data Name=&quot;AuthenticationPackageName&quot;&gt;NTLM&lt;/Data&gt; 
+      &lt;Data Name=&quot;WorkstationName&quot;&gt;KALI-WINDOWS&lt;/Data&gt; 
+      &lt;Data Name=&quot;LogonGuid&quot;&gt;{00000000-0000-0000-0000-000000000000}&lt;/Data&gt; 
+      &lt;Data Name=&quot;TransmittedServices&quot;&gt;-&lt;/Data&gt; 
+      &lt;Data Name=&quot;LmPackageName&quot;&gt;NTLM V2&lt;/Data&gt; 
+      &lt;Data Name=&quot;KeyLength&quot;&gt;128&lt;/Data&gt; 
+      &lt;Data Name=&quot;ProcessId&quot;&gt;0x0&lt;/Data&gt; 
+      &lt;Data Name=&quot;ProcessName&quot;&gt;-&lt;/Data&gt; 
+      &lt;Data Name=&quot;IpAddress&quot;&gt;192.168.56.1&lt;/Data&gt; 
+      &lt;Data Name=&quot;IpPort&quot;&gt;6232&lt;/Data&gt; 
+      &lt;Data Name=&quot;ImpersonationLevel&quot;&gt;%%1833&lt;/Data&gt; 
+      &lt;Data Name=&quot;RestrictedAdminMode&quot;&gt;-&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetOutboundUserName&quot;&gt;-&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetOutboundDomainName&quot;&gt;-&lt;/Data&gt; 
+      &lt;Data Name=&quot;VirtualAccount&quot;&gt;%%1843&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetLinkedLogonId&quot;&gt;0x0&lt;/Data&gt; 
+      &lt;Data Name=&quot;ElevatedToken&quot;&gt;%%1842&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node><node custom_icon_id="0" foreground="" is_bold="False" name="2. 4698 - Other Object Access Events (Success)" prog_lang="xml" readonly="True" tags="" ts_creation="1561440760.44" ts_lastsave="1561441047.1" unique_id="44"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
++ &lt;System&gt;
+      &lt;Provider Name=&quot;Microsoft-Windows-Security-Auditing&quot; Guid=&quot;{54849625-5478-4994-a5ba-3e3b0328c30d}&quot; /&gt; 
+      &lt;EventID&gt;4698&lt;/EventID&gt; 
+      &lt;Version&gt;0&lt;/Version&gt; 
+      &lt;Level&gt;0&lt;/Level&gt; 
+      &lt;Task&gt;12804&lt;/Task&gt; 
+      &lt;Opcode&gt;0&lt;/Opcode&gt; 
+      &lt;Keywords&gt;0x8020000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-25T05:28:22.131432600Z&quot; /&gt; 
+      &lt;EventRecordID&gt;335142&lt;/EventRecordID&gt; 
+      &lt;Correlation ActivityID=&quot;{26a6fbe7-2b82-0004-2bfc-a626822bd501}&quot; /&gt; 
+      &lt;Execution ProcessID=&quot;684&quot; ThreadID=&quot;800&quot; /&gt; 
+      &lt;Channel&gt;Security&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data Name=&quot;SubjectUserSid&quot;&gt;S-1-5-21-3461203602-4096304019-2269080069-1000&lt;/Data&gt; 
+      &lt;Data Name=&quot;SubjectUserName&quot;&gt;IEUser&lt;/Data&gt; 
+      &lt;Data Name=&quot;SubjectDomainName&quot;&gt;MSEDGEWIN10&lt;/Data&gt; 
+      &lt;Data Name=&quot;SubjectLogonId&quot;&gt;0x2b21a3&lt;/Data&gt; 
+      &lt;Data Name=&quot;TaskName&quot;&gt;\scheduled_task&lt;/Data&gt; 
+      &lt;Data Name=&quot;TaskContent&quot;&gt;
+        &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-16&quot;?&gt; 
+            &lt;Task version=&quot;1.2&quot; xmlns=&quot;http://schemas.microsoft.com/windows/2004/02/mit/task&quot;&gt; 
+                &lt;RegistrationInfo&gt; 
+                    &lt;Date&gt;2019-06-25T13:28:22&lt;/Date&gt; 
+                    &lt;Author&gt;KALI-WINDOWS\Jebidiah&lt;/Author&gt; 
+                    &lt;URI&gt;\scheduled_task&lt;/URI&gt; 
+                &lt;/RegistrationInfo&gt; 
+                &lt;Triggers&gt; 
+                    &lt;TimeTrigger&gt; 
+                        &lt;Repetition&gt; 
+                            &lt;Interval&gt;PT2M&lt;/Interval&gt; 
+                            &lt;StopAtDurationEnd&gt;false&lt;/StopAtDurationEnd&gt; 
+                        &lt;/Repetition&gt; 
+                        &lt;StartBoundary&gt;2019-06-25T13:28:00&lt;/StartBoundary&gt; 
+                        &lt;Enabled&gt;true&lt;/Enabled&gt; 
+                    &lt;/TimeTrigger&gt; 
+                &lt;/Triggers&gt; 
+                &lt;Settings&gt; 
+                    &lt;MultipleInstancesPolicy&gt;IgnoreNew&lt;/MultipleInstancesPolicy&gt; 
+                    &lt;DisallowStartIfOnBatteries&gt;true&lt;/DisallowStartIfOnBatteries&gt; 
+                    &lt;StopIfGoingOnBatteries&gt;true&lt;/StopIfGoingOnBatteries&gt; 
+                    &lt;AllowHardTerminate&gt;true&lt;/AllowHardTerminate&gt; 
+                    &lt;StartWhenAvailable&gt;false&lt;/StartWhenAvailable&gt; 
+                    &lt;RunOnlyIfNetworkAvailable&gt;false&lt;/RunOnlyIfNetworkAvailable&gt; 
+                    &lt;IdleSettings&gt; 
+                        &lt;Duration&gt;PT10M&lt;/Duration&gt; 
+                        &lt;WaitTimeout&gt;PT1H&lt;/WaitTimeout&gt; 
+                        &lt;StopOnIdleEnd&gt;true&lt;/StopOnIdleEnd&gt; 
+                        &lt;RestartOnIdle&gt;false&lt;/RestartOnIdle&gt; 
+                    &lt;/IdleSettings&gt; 
+                    &lt;AllowStartOnDemand&gt;true&lt;/AllowStartOnDemand&gt; 
+                    &lt;Enabled&gt;true&lt;/Enabled&gt; 
+                    &lt;Hidden&gt;false&lt;/Hidden&gt; 
+                    &lt;RunOnlyIfIdle&gt;false&lt;/RunOnlyIfIdle&gt; 
+                    &lt;WakeToRun&gt;false&lt;/WakeToRun&gt; 
+                    &lt;ExecutionTimeLimit&gt;PT72H&lt;/ExecutionTimeLimit&gt; 
+                    &lt;Priority&gt;7&lt;/Priority&gt; 
+                &lt;/Settings&gt; 
+                &lt;Actions Context=&quot;Author&quot;&gt; 
+                    &lt;Exec&gt; 
+                        &lt;Command&gt;powershell.exe&lt;/Command&gt; 
+                        &lt;Arguments&gt;-enc QQBkAGQALQBDAG8AbgB0AGUAbgB0ACAAQwA6AFwAVQBzAGUAcgBzAFwASQBFAFUAcwBlAHIAXABEAGUAcwBrAHQAbwBwAFwAdABhAHMAawAuAHQAeAB0ACAAIgBTAGMAaABlAGQAdQBsAGUAZAAgAFQAYQBzAGsALgAiAAoA&lt;/Arguments&gt; 
+                    &lt;/Exec&gt; 
+                &lt;/Actions&gt; 
+                &lt;Principals&gt; 
+                    &lt;Principal id=&quot;Author&quot;&gt; 
+                        &lt;UserId&gt;\IEUser&lt;/UserId&gt; 
+                        &lt;LogonType&gt;InteractiveToken&lt;/LogonType&gt; 
+                        &lt;RunLevel&gt;LeastPrivilege&lt;/RunLevel&gt; 
+                    &lt;/Principal&gt; 
+                &lt;/Principals&gt; 
+            &lt;/Task&gt;
+        &lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node></node></node></node><node custom_icon_id="0" foreground="" is_bold="False" name="3. View the created task" prog_lang="custom-colors" readonly="True" tags="" ts_creation="1561445533.61" ts_lastsave="1561519253.92" unique_id="45"><rich_text scale="h1">1.1 View the created task on both Local and Remote machines:</rich_text><rich_text>
+
+</rich_text><rich_text scale="h1" underline="single" weight="heavy">Local Machine:</rich_text><rich_text>
+
+</rich_text><rich_text scale="h2">• Command Issued (PowerShell):</rich_text><rich_text>
+    </rich_text><rich_text justification="left"></rich_text><rich_text>
+
+    </rich_text><rich_text justification="left"></rich_text><rich_text>
+   
+</rich_text><rich_text scale="h2">• Output:</rich_text><rich_text>
+    </rich_text><rich_text justification="left"></rich_text><rich_text>
+
+</rich_text><rich_text scale="h1" underline="single" weight="heavy">Remote Machine:</rich_text><rich_text>
+
+</rich_text><rich_text scale="h2">• Command Issued (PowerShell):</rich_text><rich_text>
+    </rich_text><rich_text justification="left"></rich_text><rich_text>
+   
+</rich_text><rich_text scale="h2">• Output:</rich_text><rich_text>
+    </rich_text><rich_text justification="left"></rich_text><rich_text>
+
+</rich_text><rich_text scale="h2">    </rich_text><rich_text scale="h2" weight="heavy">NOTES</rich_text><rich_text scale="h2">:</rich_text><rich_text>
+    
+    </rich_text><rich_text scale="h2">    • The </rich_text><rich_text scale="h2" underline="single" weight="heavy">Start Date</rich_text><rich_text scale="h2"> and </rich_text><rich_text scale="h2" underline="single" weight="heavy">Start Time</rich_text><rich_text scale="h2"> field of the scheduled task created on the remote machine is </rich_text><rich_text scale="h2" underline="single">referenced from the local machine</rich_text><rich_text scale="h2">        </rich_text><rich_text>
+         </rich_text><rich_text scale="h2">• The initial </rich_text><rich_text scale="h2" weight="heavy">Next Run TIme </rich_text><rich_text scale="h2">field value on the </rich_text><rich_text scale="h2" underline="single">remote machine</rich_text><rich_text scale="h2"> will be the </rich_text><rich_text scale="h2" underline="single">Start Time referenced from the local machine</rich_text><rich_text>
+         </rich_text><rich_text scale="h2">• In this sample, the </rich_text><rich_text scale="h2" underline="single">Remote Machine's time</rich_text><rich_text scale="h2"> is </rich_text><rich_text scale="h2" weight="heavy">15 hours behind</rich_text><rich_text scale="h2"> compared to the Local Machine</rich_text><rich_text>
+</rich_text><rich_text scale="h2">            • This means that, in the provided example, the created scheduled task will wait the time difference in order to start</rich_text><rich_text>
+</rich_text><rich_text scale="h2">            • A workaround could be setting the </rich_text><rich_text scale="h2" underline="single" weight="heavy">Start Time</rich_text><rich_text scale="h2"> and/or </rich_text><rich_text scale="h2" underline="single" weight="heavy">Start Date</rich_text><rich_text scale="h2"> </rich_text><rich_text scale="h2" underline="single">prior to the Remote Machine's current time</rich_text><rich_text>
+
+
+   </rich_text><rich_text scale="h2">• </rich_text><rich_text scale="h2" weight="heavy">Logs Generated:</rich_text><rich_text>
+</rich_text><rich_text scale="h2">        •  </rich_text><rich_text link="node 52" scale="h2" weight="heavy">LogName: Security</rich_text><rich_text scale="sup"> (&lt;- CLICK HERE TO VIEW BRIEF SUMMARY)</rich_text><rich_text weight="heavy">:</rich_text><rich_text>
+</rich_text><rich_text scale="h2">               1. </rich_text><rich_text link="node 53" scale="h2">4624 - Logon (Success)</rich_text><rich_text>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</rich_text><codebox char_offset="113" frame_height="40" frame_width="91" highlight_brackets="True" show_line_numbers="False" syntax_highlighting="powershell" width_in_pixels="False">schtasks.exe /Query /S 192.168.56.101 /U IEUser /P Passw0rd! /FO list /TN scheduled_task /V</codebox><table char_offset="120" col_max="1000" col_min="40"><row><cell>/Query</cell><cell>Displays all scheduled tasks</cell></row><row><cell>/FO list</cell><cell>Specifies the format for the output</cell></row><row><cell>/V</cell><cell>Displays verbose task output</cell></row><row><cell>PARAMETER</cell><cell>DEFINITION</cell></row></table><codebox char_offset="140" frame_height="640" frame_width="91" highlight_brackets="True" show_line_numbers="False" syntax_highlighting="powershell" width_in_pixels="False">Folder: \
+HostName:                             192.168.56.101
+TaskName:                             \scheduled_task
+Next Run Time:                        6/25/2019 4:41:00 PM
+Status:                               Ready
+Logon Mode:                           Background only
+Last Run Time:                        11/30/1999 12:00:00 AM
+Last Result:                          267011
+Author:                               KALI-WINDOWS\Jebidiah
+Task To Run:                          powershell.exe -enc QQBkAGQALQBDAG8AbgB0AGUAbgB0ACAAQwA6AFwAVQBzAGUAcgBzAFwASQBFAFUAcwBlAHIAXABEAGUAcwBrAHQAbwBwAFwAdABhAHMAawAuAHQAeAB0ACAAIgBTAGMAaABlAGQAdQBsAGUAZAAgAFQAYQBzAGsALgAiAAoA
+Start In:                             N/A
+Comment:                              N/A
+Scheduled Task State:                 Enabled
+Idle Time:                            Disabled
+Power Management:                     Stop On Battery Mode, No Start On Batteries
+Run As User:                          NT AUTHORITY\SYSTEM
+Delete Task If Not Rescheduled:       Disabled
+Stop Task If Runs X Hours and X Mins: 72:00:00
+Schedule:                             Scheduling data is not available in this format.
+Schedule Type:                        One Time Only, Minute
+Start Time:                           4:37:00 PM
+Start Date:                           6/25/2019
+End Date:                             N/A
+Days:                                 N/A
+Months:                               N/A
+Repeat: Every:                        0 Hour(s), 2 Minute(s)
+Repeat: Until: Time:                  None
+Repeat: Until: Duration:              Disabled
+Repeat: Stop If Still Running:        Disabled</codebox><codebox char_offset="195" frame_height="40" frame_width="91" highlight_brackets="True" show_line_numbers="False" syntax_highlighting="powershell" width_in_pixels="False">schtasks.exe /Query /FO list /TN scheduled_task /V</codebox><codebox char_offset="215" frame_height="640" frame_width="91" highlight_brackets="True" show_line_numbers="False" syntax_highlighting="powershell" width_in_pixels="False">Folder: \
+HostName:                             MSEDGEWIN10
+TaskName:                             \scheduled_task
+Next Run Time:                        6/25/2019 4:37:00 PM
+Status:                               Ready
+Logon Mode:                           Interactive only
+Last Run Time:                        11/30/1999 12:00:00 AM
+Last Result:                          267011
+Author:                               KALI-WINDOWS\Jebidiah
+Task To Run:                          powershell.exe -enc QQBkAGQALQBDAG8AbgB0AGUAbgB0ACAAQwA6AFwAVQBzAGUAcgBzAFwASQBFAFUAcwBlAHIAXABEAGUAcwBrAHQAbwBwAFwAdABhAHMAawAuAHQAeAB0ACAAIgBTAGMAaABlAGQAdQBsAGUAZAAgAFQAYQBzAGsALgAiAAoA
+Start In:                             N/A
+Comment:                              N/A
+Scheduled Task State:                 Enabled
+Idle Time:                            Disabled
+Power Management:                     Stop On Battery Mode, No Start On Batteries
+Run As User:                          IEUser
+Delete Task If Not Rescheduled:       Disabled
+Stop Task If Runs X Hours and X Mins: 72:00:00
+Schedule:                             Scheduling data is not available in this format.
+Schedule Type:                        One Time Only, Minute
+Start Time:                           4:37:00 PM
+Start Date:                           6/25/2019
+End Date:                             N/A
+Days:                                 N/A
+Months:                               N/A
+Repeat: Every:                        0 Hour(s), 2 Minute(s)
+Repeat: Until: Time:                  None
+Repeat: Until: Duration:              Disabled
+Repeat: Stop If Still Running:        Disabled</codebox><node custom_icon_id="0" foreground="" is_bold="False" name="LogName: Security" prog_lang="custom-colors" readonly="True" tags="" ts_creation="1561450351.97" ts_lastsave="1561466039.1" unique_id="52"><rich_text scale="h2">    1. </rich_text><rich_text link="node 53" scale="h2">4624 - Logon (Success)</rich_text><rich_text>
+          </rich_text><rich_text justification="left"></rich_text><rich_text>   
+</rich_text><rich_text scale="h2">          </rich_text><table char_offset="40" col_max="750" col_min="40"><row><cell>TargetUserName</cell><cell>IEUser</cell></row><row><cell>TargetDomainName</cell><cell>MSEDGEWIN10</cell></row><row><cell>LogonType</cell><cell>3</cell></row><row><cell>AuthenticationPackageName</cell><cell>NTLM</cell></row><row><cell>WorkstationName</cell><cell>KALI-WINDOWS</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><node custom_icon_id="0" foreground="" is_bold="False" name="1. 4624 - Logon (Success)" prog_lang="xml" readonly="True" tags="" ts_creation="1561450496.38" ts_lastsave="1561450509.69" unique_id="53"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+      &lt;Provider Name=&quot;Microsoft-Windows-Security-Auditing&quot; Guid=&quot;{54849625-5478-4994-a5ba-3e3b0328c30d}&quot; /&gt; 
+      &lt;EventID&gt;4624&lt;/EventID&gt; 
+      &lt;Version&gt;2&lt;/Version&gt; 
+      &lt;Level&gt;0&lt;/Level&gt; 
+      &lt;Task&gt;12544&lt;/Task&gt; 
+      &lt;Opcode&gt;0&lt;/Opcode&gt; 
+      &lt;Keywords&gt;0x8020000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-25T08:13:31.099092100Z&quot; /&gt; 
+      &lt;EventRecordID&gt;339263&lt;/EventRecordID&gt; 
+      &lt;Correlation ActivityID=&quot;{26a6fbe7-2b82-0004-2bfc-a626822bd501}&quot; /&gt; 
+      &lt;Execution ProcessID=&quot;684&quot; ThreadID=&quot;800&quot; /&gt; 
+      &lt;Channel&gt;Security&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data Name=&quot;SubjectUserSid&quot;&gt;S-1-0-0&lt;/Data&gt; 
+      &lt;Data Name=&quot;SubjectUserName&quot;&gt;-&lt;/Data&gt; 
+      &lt;Data Name=&quot;SubjectDomainName&quot;&gt;-&lt;/Data&gt; 
+      &lt;Data Name=&quot;SubjectLogonId&quot;&gt;0x0&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetUserSid&quot;&gt;S-1-5-21-3461203602-4096304019-2269080069-1000&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetUserName&quot;&gt;IEUser&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetDomainName&quot;&gt;MSEDGEWIN10&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetLogonId&quot;&gt;0x59b10f&lt;/Data&gt; 
+      &lt;Data Name=&quot;LogonType&quot;&gt;3&lt;/Data&gt; 
+      &lt;Data Name=&quot;LogonProcessName&quot;&gt;NtLmSsp&lt;/Data&gt; 
+      &lt;Data Name=&quot;AuthenticationPackageName&quot;&gt;NTLM&lt;/Data&gt; 
+      &lt;Data Name=&quot;WorkstationName&quot;&gt;KALI-WINDOWS&lt;/Data&gt; 
+      &lt;Data Name=&quot;LogonGuid&quot;&gt;{00000000-0000-0000-0000-000000000000}&lt;/Data&gt; 
+      &lt;Data Name=&quot;TransmittedServices&quot;&gt;-&lt;/Data&gt; 
+      &lt;Data Name=&quot;LmPackageName&quot;&gt;NTLM V2&lt;/Data&gt; 
+      &lt;Data Name=&quot;KeyLength&quot;&gt;128&lt;/Data&gt; 
+      &lt;Data Name=&quot;ProcessId&quot;&gt;0x0&lt;/Data&gt; 
+      &lt;Data Name=&quot;ProcessName&quot;&gt;-&lt;/Data&gt; 
+      &lt;Data Name=&quot;IpAddress&quot;&gt;192.168.56.1&lt;/Data&gt; 
+      &lt;Data Name=&quot;IpPort&quot;&gt;1111&lt;/Data&gt; 
+      &lt;Data Name=&quot;ImpersonationLevel&quot;&gt;%%1833&lt;/Data&gt; 
+      &lt;Data Name=&quot;RestrictedAdminMode&quot;&gt;-&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetOutboundUserName&quot;&gt;-&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetOutboundDomainName&quot;&gt;-&lt;/Data&gt; 
+      &lt;Data Name=&quot;VirtualAccount&quot;&gt;%%1843&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetLinkedLogonId&quot;&gt;0x0&lt;/Data&gt; 
+      &lt;Data Name=&quot;ElevatedToken&quot;&gt;%%1842&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node></node><node custom_icon_id="0" foreground="" is_bold="False" name="3.1 Adjust the Start Time and Start Date fields" prog_lang="custom-colors" readonly="True" tags="" ts_creation="1561453791.4" ts_lastsave="1561959098.71" unique_id="54"><rich_text scale="h1">2.1 Adjust the </rich_text><rich_text scale="h1" underline="single" weight="heavy">Start Time</rich_text><rich_text scale="h1"> and </rich_text><rich_text scale="h1" underline="single" weight="heavy">Start Date</rich_text><rich_text scale="h1"> fields of the created scheduled task</rich_text><rich_text>
+   
+    </rich_text><rich_text scale="h2">• Command issued (PowerShell):</rich_text><rich_text>
+
+     </rich_text><rich_text justification="left"></rich_text><rich_text>
+
+    
+     </rich_text><rich_text scale="h2" weight="heavy">NOTES</rich_text><rich_text scale="h2">:</rich_text><rich_text>
+    
+    </rich_text><rich_text scale="h2">    • Adding </rich_text><rich_text scale="h2" underline="single" weight="heavy">/SD</rich_text><rich_text scale="h2"> and </rich_text><rich_text scale="h2" underline="single" weight="heavy">/ST</rich_text><rich_text scale="h2"> options to the </rich_text><rich_text scale="h2" underline="single" weight="heavy">/Change</rich_text><rich_text scale="h2"> command outputs an error:
+        
+          </rich_text><rich_text justification="left" scale="h2"></rich_text><rich_text scale="h2">    </rich_text><rich_text>
+
+   </rich_text><rich_text scale="h2">• </rich_text><rich_text scale="h2" weight="heavy">Logs Generated:</rich_text><rich_text>
+</rich_text><rich_text scale="h2">        •  </rich_text><rich_text link="node 56" scale="h2" weight="heavy">LogName: Security</rich_text><rich_text scale="sup"> (&lt;- CLICK HERE TO VIEW BRIEF SUMMARY)</rich_text><rich_text weight="heavy">:</rich_text><rich_text>
+</rich_text><rich_text scale="h2">               1. </rich_text><rich_text link="node 57" scale="h2">4624 - Logon (Success)</rich_text><rich_text>
+</rich_text><rich_text scale="h2">               2. </rich_text><rich_text link="node 58" scale="h2">4624 - Logon (Success)</rich_text><rich_text>
+</rich_text><rich_text scale="h2">               3. </rich_text><rich_text link="node 59" scale="h2">4698 - Other Object Access Events (Success)</rich_text><codebox char_offset="123" frame_height="175" frame_width="91" highlight_brackets="True" show_line_numbers="False" syntax_highlighting="powershell" width_in_pixels="False">schtasks.exe /Delete /S 192.168.56.101 /U IEUser /P Passw0rd! /TN scheduled_task
+# WARNING: Are you sure you want to remove the task &quot;scheduled_task&quot; (Y/N)? Y
+# SUCCESS: The scheduled task &quot;scheduled_task&quot; was successfully deleted.
+
+schtasks.exe /Create /S 192.168.56.101 /U IEUser /P Passw0rd! /SC MINUTE /MO 2 /SD 06/23/2019 /ST 00:00 /TN scheduled_task /TR &quot;powershell.exe -enc QQBkAGQALQBDAG8AbgB0AGUAbgB0ACAAQwA6AFwAVQBzAGUAcgBzAFwASQBFAFUAcwBlAHIAXABEAGUAcwBrAHQAbwBwAFwAdABhAHMAawAuAHQAeAB0ACAAIgBTAGMAaABlAGQAdQBsAGUAZAAgAFQAYQBzAGsALgAiAAoA&quot;</codebox><codebox char_offset="245" frame_height="40" frame_width="82" highlight_brackets="True" show_line_numbers="False" syntax_highlighting="powershell" width_in_pixels="False">ERROR: The task XML contains a value which is incorrectly formatted or out of range.</codebox><node custom_icon_id="0" foreground="" is_bold="False" name="LogName: Security" prog_lang="custom-colors" readonly="True" tags="" ts_creation="1561461171.01" ts_lastsave="1561466032.04" unique_id="56"><rich_text> </rich_text><rich_text scale="h2">   1. </rich_text><rich_text link="node 57" scale="h2">4624 - Logon (Success)</rich_text><rich_text>
+          </rich_text><rich_text justification="left"></rich_text><rich_text>   
+    
+ </rich_text><rich_text scale="h2">   2. </rich_text><rich_text link="node 58" scale="h2">4624 - Logon (Success)</rich_text><rich_text>
+          </rich_text><rich_text justification="left"></rich_text><rich_text>   
+</rich_text><rich_text scale="h2">          </rich_text><rich_text>
+</rich_text><rich_text scale="h2">    3. </rich_text><rich_text link="node 59" scale="h2">4698 - Other Object Access Events (Success)</rich_text><rich_text>
+          </rich_text><rich_text justification="left"></rich_text><table char_offset="40" col_max="750" col_min="40"><row><cell>TargetUserName</cell><cell>IEUser</cell></row><row><cell>TargetDomainName</cell><cell>MSEDGEWIN10</cell></row><row><cell>LogonType</cell><cell>3</cell></row><row><cell>AuthenticationPackageName</cell><cell>NTLM</cell></row><row><cell>WorkstationName</cell><cell>KALI-WINDOWS</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><table char_offset="90" col_max="750" col_min="40"><row><cell>TargetUserName</cell><cell>IEUser</cell></row><row><cell>TargetDomainName</cell><cell>MSEDGEWIN10</cell></row><row><cell>LogonType</cell><cell>3</cell></row><row><cell>AuthenticationPackageName</cell><cell>NTLM</cell></row><row><cell>WorkstationName</cell><cell>KALI-WINDOWS</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><table char_offset="167" col_max="750" col_min="40"><row><cell>SubjectUserName</cell><cell>IEUser</cell></row><row><cell>SubjectDomainName</cell><cell>MSEDGEWIN10</cell></row><row><cell>Author</cell><cell>KALI-WINDOWS\Jebidiah</cell></row><row><cell>URI</cell><cell>\scheduled_task</cell></row><row><cell>StartBoundary</cell><cell>2019-06-23T00:00:00</cell></row><row><cell>Enabled</cell><cell>true</cell></row><row><cell>Command</cell><cell>powershell.exe</cell></row><row><cell>Arguments</cell><cell>-enc QQBkAGQALQBDAG8AbgB0AGUAbgB0ACAAQwA6AFwAVQBzAGUAcgBzAFwASQBFAFUAcwBlAHIAXABEAGUAcwBrAHQAbwBwAFwAdABhAHMAawAuAHQAeAB0ACAAIgBTAGMAaABlAGQAdQBsAGUAZAAgAFQAYQBzAGsALgAiAAoA</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><node custom_icon_id="0" foreground="" is_bold="False" name="1. 4624 - Logon (Success)" prog_lang="xml" readonly="True" tags="" ts_creation="1561461183.15" ts_lastsave="1561461235.29" unique_id="57"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+      &lt;Provider Name=&quot;Microsoft-Windows-Security-Auditing&quot; Guid=&quot;{54849625-5478-4994-a5ba-3e3b0328c30d}&quot; /&gt; 
+      &lt;EventID&gt;4624&lt;/EventID&gt; 
+      &lt;Version&gt;2&lt;/Version&gt; 
+      &lt;Level&gt;0&lt;/Level&gt; 
+      &lt;Task&gt;12544&lt;/Task&gt; 
+      &lt;Opcode&gt;0&lt;/Opcode&gt; 
+      &lt;Keywords&gt;0x8020000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-25T11:11:17.794928200Z&quot; /&gt; 
+      &lt;EventRecordID&gt;355120&lt;/EventRecordID&gt; 
+      &lt;Correlation ActivityID=&quot;{560c789f-2b44-0004-e278-0c56442bd501}&quot; /&gt; 
+      &lt;Execution ProcessID=&quot;680&quot; ThreadID=&quot;820&quot; /&gt; 
+      &lt;Channel&gt;Security&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data Name=&quot;SubjectUserSid&quot;&gt;S-1-0-0&lt;/Data&gt; 
+      &lt;Data Name=&quot;SubjectUserName&quot;&gt;-&lt;/Data&gt; 
+      &lt;Data Name=&quot;SubjectDomainName&quot;&gt;-&lt;/Data&gt; 
+      &lt;Data Name=&quot;SubjectLogonId&quot;&gt;0x0&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetUserSid&quot;&gt;S-1-5-21-3461203602-4096304019-2269080069-1000&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetUserName&quot;&gt;IEUser&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetDomainName&quot;&gt;MSEDGEWIN10&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetLogonId&quot;&gt;0x22d59f&lt;/Data&gt; 
+      &lt;Data Name=&quot;LogonType&quot;&gt;3&lt;/Data&gt; 
+      &lt;Data Name=&quot;LogonProcessName&quot;&gt;NtLmSsp&lt;/Data&gt; 
+      &lt;Data Name=&quot;AuthenticationPackageName&quot;&gt;NTLM&lt;/Data&gt; 
+      &lt;Data Name=&quot;WorkstationName&quot;&gt;KALI-WINDOWS&lt;/Data&gt; 
+      &lt;Data Name=&quot;LogonGuid&quot;&gt;{00000000-0000-0000-0000-000000000000}&lt;/Data&gt; 
+      &lt;Data Name=&quot;TransmittedServices&quot;&gt;-&lt;/Data&gt; 
+      &lt;Data Name=&quot;LmPackageName&quot;&gt;NTLM V2&lt;/Data&gt; 
+      &lt;Data Name=&quot;KeyLength&quot;&gt;128&lt;/Data&gt; 
+      &lt;Data Name=&quot;ProcessId&quot;&gt;0x0&lt;/Data&gt; 
+      &lt;Data Name=&quot;ProcessName&quot;&gt;-&lt;/Data&gt; 
+      &lt;Data Name=&quot;IpAddress&quot;&gt;192.168.56.1&lt;/Data&gt; 
+      &lt;Data Name=&quot;IpPort&quot;&gt;3493&lt;/Data&gt; 
+      &lt;Data Name=&quot;ImpersonationLevel&quot;&gt;%%1833&lt;/Data&gt; 
+      &lt;Data Name=&quot;RestrictedAdminMode&quot;&gt;-&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetOutboundUserName&quot;&gt;-&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetOutboundDomainName&quot;&gt;-&lt;/Data&gt; 
+      &lt;Data Name=&quot;VirtualAccount&quot;&gt;%%1843&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetLinkedLogonId&quot;&gt;0x0&lt;/Data&gt; 
+      &lt;Data Name=&quot;ElevatedToken&quot;&gt;%%1842&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node><node custom_icon_id="0" foreground="" is_bold="False" name="2. 4624 - Logon (Success)" prog_lang="xml" readonly="True" tags="" ts_creation="1561461193.71" ts_lastsave="1561461331.91" unique_id="58"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+      &lt;Provider Name=&quot;Microsoft-Windows-Security-Auditing&quot; Guid=&quot;{54849625-5478-4994-a5ba-3e3b0328c30d}&quot; /&gt; 
+      &lt;EventID&gt;4624&lt;/EventID&gt; 
+      &lt;Version&gt;2&lt;/Version&gt; 
+      &lt;Level&gt;0&lt;/Level&gt; 
+      &lt;Task&gt;12544&lt;/Task&gt; 
+      &lt;Opcode&gt;0&lt;/Opcode&gt; 
+      &lt;Keywords&gt;0x8020000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-25T11:12:01.633495600Z&quot; /&gt; 
+      &lt;EventRecordID&gt;355145&lt;/EventRecordID&gt; 
+      &lt;Correlation ActivityID=&quot;{560c789f-2b44-0004-e278-0c56442bd501}&quot; /&gt; 
+      &lt;Execution ProcessID=&quot;680&quot; ThreadID=&quot;792&quot; /&gt; 
+      &lt;Channel&gt;Security&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data Name=&quot;SubjectUserSid&quot;&gt;S-1-0-0&lt;/Data&gt; 
+      &lt;Data Name=&quot;SubjectUserName&quot;&gt;-&lt;/Data&gt; 
+      &lt;Data Name=&quot;SubjectDomainName&quot;&gt;-&lt;/Data&gt; 
+      &lt;Data Name=&quot;SubjectLogonId&quot;&gt;0x0&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetUserSid&quot;&gt;S-1-5-21-3461203602-4096304019-2269080069-1000&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetUserName&quot;&gt;IEUser&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetDomainName&quot;&gt;MSEDGEWIN10&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetLogonId&quot;&gt;0x23079d&lt;/Data&gt; 
+      &lt;Data Name=&quot;LogonType&quot;&gt;3&lt;/Data&gt; 
+      &lt;Data Name=&quot;LogonProcessName&quot;&gt;NtLmSsp&lt;/Data&gt; 
+      &lt;Data Name=&quot;AuthenticationPackageName&quot;&gt;NTLM&lt;/Data&gt; 
+      &lt;Data Name=&quot;WorkstationName&quot;&gt;KALI-WINDOWS&lt;/Data&gt; 
+      &lt;Data Name=&quot;LogonGuid&quot;&gt;{00000000-0000-0000-0000-000000000000}&lt;/Data&gt; 
+      &lt;Data Name=&quot;TransmittedServices&quot;&gt;-&lt;/Data&gt; 
+      &lt;Data Name=&quot;LmPackageName&quot;&gt;NTLM V2&lt;/Data&gt; 
+      &lt;Data Name=&quot;KeyLength&quot;&gt;128&lt;/Data&gt; 
+      &lt;Data Name=&quot;ProcessId&quot;&gt;0x0&lt;/Data&gt; 
+      &lt;Data Name=&quot;ProcessName&quot;&gt;-&lt;/Data&gt; 
+      &lt;Data Name=&quot;IpAddress&quot;&gt;192.168.56.1&lt;/Data&gt; 
+      &lt;Data Name=&quot;IpPort&quot;&gt;3495&lt;/Data&gt; 
+      &lt;Data Name=&quot;ImpersonationLevel&quot;&gt;%%1833&lt;/Data&gt; 
+      &lt;Data Name=&quot;RestrictedAdminMode&quot;&gt;-&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetOutboundUserName&quot;&gt;-&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetOutboundDomainName&quot;&gt;-&lt;/Data&gt; 
+      &lt;Data Name=&quot;VirtualAccount&quot;&gt;%%1843&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetLinkedLogonId&quot;&gt;0x0&lt;/Data&gt; 
+      &lt;Data Name=&quot;ElevatedToken&quot;&gt;%%1842&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node><node custom_icon_id="0" foreground="" is_bold="False" name="3. 4698 - Other Object Access Events (Success)" prog_lang="xml" readonly="True" tags="" ts_creation="1561461212.56" ts_lastsave="1561465917.8" unique_id="59"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+  &lt;Provider Name=&quot;Microsoft-Windows-Security-Auditing&quot; Guid=&quot;{54849625-5478-4994-a5ba-3e3b0328c30d}&quot; /&gt; 
+  &lt;EventID&gt;4698&lt;/EventID&gt; 
+  &lt;Version&gt;0&lt;/Version&gt; 
+  &lt;Level&gt;0&lt;/Level&gt; 
+  &lt;Task&gt;12804&lt;/Task&gt; 
+  &lt;Opcode&gt;0&lt;/Opcode&gt; 
+  &lt;Keywords&gt;0x8020000000000000&lt;/Keywords&gt; 
+  &lt;TimeCreated SystemTime=&quot;2019-06-25T05:28:22.131432600Z&quot; /&gt; 
+  &lt;EventRecordID&gt;355148&lt;/EventRecordID&gt; 
+  &lt;Correlation ActivityID=&quot;{560c789f-2b44-0004-e278-0c56442bd501}&quot; /&gt; 
+  &lt;Execution ProcessID=&quot;680&quot; ThreadID=&quot;792&quot; /&gt; 
+  &lt;Channel&gt;Security&lt;/Channel&gt; 
+  &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+  &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+  &lt;Data Name=&quot;SubjectUserSid&quot;&gt;S-1-5-21-3461203602-4096304019-2269080069-1000&lt;/Data&gt; 
+  &lt;Data Name=&quot;SubjectUserName&quot;&gt;IEUser&lt;/Data&gt; 
+  &lt;Data Name=&quot;SubjectDomainName&quot;&gt;MSEDGEWIN10&lt;/Data&gt; 
+  &lt;Data Name=&quot;SubjectLogonId&quot;&gt;0x23079d&lt;/Data&gt; 
+  &lt;Data Name=&quot;TaskName&quot;&gt;\scheduled_task&lt;/Data&gt; 
+  &lt;Data Name=&quot;TaskContent&quot;&gt;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-16&quot;?&gt; 
+      &lt;Task version=&quot;1.2&quot; xmlns=&quot;http://schemas.microsoft.com/windows/2004/02/mit/task&quot;&gt; 
+          &lt;RegistrationInfo&gt; 
+              &lt;Date&gt;2019-06-25T18:44:22&lt;/Date&gt; 
+              &lt;Author&gt;KALI-WINDOWS\Jebidiah&lt;/Author&gt; 
+              &lt;URI&gt;\scheduled_task&lt;/URI&gt; 
+          &lt;/RegistrationInfo&gt; 
+          &lt;Triggers&gt; 
+              &lt;TimeTrigger&gt; 
+                  &lt;Repetition&gt; 
+                      &lt;Interval&gt;PT2M&lt;/Interval&gt; 
+                      &lt;StopAtDurationEnd&gt;false&lt;/StopAtDurationEnd&gt; 
+                  &lt;/Repetition&gt; 
+                  &lt;StartBoundary&gt;2019-06-23T00:00:00&lt;/StartBoundary&gt; 
+                  &lt;Enabled&gt;true&lt;/Enabled&gt; 
+              &lt;/TimeTrigger&gt; 
+          &lt;/Triggers&gt; 
+          &lt;Settings&gt; 
+              &lt;MultipleInstancesPolicy&gt;IgnoreNew&lt;/MultipleInstancesPolicy&gt; 
+              &lt;DisallowStartIfOnBatteries&gt;true&lt;/DisallowStartIfOnBatteries&gt; 
+              &lt;StopIfGoingOnBatteries&gt;true&lt;/StopIfGoingOnBatteries&gt; 
+              &lt;AllowHardTerminate&gt;true&lt;/AllowHardTerminate&gt; 
+              &lt;StartWhenAvailable&gt;false&lt;/StartWhenAvailable&gt; 
+              &lt;RunOnlyIfNetworkAvailable&gt;false&lt;/RunOnlyIfNetworkAvailable&gt; 
+              &lt;IdleSettings&gt; 
+                  &lt;Duration&gt;PT10M&lt;/Duration&gt; 
+                  &lt;WaitTimeout&gt;PT1H&lt;/WaitTimeout&gt; 
+                  &lt;StopOnIdleEnd&gt;true&lt;/StopOnIdleEnd&gt; 
+                  &lt;RestartOnIdle&gt;false&lt;/RestartOnIdle&gt; 
+              &lt;/IdleSettings&gt; 
+              &lt;AllowStartOnDemand&gt;true&lt;/AllowStartOnDemand&gt; 
+              &lt;Enabled&gt;true&lt;/Enabled&gt; 
+              &lt;Hidden&gt;false&lt;/Hidden&gt; 
+              &lt;RunOnlyIfIdle&gt;false&lt;/RunOnlyIfIdle&gt; 
+              &lt;WakeToRun&gt;false&lt;/WakeToRun&gt; 
+              &lt;ExecutionTimeLimit&gt;PT72H&lt;/ExecutionTimeLimit&gt; 
+              &lt;Priority&gt;7&lt;/Priority&gt; 
+          &lt;/Settings&gt; 
+          &lt;Actions Context=&quot;Author&quot;&gt; 
+              &lt;Exec&gt; 
+                  &lt;Command&gt;powershell.exe&lt;/Command&gt; 
+                  &lt;Arguments&gt;-enc QQBkAGQALQBDAG8AbgB0AGUAbgB0ACAAQwA6AFwAVQBzAGUAcgBzAFwASQBFAFUAcwBlAHIAXABEAGUAcwBrAHQAbwBwAFwAdABhAHMAawAuAHQAeAB0ACAAIgBTAGMAaABlAGQAdQBsAGUAZAAgAFQAYQBzAGsALgAiAAoA&lt;/Arguments&gt; 
+              &lt;/Exec&gt; 
+          &lt;/Actions&gt; 
+          &lt;Principals&gt; 
+              &lt;Principal id=&quot;Author&quot;&gt; 
+                  &lt;UserId&gt;\IEUser&lt;/UserId&gt; 
+                  &lt;LogonType&gt;InteractiveToken&lt;/LogonType&gt; 
+                  &lt;RunLevel&gt;LeastPrivilege&lt;/RunLevel&gt; 
+              &lt;/Principal&gt; 
+          &lt;/Principals&gt; 
+      &lt;/Task&gt;
+  &lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node></node></node></node><node custom_icon_id="0" foreground="" is_bold="False" name="4. Check if the scheduled task runs" prog_lang="custom-colors" readonly="True" tags="" ts_creation="1561462315.59" ts_lastsave="1561466404.37" unique_id="60"><rich_text scale="h1">4. Check if the scheduled task runs:  </rich_text><rich_text>
+  
+</rich_text><rich_text scale="h1">• </rich_text><rich_text scale="h1" underline="single" weight="heavy">Remote</rich_text><rich_text scale="h1" underline="single"> </rich_text><rich_text scale="h1" underline="single" weight="heavy">Machine</rich_text><rich_text scale="h1">:</rich_text><rich_text>
+     </rich_text><rich_text justification="left"></rich_text><rich_text>
+
+</rich_text><rich_text scale="h2">    </rich_text><rich_text scale="h2" weight="heavy">NOTES:</rich_text><rich_text>
+</rich_text><rich_text scale="h2">       • The created scheduled task appends the string, “Scheduled Task.”, to the file task.txt every 2 minutes</rich_text><rich_text>.
+</rich_text><rich_text scale="h2">       • The scheduled task runs as expected</rich_text><rich_text>.
+         
+  
+   </rich_text><rich_text scale="h2">• </rich_text><rich_text scale="h2" weight="heavy">Logs Generated:</rich_text><rich_text>
+</rich_text><rich_text scale="h2">        •  </rich_text><rich_text link="node 62" scale="h2" weight="heavy">LogName: Security</rich_text><rich_text scale="sup"> (&lt;- CLICK HERE TO VIEW BRIEF SUMMARY)</rich_text><rich_text weight="heavy">:</rich_text><rich_text>
+</rich_text><rich_text scale="h2">               1. </rich_text><rich_text link="node 63" scale="h2">4688 - Process Creation (Success)</rich_text><rich_text>
+</rich_text><rich_text scale="h2">               2. </rich_text><rich_text link="node 64" scale="h2">4688 - Process Creation (Success)</rich_text><rich_text>
+</rich_text><rich_text scale="h2">        •  </rich_text><rich_text link="node 65" scale="h2" weight="heavy">PowerShell Logs</rich_text><rich_text scale="h2"> </rich_text><rich_text scale="sup">(&lt;- CLICK HERE TO VIEW BRIEF SUMMARY)</rich_text><rich_text scale="h2">:
+               1. </rich_text><rich_text link="node 66" scale="h2">400 - Engine Lifecycle</rich_text><rich_text scale="h2">
+               2. </rich_text><rich_text link="node 67" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text>
+</rich_text><rich_text scale="h2">               3. </rich_text><rich_text link="node 68" scale="h2">800 - Pipeline Execution Details</rich_text><codebox char_offset="65" frame_height="595" frame_width="91" highlight_brackets="True" show_line_numbers="False" syntax_highlighting="powershell" width_in_pixels="False">dir task.txt
+#
+#     Directory: C:\Users\IEUser\Desktop
+# 
+#
+# Mode                LastWriteTime         Length Name
+# ----                -------------         ------ ----
+# -a----        6/25/2019   5:04 AM             17 task.txt
+#
+
+dir task.txt
+#
+#     Directory: C:\Users\IEUser\Desktop
+# 
+#
+# Mode                LastWriteTime         Length Name
+# ----                -------------         ------ ----
+# -a----        6/25/2019   5:06 AM             34 task.txt
+#
+
+dir task.txt
+#
+#     Directory: C:\Users\IEUser\Desktop
+# 
+#
+# Mode                LastWriteTime         Length Name
+# ----                -------------         ------ ----
+# -a----        6/25/2019   5:08 AM             51 task.txt
+#</codebox><node custom_icon_id="0" foreground="" is_bold="False" name="LogName: Security" prog_lang="custom-colors" readonly="True" tags="" ts_creation="1561462976.35" ts_lastsave="1561466195.43" unique_id="62"><rich_text scale="h2">    1. </rich_text><rich_text link="node 63" scale="h2">4688 - Process Creation (Success)</rich_text><rich_text>
+          </rich_text><rich_text justification="left"></rich_text><rich_text>
+          
+</rich_text><rich_text scale="h2">    2. </rich_text><rich_text link="node 64" scale="h2">4688 - Process Creation (Success)</rich_text><rich_text>
+          </rich_text><rich_text justification="left"></rich_text><table char_offset="51" col_max="750" col_min="40"><row><cell>NewProcessName</cell><cell>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</cell></row><row><cell>CommandLine</cell><cell>powershell.exe -enc QQBkAGQALQBDAG8AbgB0AGUAbgB0ACAAQwA6AFwAVQBzAGUAcgBzAFwASQBFAFUAcwBlAHIAXABEAGUAcwBrAHQAbwBwAFwAdABhAHMAawAuAHQAeAB0ACAAIgBTAGMAaABlAGQAdQBsAGUAZAAgAFQAYQBzAGsALgAiAAoA</cell></row><row><cell>ParentProcessName</cell><cell>C:\Windows\System32\svchost.exe</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><table char_offset="115" col_max="750" col_min="40"><row><cell>NewProcessName</cell><cell>C:\Windows\System32\conhost.exe</cell></row><row><cell>CommandLine</cell><cell>\??\C:\Windows\system32\conhost.exe 0xffffffff -ForceV1</cell></row><row><cell>ParentProcessName</cell><cell>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><node custom_icon_id="0" foreground="" is_bold="False" name="1. 4688 - Process Creation (Success)" prog_lang="xml" readonly="True" tags="" ts_creation="1561462988.31" ts_lastsave="1561463059.18" unique_id="63"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+      &lt;Provider Name=&quot;Microsoft-Windows-Security-Auditing&quot; Guid=&quot;{54849625-5478-4994-a5ba-3e3b0328c30d}&quot; /&gt; 
+      &lt;EventID&gt;4688&lt;/EventID&gt; 
+      &lt;Version&gt;2&lt;/Version&gt; 
+      &lt;Level&gt;0&lt;/Level&gt; 
+      &lt;Task&gt;13312&lt;/Task&gt; 
+      &lt;Opcode&gt;0&lt;/Opcode&gt; 
+      &lt;Keywords&gt;0x8020000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-25T11:40:00.865735200Z&quot; /&gt; 
+      &lt;EventRecordID&gt;356070&lt;/EventRecordID&gt; 
+      &lt;Correlation /&gt; 
+      &lt;Execution ProcessID=&quot;4&quot; ThreadID=&quot;1864&quot; /&gt; 
+      &lt;Channel&gt;Security&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data Name=&quot;SubjectUserSid&quot;&gt;S-1-5-18&lt;/Data&gt; 
+      &lt;Data Name=&quot;SubjectUserName&quot;&gt;MSEDGEWIN10$&lt;/Data&gt; 
+      &lt;Data Name=&quot;SubjectDomainName&quot;&gt;WORKGROUP&lt;/Data&gt; 
+      &lt;Data Name=&quot;SubjectLogonId&quot;&gt;0x3e7&lt;/Data&gt; 
+      &lt;Data Name=&quot;NewProcessId&quot;&gt;0x1110&lt;/Data&gt; 
+      &lt;Data Name=&quot;NewProcessName&quot;&gt;C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe&lt;/Data&gt; 
+      &lt;Data Name=&quot;TokenElevationType&quot;&gt;%%1938&lt;/Data&gt; 
+      &lt;Data Name=&quot;ProcessId&quot;&gt;0x51c&lt;/Data&gt; 
+      &lt;Data Name=&quot;CommandLine&quot;&gt;powershell.exe -enc QQBkAGQALQBDAG8AbgB0AGUAbgB0ACAAQwA6AFwAVQBzAGUAcgBzAFwASQBFAFUAcwBlAHIAXABEAGUAcwBrAHQAbwBwAFwAdABhAHMAawAuAHQAeAB0ACAAIgBTAGMAaABlAGQAdQBsAGUAZAAgAFQAYQBzAGsALgAiAAoA&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetUserSid&quot;&gt;S-1-5-21-3461203602-4096304019-2269080069-1000&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetUserName&quot;&gt;IEUser&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetDomainName&quot;&gt;MSEDGEWIN10&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetLogonId&quot;&gt;0x2685c&lt;/Data&gt; 
+      &lt;Data Name=&quot;ParentProcessName&quot;&gt;C:\Windows\System32\svchost.exe&lt;/Data&gt; 
+      &lt;Data Name=&quot;MandatoryLabel&quot;&gt;S-1-16-8192&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node><node custom_icon_id="0" foreground="" is_bold="False" name="2. 4688 - Process Creation (Success)" prog_lang="xml" readonly="True" tags="" ts_creation="1561462991.91" ts_lastsave="1561463072.09" unique_id="64"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+      &lt;Provider Name=&quot;Microsoft-Windows-Security-Auditing&quot; Guid=&quot;{54849625-5478-4994-a5ba-3e3b0328c30d}&quot; /&gt; 
+      &lt;EventID&gt;4688&lt;/EventID&gt; 
+      &lt;Version&gt;2&lt;/Version&gt; 
+      &lt;Level&gt;0&lt;/Level&gt; 
+      &lt;Task&gt;13312&lt;/Task&gt; 
+      &lt;Opcode&gt;0&lt;/Opcode&gt; 
+      &lt;Keywords&gt;0x8020000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-25T11:40:00.869552500Z&quot; /&gt; 
+      &lt;EventRecordID&gt;356071&lt;/EventRecordID&gt; 
+      &lt;Correlation /&gt; 
+      &lt;Execution ProcessID=&quot;4&quot; ThreadID=&quot;1864&quot; /&gt; 
+      &lt;Channel&gt;Security&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data Name=&quot;SubjectUserSid&quot;&gt;S-1-5-21-3461203602-4096304019-2269080069-1000&lt;/Data&gt; 
+      &lt;Data Name=&quot;SubjectUserName&quot;&gt;IEUser&lt;/Data&gt; 
+      &lt;Data Name=&quot;SubjectDomainName&quot;&gt;MSEDGEWIN10&lt;/Data&gt; 
+      &lt;Data Name=&quot;SubjectLogonId&quot;&gt;0x2685c&lt;/Data&gt; 
+      &lt;Data Name=&quot;NewProcessId&quot;&gt;0x970&lt;/Data&gt; 
+      &lt;Data Name=&quot;NewProcessName&quot;&gt;C:\Windows\System32\conhost.exe&lt;/Data&gt; 
+      &lt;Data Name=&quot;TokenElevationType&quot;&gt;%%1938&lt;/Data&gt; 
+      &lt;Data Name=&quot;ProcessId&quot;&gt;0x1110&lt;/Data&gt; 
+      &lt;Data Name=&quot;CommandLine&quot;&gt;\??\C:\Windows\system32\conhost.exe 0xffffffff -ForceV1&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetUserSid&quot;&gt;S-1-0-0&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetUserName&quot;&gt;-&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetDomainName&quot;&gt;-&lt;/Data&gt; 
+      &lt;Data Name=&quot;TargetLogonId&quot;&gt;0x0&lt;/Data&gt; 
+      &lt;Data Name=&quot;ParentProcessName&quot;&gt;C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe&lt;/Data&gt; 
+      &lt;Data Name=&quot;MandatoryLabel&quot;&gt;S-1-16-8192&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node></node><node custom_icon_id="0" foreground="" is_bold="False" name="PowerShell Logs" prog_lang="custom-colors" readonly="True" tags="" ts_creation="1561463605.45" ts_lastsave="1561466398.99" unique_id="65"><rich_text scale="h2">    1. </rich_text><rich_text link="node 36" scale="h2">400 - Engine Lifecycle</rich_text><rich_text>
+          </rich_text><rich_text justification="left"></rich_text><rich_text scale="h2">
+            
+    2. </rich_text><rich_text link="node 37" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text>
+          </rich_text><rich_text justification="left"></rich_text><rich_text>
+          
+</rich_text><rich_text scale="h2">    3. </rich_text><rich_text link="node 37" scale="h2">800 - Pipeline Execution Details</rich_text><rich_text>
+          </rich_text><rich_text justification="left"></rich_text><table char_offset="40" col_max="750" col_min="40"><row><cell>Computer</cell><cell>MSEDGEWIN10</cell></row><row><cell>Data</cell><cell>Available</cell></row><row><cell>Data</cell><cell>None</cell></row><row><cell>Data</cell><cell>NewEngineState=Available PreviousEngineState=None SequenceNumber=13 HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=bd01a224-bf58-4a7d-b5a7-b3108fee90b3 HostApplication=powershell.exe -enc QQBkAGQALQBDAG8AbgB0AGUAbgB0ACAAQwA6AFwAVQBzAGUAcgBzAFwASQBFAFUAcwBlAHIAXABEAGUAcwBrAHQAbwBwAFwAdABhAHMAawAuAHQAeAB0ACAAIgBTAGMAaABlAGQAdQBsAGUAZAAgAFQAYQBzAGsALgAiAAoA EngineVersion=5.1.17763.316 RunspaceId=9e121391-8e37-4235-b39a-8c70b444fd2b PipelineId= CommandName= CommandType= ScriptName= CommandPath= CommandLine=</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><table char_offset="105" col_max="750" col_min="40"><row><cell>Computer</cell><cell>MSEDGEWIN10</cell></row><row><cell>Data</cell><cell>Add-Content C:\Users\IEUser\Desktop\task.txt &quot;Scheduled Task.&quot;</cell></row><row><cell>Data</cell><cell>DetailSequence=1 DetailTotal=1 SequenceNumber=15 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=bd01a224-bf58-4a7d-b5a7-b3108fee90b3 HostApplication=powershell.exe -enc QQBkAGQALQBDAG8AbgB0AGUAbgB0ACAAQwA6AFwAVQBzAGUAcgBzAFwASQBFAFUAcwBlAHIAXABEAGUAcwBrAHQAbwBwAFwAdABhAHMAawAuAHQAeAB0ACAAIgBTAGMAaABlAGQAdQBsAGUAZAAgAFQAYQBzAGsALgAiAAoA EngineVersion=5.1.17763.316 RunspaceId=9e121391-8e37-4235-b39a-8c70b444fd2b PipelineId=1 ScriptName= CommandLine=Add-Content C:\Users\IEUser\Desktop\task.txt &quot;Scheduled Task.&quot;</cell></row><row><cell>Data</cell><cell>CommandInvocation(Add-Content): &quot;Add-Content&quot; ParameterBinding(Add-Content): name=&quot;Path&quot;; value=&quot;C:\Users\IEUser\Desktop\task.txt&quot; ParameterBinding(Add-Content): name=&quot;Value&quot;; value=&quot;Scheduled Task.&quot;</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><table char_offset="168" col_max="750" col_min="40"><row><cell>Computer</cell><cell>MSEDGEWIN10</cell></row><row><cell>Data</cell><cell>DetailSequence=1 DetailTotal=1 SequenceNumber=17 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=bd01a224-bf58-4a7d-b5a7-b3108fee90b3 HostApplication=powershell.exe -enc QQBkAGQALQBDAG8AbgB0AGUAbgB0ACAAQwA6AFwAVQBzAGUAcgBzAFwASQBFAFUAcwBlAHIAXABEAGUAcwBrAHQAbwBwAFwAdABhAHMAawAuAHQAeAB0ACAAIgBTAGMAaABlAGQAdQBsAGUAZAAgAFQAYQBzAGsALgAiAAoA EngineVersion=5.1.17763.316 RunspaceId=9e121391-8e37-4235-b39a-8c70b444fd2b PipelineId=1 ScriptName= CommandLine=</cell></row><row><cell>Data</cell><cell>CommandInvocation(Out-Default): &quot;Out-Default&quot;</cell></row><row><cell>Field Name</cell><cell>Value</cell></row></table><node custom_icon_id="0" foreground="" is_bold="False" name="1. 400 - Engine Lifecycle" prog_lang="xml" readonly="True" tags="" ts_creation="1561463626.63" ts_lastsave="1561463753.21" unique_id="66"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+      &lt;Provider Name=&quot;PowerShell&quot; /&gt; 
+      &lt;EventID Qualifiers=&quot;0&quot;&gt;400&lt;/EventID&gt; 
+      &lt;Level&gt;4&lt;/Level&gt; 
+      &lt;Task&gt;4&lt;/Task&gt; 
+      &lt;Keywords&gt;0x80000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-25T11:50:01.554031600Z&quot; /&gt; 
+      &lt;EventRecordID&gt;2923&lt;/EventRecordID&gt; 
+      &lt;Channel&gt;Windows PowerShell&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data&gt;Available&lt;/Data&gt; 
+      &lt;Data&gt;None&lt;/Data&gt; 
+      &lt;Data&gt;NewEngineState=Available PreviousEngineState=None SequenceNumber=13 HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=bd01a224-bf58-4a7d-b5a7-b3108fee90b3 HostApplication=powershell.exe -enc QQBkAGQALQBDAG8AbgB0AGUAbgB0ACAAQwA6AFwAVQBzAGUAcgBzAFwASQBFAFUAcwBlAHIAXABEAGUAcwBrAHQAbwBwAFwAdABhAHMAawAuAHQAeAB0ACAAIgBTAGMAaABlAGQAdQBsAGUAZAAgAFQAYQBzAGsALgAiAAoA EngineVersion=5.1.17763.316 RunspaceId=9e121391-8e37-4235-b39a-8c70b444fd2b PipelineId= CommandName= CommandType= ScriptName= CommandPath= CommandLine=&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node><node custom_icon_id="0" foreground="" is_bold="False" name="2. 800 - Pipeline Execution Details" prog_lang="xml" readonly="True" tags="" ts_creation="1561463639.53" ts_lastsave="1561463731.44" unique_id="67"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+      &lt;Provider Name=&quot;PowerShell&quot; /&gt; 
+      &lt;EventID Qualifiers=&quot;0&quot;&gt;800&lt;/EventID&gt; 
+      &lt;Level&gt;4&lt;/Level&gt; 
+      &lt;Task&gt;8&lt;/Task&gt; 
+      &lt;Keywords&gt;0x80000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-25T11:50:01.616974800Z&quot; /&gt; 
+      &lt;EventRecordID&gt;2924&lt;/EventRecordID&gt; 
+      &lt;Channel&gt;Windows PowerShell&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data&gt;Add-Content C:\Users\IEUser\Desktop\task.txt &quot;Scheduled Task.&quot;&lt;/Data&gt; 
+      &lt;Data&gt;DetailSequence=1 DetailTotal=1 SequenceNumber=15 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=bd01a224-bf58-4a7d-b5a7-b3108fee90b3 HostApplication=powershell.exe -enc QQBkAGQALQBDAG8AbgB0AGUAbgB0ACAAQwA6AFwAVQBzAGUAcgBzAFwASQBFAFUAcwBlAHIAXABEAGUAcwBrAHQAbwBwAFwAdABhAHMAawAuAHQAeAB0ACAAIgBTAGMAaABlAGQAdQBsAGUAZAAgAFQAYQBzAGsALgAiAAoA EngineVersion=5.1.17763.316 RunspaceId=9e121391-8e37-4235-b39a-8c70b444fd2b PipelineId=1 ScriptName= CommandLine=Add-Content C:\Users\IEUser\Desktop\task.txt &quot;Scheduled Task.&quot;&lt;/Data&gt; 
+      &lt;Data&gt;CommandInvocation(Add-Content): &quot;Add-Content&quot; ParameterBinding(Add-Content): name=&quot;Path&quot;; value=&quot;C:\Users\IEUser\Desktop\task.txt&quot; ParameterBinding(Add-Content): name=&quot;Value&quot;; value=&quot;Scheduled Task.&quot;&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node><node custom_icon_id="0" foreground="" is_bold="False" name="3. 800 - Pipeline Execution Details" prog_lang="xml" readonly="True" tags="" ts_creation="1561463643.56" ts_lastsave="1561463766.6" unique_id="68"><rich_text>- &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;
+- &lt;System&gt;
+      &lt;Provider Name=&quot;PowerShell&quot; /&gt; 
+      &lt;EventID Qualifiers=&quot;0&quot;&gt;800&lt;/EventID&gt; 
+      &lt;Level&gt;4&lt;/Level&gt; 
+      &lt;Task&gt;8&lt;/Task&gt; 
+      &lt;Keywords&gt;0x80000000000000&lt;/Keywords&gt; 
+      &lt;TimeCreated SystemTime=&quot;2019-06-25T11:50:01.616974800Z&quot; /&gt; 
+      &lt;EventRecordID&gt;2925&lt;/EventRecordID&gt; 
+      &lt;Channel&gt;Windows PowerShell&lt;/Channel&gt; 
+      &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt; 
+      &lt;Security /&gt; 
+  &lt;/System&gt;
+- &lt;EventData&gt;
+      &lt;Data /&gt; 
+      &lt;Data&gt;DetailSequence=1 DetailTotal=1 SequenceNumber=17 UserId=MSEDGEWIN10\IEUser HostName=ConsoleHost HostVersion=5.1.17763.316 HostId=bd01a224-bf58-4a7d-b5a7-b3108fee90b3 HostApplication=powershell.exe -enc QQBkAGQALQBDAG8AbgB0AGUAbgB0ACAAQwA6AFwAVQBzAGUAcgBzAFwASQBFAFUAcwBlAHIAXABEAGUAcwBrAHQAbwBwAFwAdABhAHMAawAuAHQAeAB0ACAAIgBTAGMAaABlAGQAdQBsAGUAZAAgAFQAYQBzAGsALgAiAAoA EngineVersion=5.1.17763.316 RunspaceId=9e121391-8e37-4235-b39a-8c70b444fd2b PipelineId=1 ScriptName= CommandLine=&lt;/Data&gt; 
+      &lt;Data&gt;CommandInvocation(Out-Default): &quot;Out-Default&quot;&lt;/Data&gt; 
+  &lt;/EventData&gt;
+  &lt;/Event&gt;</rich_text></node></node></node></node></cherrytree>
