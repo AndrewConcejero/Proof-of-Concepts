@@ -1,0 +1,103 @@
+<?xml version="1.0" ?><cherrytree><node custom_icon_id="0" foreground="" is_bold="True" name="BP-6002-008-2019" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1563327922.37" ts_lastsave="1564054497.7" unique_id="200"><rich_text scale="h3" weight="heavy">Title:</rich_text><rich_text> Using SDelete to delete securely 
+
+</rich_text><rich_text scale="h3" weight="heavy">Description</rich_text><rich_text scale="h3">:</rich_text><rich_text> This section would cover using the tool SDelete to securely delete files, folders or even free disk spcaes. The difference between this and the normal deletion is that it deletes the contents of locations immediately and permanently, rendering said files to be unrecoverable unlike deletion by windows explorer, which can be reversed using the right tools.
+
+</rich_text><rich_text scale="h3" weight="heavy">ATT&amp;CK Tactic and Technique</rich_text><rich_text>: None
+
+</rich_text><rich_text scale="h3" weight="heavy">Use Case ID(s) and Description(s):</rich_text><rich_text> None 
+
+</rich_text><rich_text scale="h3" weight="heavy">Prerequisites:</rich_text><rich_text>
+    
+    1. Machine is a windows 10 virtual machine
+    
+    2. The tool sdelete.exe is available on said machine
+        
+        If not, download the tool here </rich_text><rich_text link="webs https://docs.microsoft.com/en-us/sysinternals/downloads/sdelete">https://docs.microsoft.com/en-us/sysinternals/downloads/sdelete</rich_text><rich_text> 
+        
+    3. Advance audit policies and </rich_text><rich_text link="node 24">Sysmon</rich_text><rich_text> are enabled
+        
+</rich_text><rich_text scale="h3" weight="heavy">Steps to Reproduce and Verify:</rich_text><rich_text>
+    
+    I. Open windows powershell and make SDelete available for execution
+        
+        Either you go to the directory of where the executable is or make it an environmental variable (see prerequisites of </rich_text><rich_text link="node 25">Downloadfile</rich_text><rich_text>)
+        
+        In this POC, the option of just going to the directory of the executable was chosen for simplicity. 
+        
+        Powershell:
+        </rich_text><rich_text foreground="#1e1e9090ffff">PS C:\users\ieuser\Downloads\Sdelete&gt; ls
+
+
+        Directory: C:\users\ieuser\Downloads\Sdelete
+
+
+        Mode                LastWriteTime         Length Name
+        ----                -------------         ------ ----
+        -a----        7/16/2019   6:35 PM           7490 Eula.txt
+        -a----        7/16/2019   6:35 PM         235560 sdelete.exe
+        -a----        7/16/2019   6:35 PM         246528 sdelete64.exe</rich_text><rich_text>
+    
+    II. Use SDelete to delete a file 
+        
+        The file thats going to be deleted is Hello.txt
+             
+        Enter </rich_text><rich_text foreground="#ffff00000000">.\sdelete -q path_of_the_file</rich_text><rich_text> in powershell
+        
+        Powershell:
+        </rich_text><rich_text foreground="#1e1e9090ffff">C:\users\ieuser\downloads\SDelete&gt; .\sdelete -q C:\users\ieuser\desktop\Hello.txt
+
+        SDelete v2.02 - Secure file delete
+        Copyright (C) 1999-2018 Mark Russinovich
+        Sysinternals - </rich_text><rich_text foreground="#1e1e9090ffff" link="webs http://www.sysinternals.com">www.sysinternals.com</rich_text><rich_text foreground="#1e1e9090ffff">
+
+        SDelete is set for 1 pass.
+
+        Files deleted: 1</rich_text><rich_text>
+        
+        Upon execution, logs were produced
+        
+        Security
+        1. </rich_text><rich_text link="node 201">SDelete.exe started</rich_text><rich_text>
+        2. </rich_text><rich_text link="node 202">SDelete exited</rich_text><rich_text>
+        
+        Powershell
+        </rich_text><rich_text link="node 203">Powershell command</rich_text><rich_text>
+        
+        Sysmon
+        </rich_text><rich_text link="node 204">Process Create</rich_text><rich_text>
+        </rich_text><rich_text link="node 205">Process terminate</rich_text><rich_text>
+        
+    II. Use SDelete to delete a folder
+        
+        The folder thats going to be deleted is named randomfolder
+        
+        Enter </rich_text><rich_text foreground="#ffff00000000">.\sdelete -s path_of_folder</rich_text><rich_text> in powershell
+        
+        Powershell:
+        </rich_text><rich_text foreground="#1e1e9090ffff">PS C:\users\ieuser\downloads\SDelete&gt; .\sdelete.exe -s C:\users\ieuser\desktop\randomfolder
+
+        SDelete v2.02 - Secure file delete
+        Copyright (C) 1999-2018 Mark Russinovich
+        Sysinternals - </rich_text><rich_text foreground="#1e1e9090ffff" link="webs http://www.sysinternals.com">www.sysinternals.com</rich_text><rich_text foreground="#1e1e9090ffff">
+
+        SDelete is set for 1 pass.
+
+        Directories deleted: 1</rich_text><rich_text>
+        
+        Upon execution, logs were produced 
+        
+        Security
+        1. </rich_text><rich_text link="node 206">SDelete started</rich_text><rich_text>
+        2. </rich_text><rich_text link="node 207">SDelete exited</rich_text><rich_text>
+        
+        Powershell
+        </rich_text><rich_text link="node 208">Powershell command</rich_text><rich_text>
+        
+        Sysmon
+        1. </rich_text><rich_text link="node 209">Process create</rich_text><rich_text>
+        2. </rich_text><rich_text link="node 210">Process Terminate</rich_text><rich_text>
+       
+</rich_text><rich_text scale="h3" weight="heavy">References:</rich_text><rich_text>
+</rich_text><rich_text link="webs https://jpcertcc.github.io/ToolAnalysisResultSheet/">https://jpcertcc.github.io/ToolAnalysisResultSheet/</rich_text><rich_text>
+</rich_text><rich_text link="webs https://www.ghacks.net/2017/11/14/delete-files-and-free-disk-space-securely-with-sdelete/">https://www.ghacks.net/2017/11/14/delete-files-and-free-disk-space-securely-with-sdelete/</rich_text><rich_text>
+</rich_text></node></cherrytree>

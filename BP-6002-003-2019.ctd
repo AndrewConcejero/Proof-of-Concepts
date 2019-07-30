@@ -1,0 +1,30 @@
+<?xml version="1.0" ?><cherrytree><node custom_icon_id="0" foreground="" is_bold="True" name="BP-6002-003-2019" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1561511796.57" ts_lastsave="1564054444.88" unique_id="3"><rich_text>
+</rich_text><rich_text scale="h3" weight="heavy">Description: </rich_text><rich_text scale="h3">This section would deal with the different tools that can be used in powershell to transfer files. </rich_text><rich_text>
+
+</rich_text><rich_text weight="heavy">ATT&amp;CK Tactic and Technique:</rich_text><rich_text> https://attack.mitre.org/techniques/T1105/
+
+</rich_text><rich_text weight="heavy">Use Case ID(s) and Description(s): </rich_text><rich_text>Usage of file transfer commands on powershell
+Detection Parameters: command line arguments contains something like: “Copy-Item -
+Path \\serverb\c$\programs\temp\test.txt -Destination \\servera\c$\programs\temp\
+test.txt;”, Invoke-WebRequest, System.Net.WebClient, Start-BitsTransfer
+
+</rich_text><rich_text scale="h3" weight="heavy">Prerequisites</rich_text><rich_text scale="h3">: 
+
+ </rich_text><rich_text>   Advance audit policies and </rich_text><rich_text link="node 24">Sysmon</rich_text><rich_text> are enabled
+
+</rich_text><rich_text scale="h3" weight="heavy">Steps to Reproduce and Verify:</rich_text><rich_text>
+
+    1. </rich_text><rich_text link="node 4">Copy-Item</rich_text><rich_text>
+
+    2. </rich_text><rich_text link="node 10">Get-SCP</rich_text><rich_text>
+
+    3. </rich_text><rich_text link="node 25">Downloadfile</rich_text><rich_text>
+    
+    4. </rich_text><rich_text link="node 56">Invokewebrequest</rich_text><rich_text>
+    
+</rich_text><rich_text weight="heavy">References: </rich_text><rich_text>
+</rich_text><rich_text link="webs https://blog.ipswitch.com/use-powershell-copy-item-cmdlet-transfer-files-winrm">https://blog.ipswitch.com/use-powershell-copy-item-cmdlet-transfer-files-winrm</rich_text><rich_text>
+</rich_text><rich_text link="webs https://mcpmag.com/articles/2018/07/19/transfer-files-via-scp-with-powershell.aspx">https://mcpmag.com/articles/2018/07/19/transfer-files-via-scp-with-powershell.aspx</rich_text><rich_text>
+</rich_text><rich_text link="webs https://linuxacademy.com/blog/linux/ssh-and-scp-howto-tips-tricks/">https://linuxacademy.com/blog/linux/ssh-and-scp-howto-tips-tricks/</rich_text><rich_text>
+</rich_text><rich_text link="webs https://blog.jourdant.me/post/3-ways-to-download-files-with-powershell">https://blog.jourdant.me/post/3-ways-to-download-files-with-powershell</rich_text><rich_text>
+</rich_text></node></cherrytree>
