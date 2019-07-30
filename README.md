@@ -1,6 +1,6 @@
 # CATALOG
 
-CALL NO. | TITLE | SOFTWARE USED | CROSS-REFERENCES
+CALL NO. | TITLE | TOOL/METHOD USED | CROSS-REFERENCES
 --- | --- | --- | ---
 EXE-1059-0001-2019 | Long PowerShell Commands    | Invoke-Encode (nishang) | 
 EXE-1035-0001-2019 | PsExec                      | PsExec (S0029)          |
