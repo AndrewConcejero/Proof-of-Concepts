@@ -1,0 +1,175 @@
+<?xml version="1.0" ?><cherrytree><node custom_icon_id="0" foreground="" is_bold="True" name="AC-6000-004-2019" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1561712084.05" ts_lastsave="1564040855.66" unique_id="2"><rich_text weight="heavy">Test Case #186b </rich_text><rich_text>
+</rich_text><rich_text weight="heavy">Title: </rich_text><rich_text>Account Creation through Command Line
+</rich_text><rich_text weight="heavy">Description: </rich_text><rich_text>Account created using cmd.exe detected.
+</rich_text><rich_text weight="heavy">ATT&amp;CK Tactic and Technique: </rich_text><rich_text>Enterprise -&gt; Create Account
+Use Case ID(s) and Description(s): Optional. If this PoC is related to an Item in the Use Cases List
+</rich_text><rich_text weight="heavy">Tool Name and Version: </rich_text><rich_text>Optional.
+</rich_text><rich_text weight="heavy">Prerequisites: </rich_text><rich_text>
+• Windows Machine
+• Access to shell/cmd.exe
+• Audit User Account Management must be enabled. 
+• Audit Process Creation auditing must be enabled. Computer Configuration\Windows Settings\Security Settings\Advanced Audit Policy Configuration\System Audit Policies\Detailed Tracking.  
+• Include command line in process creation events GPO setting. You can find this setting in the following GPO container: Computer Configuration\Administrative Templates\System\Audit Process Creation.
+
+</rich_text><rich_text weight="heavy">Steps to Reproduce:</rich_text><rich_text> 
+1. Open cmd.exe without administrator privileges
+2. Type in ”</rich_text><rich_text style="italic">net user /add [username] [password]</rich_text><rich_text>“
+3. Optional: type in “</rich_text><rich_text style="italic">new localgroup administrators [username] /add</rich_text><rich_text>” to become local admin
+4. Command line will out put ‘Access is denied’
+
+</rich_text><rich_text weight="heavy">Steps to Verify:</rich_text><rich_text> Audit event IDs 4688 (Process creation for command line parameters). Can use event viewer or powershell auditing to verify logs. 
+</rich_text><rich_text link="node 3" weight="heavy">Log(s) Produced</rich_text><rich_text>
+
+</rich_text><rich_text weight="heavy">References: </rich_text><rich_text foreground="#1155cc" link="webs https://attack.mitre.org/techniques/T1136/" underline="single">https://attack.mitre.org/techniques/T1136/</rich_text><rich_text underline="single">
+</rich_text><node custom_icon_id="0" foreground="" is_bold="False" name="logs failed " prog_lang="custom-colors" readonly="False" tags="" ts_creation="1561712585.37" ts_lastsave="1561712721.3" unique_id="3"><rich_text>-</rich_text><rich_text link="node 4">Event ID 4688 - Process Command Line</rich_text><rich_text>
+-Event ID </rich_text><node custom_icon_id="0" foreground="" is_bold="False" name="process command line" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1561712619.91" ts_lastsave="1561712621.49" unique_id="4"><rich_text>Log Name:      Security
+Source:        Microsoft-Windows-Security-Auditing
+Date:          6/28/2019 5:00:31 PM
+Event ID:      4688
+Task Category: Process Creation
+Level:         Information
+Keywords:      Audit Success
+User:          N/A
+Computer:      MSEDGEWIN10
+Description:
+A new process has been created.
+
+Creator Subject:
+	Security ID:		MSEDGEWIN10\IEUser
+	Account Name:		IEUser
+	Account Domain:		MSEDGEWIN10
+	Logon ID:		0x3704E
+
+Target Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+
+Process Information:
+	New Process ID:		0x194c
+	New Process Name:	C:\Windows\System32\net.exe
+	Token Elevation Type:	%%1938
+	Mandatory Label:		Mandatory Label\Medium Mandatory Level
+	Creator Process ID:	0x1a90
+	Creator Process Name:	C:\Windows\System32\cmd.exe
+	Process Command Line:	net  user /add heck
+
+Token Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.
+
+Type 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.
+
+Type 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.
+
+Type 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.
+Event Xml:
+&lt;Event xmlns=&quot;</rich_text><rich_text link="webs http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;">http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;</rich_text><rich_text>
+  &lt;System&gt;
+    &lt;Provider Name=&quot;Microsoft-Windows-Security-Auditing&quot; Guid=&quot;{54849625-5478-4994-a5ba-3e3b0328c30d}&quot; /&gt;
+    &lt;EventID&gt;4688&lt;/EventID&gt;
+    &lt;Version&gt;2&lt;/Version&gt;
+    &lt;Level&gt;0&lt;/Level&gt;
+    &lt;Task&gt;13312&lt;/Task&gt;
+    &lt;Opcode&gt;0&lt;/Opcode&gt;
+    &lt;Keywords&gt;0x8020000000000000&lt;/Keywords&gt;
+    &lt;TimeCreated SystemTime=&quot;2019-06-28T09:00:31.272574400Z&quot; /&gt;
+    &lt;EventRecordID&gt;12682&lt;/EventRecordID&gt;
+    &lt;Correlation /&gt;
+    &lt;Execution ProcessID=&quot;4&quot; ThreadID=&quot;184&quot; /&gt;
+    &lt;Channel&gt;Security&lt;/Channel&gt;
+    &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt;
+    &lt;Security /&gt;
+  &lt;/System&gt;
+  &lt;EventData&gt;
+    &lt;Data Name=&quot;SubjectUserSid&quot;&gt;S-1-5-21-3461203602-4096304019-2269080069-1000&lt;/Data&gt;
+    &lt;Data Name=&quot;SubjectUserName&quot;&gt;IEUser&lt;/Data&gt;
+    &lt;Data Name=&quot;SubjectDomainName&quot;&gt;MSEDGEWIN10&lt;/Data&gt;
+    &lt;Data Name=&quot;SubjectLogonId&quot;&gt;0x3704e&lt;/Data&gt;
+    &lt;Data Name=&quot;NewProcessId&quot;&gt;0x194c&lt;/Data&gt;
+    &lt;Data Name=&quot;NewProcessName&quot;&gt;C:\Windows\System32\net.exe&lt;/Data&gt;
+    &lt;Data Name=&quot;TokenElevationType&quot;&gt;%%1938&lt;/Data&gt;
+    &lt;Data Name=&quot;ProcessId&quot;&gt;0x1a90&lt;/Data&gt;
+    &lt;Data Name=&quot;CommandLine&quot;&gt;net  user /add heck&lt;/Data&gt;
+    &lt;Data Name=&quot;TargetUserSid&quot;&gt;S-1-0-0&lt;/Data&gt;
+    &lt;Data Name=&quot;TargetUserName&quot;&gt;-&lt;/Data&gt;
+    &lt;Data Name=&quot;TargetDomainName&quot;&gt;-&lt;/Data&gt;
+    &lt;Data Name=&quot;TargetLogonId&quot;&gt;0x0&lt;/Data&gt;
+    &lt;Data Name=&quot;ParentProcessName&quot;&gt;C:\Windows\System32\cmd.exe&lt;/Data&gt;
+    &lt;Data Name=&quot;MandatoryLabel&quot;&gt;S-1-16-8192&lt;/Data&gt;
+  &lt;/EventData&gt;
+&lt;/Event&gt;</rich_text></node><node custom_icon_id="0" foreground="" is_bold="False" name="net.exe" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1561712721.3" ts_lastsave="1561712727.37" unique_id="5"><rich_text>Log Name:      Security
+Source:        Microsoft-Windows-Security-Auditing
+Date:          6/28/2019 5:00:31 PM
+Event ID:      4688
+Task Category: Process Creation
+Level:         Information
+Keywords:      Audit Success
+User:          N/A
+Computer:      MSEDGEWIN10
+Description:
+A new process has been created.
+
+Creator Subject:
+	Security ID:		MSEDGEWIN10\IEUser
+	Account Name:		IEUser
+	Account Domain:		MSEDGEWIN10
+	Logon ID:		0x3704E
+
+Target Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+
+Process Information:
+	New Process ID:		0x19f4
+	New Process Name:	C:\Windows\System32\net1.exe
+	Token Elevation Type:	%%1938
+	Mandatory Label:		Mandatory Label\Medium Mandatory Level
+	Creator Process ID:	0x194c
+	Creator Process Name:	C:\Windows\System32\net.exe
+	Process Command Line:	C:\Windows\system32\net1  user /add heck
+
+Token Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.
+
+Type 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.
+
+Type 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.
+
+Type 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.
+Event Xml:
+&lt;Event xmlns=&quot;</rich_text><rich_text link="webs http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;">http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;</rich_text><rich_text>
+  &lt;System&gt;
+    &lt;Provider Name=&quot;Microsoft-Windows-Security-Auditing&quot; Guid=&quot;{54849625-5478-4994-a5ba-3e3b0328c30d}&quot; /&gt;
+    &lt;EventID&gt;4688&lt;/EventID&gt;
+    &lt;Version&gt;2&lt;/Version&gt;
+    &lt;Level&gt;0&lt;/Level&gt;
+    &lt;Task&gt;13312&lt;/Task&gt;
+    &lt;Opcode&gt;0&lt;/Opcode&gt;
+    &lt;Keywords&gt;0x8020000000000000&lt;/Keywords&gt;
+    &lt;TimeCreated SystemTime=&quot;2019-06-28T09:00:31.322036000Z&quot; /&gt;
+    &lt;EventRecordID&gt;12683&lt;/EventRecordID&gt;
+    &lt;Correlation /&gt;
+    &lt;Execution ProcessID=&quot;4&quot; ThreadID=&quot;184&quot; /&gt;
+    &lt;Channel&gt;Security&lt;/Channel&gt;
+    &lt;Computer&gt;MSEDGEWIN10&lt;/Computer&gt;
+    &lt;Security /&gt;
+  &lt;/System&gt;
+  &lt;EventData&gt;
+    &lt;Data Name=&quot;SubjectUserSid&quot;&gt;S-1-5-21-3461203602-4096304019-2269080069-1000&lt;/Data&gt;
+    &lt;Data Name=&quot;SubjectUserName&quot;&gt;IEUser&lt;/Data&gt;
+    &lt;Data Name=&quot;SubjectDomainName&quot;&gt;MSEDGEWIN10&lt;/Data&gt;
+    &lt;Data Name=&quot;SubjectLogonId&quot;&gt;0x3704e&lt;/Data&gt;
+    &lt;Data Name=&quot;NewProcessId&quot;&gt;0x19f4&lt;/Data&gt;
+    &lt;Data Name=&quot;NewProcessName&quot;&gt;C:\Windows\System32\net1.exe&lt;/Data&gt;
+    &lt;Data Name=&quot;TokenElevationType&quot;&gt;%%1938&lt;/Data&gt;
+    &lt;Data Name=&quot;ProcessId&quot;&gt;0x194c&lt;/Data&gt;
+    &lt;Data Name=&quot;CommandLine&quot;&gt;C:\Windows\system32\net1  user /add heck&lt;/Data&gt;
+    &lt;Data Name=&quot;TargetUserSid&quot;&gt;S-1-0-0&lt;/Data&gt;
+    &lt;Data Name=&quot;TargetUserName&quot;&gt;-&lt;/Data&gt;
+    &lt;Data Name=&quot;TargetDomainName&quot;&gt;-&lt;/Data&gt;
+    &lt;Data Name=&quot;TargetLogonId&quot;&gt;0x0&lt;/Data&gt;
+    &lt;Data Name=&quot;ParentProcessName&quot;&gt;C:\Windows\System32\net.exe&lt;/Data&gt;
+    &lt;Data Name=&quot;MandatoryLabel&quot;&gt;S-1-16-8192&lt;/Data&gt;
+  &lt;/EventData&gt;
+&lt;/Event&gt;</rich_text></node></node></node></cherrytree>
