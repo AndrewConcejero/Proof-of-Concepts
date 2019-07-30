@@ -1,0 +1,196 @@
+<?xml version="1.0" ?><cherrytree><node custom_icon_id="0" foreground="" is_bold="True" name="BP-6002-006-2019" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1562565441.59" ts_lastsave="1564054477.22" unique_id="133"><rich_text scale="h3" weight="heavy">Title:</rich_text><rich_text scale="h3"> </rich_text><rich_text>Extracting vital PC information using wmic (Windows management interface command)
+
+</rich_text><rich_text scale="h3" weight="heavy">Description:</rich_text><rich_text scale="h3"> </rich_text><rich_text>wmic is going to be used in powershell to get information about a remote pc such as name, memory, addresses and such
+
+</rich_text><rich_text scale="h3" weight="heavy">ATT&amp;CK Tactic and Technique:</rich_text><rich_text scale="h3"> </rich_text><rich_text>none
+
+</rich_text><rich_text scale="h3" weight="heavy">Use Case ID(s) and Description(s):</rich_text><rich_text scale="h3"> </rich_text><rich_text>none
+
+</rich_text><rich_text scale="h3" weight="heavy">Prerequisites: </rich_text><rich_text>
+    
+    1. Machine will be a windows 10 virtual machine
+    
+    2. Powershell would be used
+    
+    3. Advance audit policies and </rich_text><rich_text link="node 24">Sysmon</rich_text><rich_text> are enabled
+    
+
+</rich_text><rich_text scale="h3" weight="heavy">Steps to Reproduce and Verify:</rich_text><rich_text>
+    
+</rich_text><rich_text scale="h3">    I. Open windows powershell. It can either be administrator or not.</rich_text><rich_text>
+    
+</rich_text><rich_text scale="h3">    II. Create an interactive wmic command line by entering </rich_text><rich_text foreground="#ffff00000000" scale="h3">wmic</rich_text><rich_text scale="h3"> on powershell</rich_text><rich_text>
+    
+        Upon entering, logs were produced
+        
+        Security
+        </rich_text><rich_text link="node 135">Event 4688</rich_text><rich_text>
+        
+        Powershell
+        </rich_text><rich_text link="node 136">Event 4014</rich_text><rich_text>
+        
+        Sysmon
+        </rich_text><rich_text link="node 137">Event 1</rich_text><rich_text>
+        
+        Once a sort of shell is created, multiple types of command can be issued. It can vary from system information, addresses or even process creation or termination
+        
+</rich_text><rich_text scale="h3">    III. Issue commands </rich_text><rich_text>
+        
+</rich_text><rich_text weight="heavy">        1. Get computer model and manufacturer</rich_text><rich_text>
+            
+            In the wmic command line interface, </rich_text><rich_text foreground="#ffffffffffff">enter</rich_text><rich_text foreground="#ffff00000000"> computersystem get model</rich_text><rich_text>
+            
+            Powershell:
+            </rich_text><rich_text foreground="#1e1e9090ffff">Model
+            VirtualBox</rich_text><rich_text>
+            
+            Upon entering a log was produced:
+            
+            Security
+            </rich_text><rich_text link="node 138">Event 4703</rich_text><rich_text>
+                          
+</rich_text><rich_text weight="heavy">        2. Get BIOS Serial Number</rich_text><rich_text>
+            
+            In wmic command line interface, enter </rich_text><rich_text foreground="#ffff00000000">bios get serialnumber</rich_text><rich_text>
+            
+            Powershell: 
+            </rich_text><rich_text foreground="#1e1e9090ffff">SerialNumber
+            0</rich_text><rich_text>
+            
+            Upon entering a log was produced:
+            </rich_text><rich_text link="node 138">Event 4703</rich_text><rich_text>
+
+</rich_text><rich_text weight="heavy">        3. Get Network Interface Mac Addresses </rich_text><rich_text>
+            
+            In wmic command line interface, enter </rich_text><rich_text foreground="#ffff00000000">nic get macaddress</rich_text><rich_text>
+            
+            Powershell:
+            </rich_text><rich_text foreground="#1e1e9090ffff">MACAddress
+
+            08:00:27:E6:E5:59
+
+
+
+
+
+            68:A2:20:52:41:53
+            68:A2:20:52:41:53
+            68:A2:20:52:41:53
+            02:00:4C:4F:4F:50</rich_text><rich_text>
+            
+            Upon entering a log was produced:
+            </rich_text><rich_text link="node 138">Event 4703</rich_text><rich_text>           
+
+</rich_text><rich_text weight="heavy">        4. Get RAM or Physical memory size</rich_text><rich_text>
+        
+            In wmic command line interface , enter </rich_text><rich_text foreground="#ffff00000000">computersystem get totalphysicalmemory</rich_text><rich_text>
+            
+            Powershell: 
+            </rich_text><rich_text foreground="#1e1e9090ffff">TotalPhysicalMemory
+            4294496256</rich_text><rich_text>
+            
+            Upon entering a log was produced:
+            </rich_text><rich_text link="node 138">Event 4703</rich_text><rich_text> 
+
+</rich_text><rich_text weight="heavy">        5. Get running apps, programs and their memory consumption </rich_text><rich_text>
+        
+            In wmic command line interface, enter </rich_text><rich_text foreground="#ffff00000000">process get workingsetsize, commandline</rich_text><rich_text>
+            
+            Powershell:
+</rich_text><rich_text foreground="#1e1e9090ffff">            //list programs, too many to list down XD</rich_text><rich_text>
+            
+            Upon entering a log was produced:
+            </rich_text><rich_text link="node 138">Event 4703</rich_text><rich_text> 
+
+</rich_text><rich_text weight="heavy">        6. List Services or processes</rich_text><rich_text>
+            
+            In wmic command line interface, enter </rich_text><rich_text foreground="#ffff00000000">service/process list brief</rich_text><rich_text>            
+            
+            Powershell:
+</rich_text><rich_text foreground="#1e1e9090ffff">            //list services or processes, too many to list down XD</rich_text><rich_text>
+          
+            Upon entering a log was produced:
+            </rich_text><rich_text link="node 138">Event 4703</rich_text><rich_text> 
+
+</rich_text><rich_text weight="heavy">        7. Kill Given Process</rich_text><rich_text>
+        
+            In wmic command line interface, enter </rich_text><rich_text foreground="#ffff00000000">process where name=&quot;name goes here.exe&quot; call terminate</rich_text><rich_text>
+            
+            Powershell:
+            </rich_text><rich_text foreground="#1e1e9090ffff">Execute (\\MSEDGEWIN10\ROOT\CIMV2:Win32_Process.Handle=&quot;7424&quot;)-&gt;terminate() (Y/N/?)? Y
+            Method execution successful.
+            Out Parameters:
+            instance of __PARAMETERS
+            {
+            ReturnValue = 0;
+            };</rich_text><rich_text>
+            
+            Upon entering, logs were produced:
+            
+            Security
+            </rich_text><rich_text link="node 139">Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftEdge.exe privilage called</rich_text><rich_text>
+            </rich_text><rich_text link="node 140">MicrosoftEdgeCP.exe created</rich_text><rich_text>
+            </rich_text><rich_text link="node 141">Token svchost.exe</rich_text><rich_text>
+            </rich_text><rich_text link="node 142">Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftEdge.exe exited</rich_text><rich_text>
+            </rich_text><rich_text link="node 143">MicrosoftEdgeCP.exe exited</rich_text><rich_text>
+            </rich_text><rich_text link="node 144">Windows.WARP.JITService.exe exited</rich_text><rich_text>
+            </rich_text><rich_text link="node 145">browser_broker.exe exited</rich_text><rich_text>
+            </rich_text><rich_text link="node 146">MicrosoftEdgeSH.exe exited</rich_text><rich_text>
+            
+            In this example, mircrosoft edge was terminated
+           
+</rich_text><rich_text weight="heavy">        8. Write WMIC output to a file </rich_text><rich_text>
+        
+            After a command, append </rich_text><rich_text foreground="#ffff00000000">&gt; nameoffile.txt</rich_text><rich_text> at the end
+            
+            In this case the command was </rich_text><rich_text foreground="#ffff00000000">wmic</rich_text><rich_text> </rich_text><rich_text foreground="#ffff00000000">process list brief &gt; C:\users\ieuser\desktop\wack.txt</rich_text><rich_text>
+            
+            Powershell: </rich_text><rich_text foreground="#1e1e9090ffff">No output</rich_text><rich_text>
+            
+            Upon entering, logs were produced:           
+            
+            Security
+            </rich_text><rich_text link="node 147">WMIC.exe has started</rich_text><rich_text> 
+            </rich_text><rich_text link="node 148">Token</rich_text><rich_text>
+            </rich_text><rich_text link="node 149">Handle to an object</rich_text><rich_text>
+            </rich_text><rich_text link="node 150">WMIC.exe exited</rich_text><rich_text>
+            
+            Powershell
+            </rich_text><rich_text link="node 151">powershell command</rich_text><rich_text>
+            
+            Sysmon
+            </rich_text><rich_text link="node 152">Process Create</rich_text><rich_text>
+            
+
+</rich_text><rich_text weight="heavy">        9. List Disk Drives (HDD)</rich_text><rich_text>
+        
+            In wmic command line interface, enter </rich_text><rich_text foreground="#ffff00000000">diskdrive get model, name, size</rich_text><rich_text>
+            
+            Powershell:
+</rich_text><rich_text foreground="#1e1e9090ffff">                        Model                                           Name                              Size</rich_text><rich_text>
+</rich_text><rich_text foreground="#1e1e9090ffff">            VBOX HARDDISK ATA Device            \\.\PHYSICALDRIVE0              42944186880</rich_text><rich_text>
+            
+            Upon entering a log was produced:
+            </rich_text><rich_text link="node 138">Event 4703</rich_text><rich_text> 
+            
+
+</rich_text><rich_text weight="heavy">        10. Obtain OS information </rich_text><rich_text>
+        
+            In wmic command line interface, enter </rich_text><rich_text foreground="#ffff00000000">os list brief</rich_text><rich_text>            
+          
+            Powershell: 
+</rich_text><rich_text foreground="#1e1e9090ffff">            BuildNumber     Organization  RegisteredUser                    SerialNumber                    SystemDirectory             Version</rich_text><rich_text>
+</rich_text><rich_text foreground="#1e1e9090ffff">            17763               Microsoft                                   00329-20000-00001-AA236     C:\Windows\system32         10.0.17763</rich_text><rich_text>
+          
+            Upon entering a log was produced:
+            </rich_text><rich_text link="node 138">Event 4703</rich_text><rich_text> 
+            
+</rich_text><rich_text scale="h3" weight="heavy">    Notes:</rich_text><rich_text>
+        
+        Commands entered inside the wmic interactive shell do not create logs.
+                             
+</rich_text><rich_text scale="h3" weight="heavy">References:</rich_text><rich_text> 
+
+</rich_text><rich_text link="webs https://www.darkoperator.com/blog/2013/1/31/introduction-to-wmi-basics-with-powershell-part-1-what-it-is.html">https://www.darkoperator.com/blog/2013/1/31/introduction-to-wmi-basics-with-powershell-part-1-what-it-is.html</rich_text><rich_text>
+</rich_text><rich_text link="webs https://www.poftut.com/windows-wmic-windows-management-interface-command-tutorial-with-examples/">https://www.poftut.com/windows-wmic-windows-management-interface-command-tutorial-with-examples/</rich_text><rich_text>
+</rich_text><rich_text link="webs https://jpcertcc.github.io/ToolAnalysisResultSheet/">https://jpcertcc.github.io/ToolAnalysisResultSheet/</rich_text></node></cherrytree>
