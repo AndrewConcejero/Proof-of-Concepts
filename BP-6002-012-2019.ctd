@@ -1,8 +1,0 @@
-<?xml version="1.0" ?><cherrytree><node custom_icon_id="0" foreground="" is_bold="True" name="BP-6002-012-2019" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1561961033.63" ts_lastsave="1564054535.38" unique_id="24"><rich_text scale="h2" weight="heavy">Installing sysmon</rich_text><rich_text>
-
-</rich_text><rich_text scale="h3">Install and configure sysmon in your PC</rich_text><rich_text scale="h2">
-
-1. Go to </rich_text><rich_text link="webs https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon" scale="h2">https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon</rich_text><rich_text scale="h2"> and donwload Sysmon
-2. Go to </rich_text><rich_text link="webs https://github.com/SwiftOnSecurity/sysmon-config" scale="h2">https://github.com/SwiftOnSecurity/sysmon-config</rich_text><rich_text scale="h2"> and click the link </rich_text><rich_text link="webs https://github.com/SwiftOnSecurity/sysmon-config/blob/master/sysmonconfig-export.xml" scale="h2">sysmonconfig-export.xml</rich_text><rich_text scale="h2"> on the page
-3. In the </rich_text><rich_text link="webs https://github.com/SwiftOnSecurity/sysmon-config/blob/master/sysmonconfig-export.xml" scale="h2">sysmonconfig-export.xml</rich_text><rich_text scale="h2"> link, click raw and save the text as an xml file in your PC with the same name for convenience. 
-4. Open Powershell with administrator rights and enter </rich_text><rich_text background="#00000000ffff" family="monospace" scale="h2">sysmon.exe -accepteula -i sysmonconfig-export.xml</rich_text><rich_text scale="h2">.</rich_text></node></cherrytree>

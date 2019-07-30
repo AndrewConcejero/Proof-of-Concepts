@@ -1,5 +1,0 @@
-<?xml version="1.0" ?><cherrytree><node custom_icon_id="0" foreground="" is_bold="True" name="BP-6002-011-2019" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1564019338.18" ts_lastsave="1564054526.87" unique_id="216"><rich_text scale="h3" weight="heavy">WCE(Windows Credential Editor)</rich_text><rich_text>
-
-Unfortunately, WCE only supports windows XP, 2003, Vista, 7, 2008 and 8 which makes it difficult for our purposes since our virtual machines are running on windows 10.  
-
-Attempts were made like downloading the executable here </rich_text><rich_text link="webs https://www.ampliasecurity.com/research/windows-credentials-editor/">https://www.ampliasecurity.com/research/windows-credentials-editor/</rich_text><rich_text> but trivial functions can only be used from it, such as creating a hash for a text and the like. </rich_text></node></cherrytree>
