@@ -24,7 +24,7 @@ CALL NO. | TITLE | METHOD USED | CROSS-REFERENCES
 [EXE-1053-0001-2019](./Cherry%20Tree%20Files/EXE-1053-0001-2019.ctd) | schtasks | schtasks (S0111) | 
 [EXE-1059-0002-2019](./Cherry%20Tree%20Files/EXE-1059-0002-2019.ctd) | Terminal Commands (Detection) | cmd.exe (S0106) | 
 [EXE-1047-0001-2019](./Cherry%20Tree%20Files/EXE-1047-0001-2019.ctd) | Windows Management Instrumentation | wmic |
-[EXE-1028-0001-2019](./Cherry%20Tree%20Files/EXE-1028-0001-2019.ctd) | Windows Remote Management (WinRM) | __*running service*__       |
+[EXE-1028-0001-2019](./Cherry%20Tree%20Files/EXE-1028-0001-2019.ctd) | Windows Remote Management (WinRM) | __*running service*__ |
 [EXE-1028-0002-2019](./Cherry%20Tree%20Files/EXE-1028-0002-2019.ctd) | Windows Remote Shell (WinRS) | WinRS | EXE-1028-0001-2019
 [LAT-1076-0001-2019](./Cherry%20Tree%20Files/LAT-1076-0001-2019.ctd) | Remote Desktop Protocol | Remote Desktop Connection |
 [LAT-1075-0001-2019](./Cherry%20Tree%20Files/LAT-1075-0001-2019.ctd) | Pass-the-Hash | mimikatz (S0002) | EXE-1028-0001-2019
