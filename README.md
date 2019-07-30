@@ -12,6 +12,7 @@ CALL NO. | TITLE | METHOD USED | CROSS-REFERENCES
 [CNC-1105-0002-2019](./Cherry%20Tree%20Files/CNC-1105-0002-2019.ctd) | File Transfer (PowerShell) | PowerShell | 
 [CNC-1105-0003-2019](./Cherry%20Tree%20Files/CNC-1105-0003-2019.ctd) | File Transfer (Usage) | scp, ftp, git, certutil, copy |
 [CRE-1003-0001-2019](./Cherry%20Tree%20Files/CRE-1003-0001-2019.ctd) | Fgdump | fgdump (S0120) |
+[CRE-1003-0002-2019](./Cherry%20Tree%20Files/CRE-1003-0002-2019.ctd) | Windows Credential Editor | WCE (S0005) | 
 [DEF-1107-0001-2019](./Cherry%20Tree%20Files/DEF-1107-0001-2019.ctd) | File Deletion (Secure) | SDelete (S0195) |
 [DEF-1099-0001-2019](./Cherry%20Tree%20Files/DEF-1099-0001-2019.ctd) | timestomp | cmd (S0106), PowerShell | 
 [DEF-1070-0001-2019](./Cherry%20Tree%20Files/DEF-1070-0001-2019.ctd) | Windows Log Files (Manual Delete) | Windows Explorer |
