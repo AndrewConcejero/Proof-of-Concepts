@@ -2,7 +2,7 @@
 
 CALL NO. | TITLE | METHOD USED | CROSS-REFERENCES
 --- | --- | --- | ---
-[EXE-1059-0001-2019](./Cherry Tree Files/EXE-1059-0001-2019.ctd) | Long PowerShell Commands    | Invoke-Encode (nishang) | 
+[EXE-1059-0001-2019](./Cherry%20Tree%20Files/EXE-1059-0001-2019.ctd) | Long PowerShell Commands    | Invoke-Encode (nishang) | 
 EXE-1035-0001-2019 | PsExec                      | PsExec (S0029)          |
 EXE-1035-0002-2019 | PsExec                      | impacket (S0357)        |
 EXE-1053-0001-2019 | schtasks                    | schtasks (S0111)        | 
